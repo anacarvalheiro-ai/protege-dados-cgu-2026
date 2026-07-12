@@ -1,0 +1,21 @@
+﻿# Ambientes e caches Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Dados brutos, pacotes e arquivos grandes
+data/raw/
+*.parquet
+*.zip
+*.xls
+*.xlsx
+
+# Segredos
+.env
+*.pem
+*.key
