@@ -35,7 +35,7 @@ jobs:
           python -m pip install -e .
 
       - name: Validar release
-        run: python scripts/validate_release.py
+        run: python scripts/verificar_submissao.py
 
       - name: Construir API estatica
         run: python -m protege_dados.pipelines.build_static_api
@@ -92,3 +92,4 @@ jobs:
       - name: Publicar GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
