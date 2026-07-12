@@ -1,4 +1,4 @@
-name: Publicar Protege.Dados
+﻿name: Publicar Protege.Dados
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verificar arquivos obrigatórios
+      - name: Verificar arquivos obrigatÃ³rios
         run: |
           test -f web/index.html
           test -f web/assets/app.js
@@ -42,7 +42,6 @@ jobs:
           args: >-
             --no-progress
             --accept 200,204,206,429
-            --exclude-mail
             web/index.html
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
