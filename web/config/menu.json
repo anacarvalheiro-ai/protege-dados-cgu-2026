@@ -1,34 +1,52 @@
 [
   {
     "titulo": "Observatório",
-    "url": "index.html"
+    "url": "index.html",
+    "id": "observatorio"
   },
   {
-    "titulo": "Inteligência Territorial",
-    "url": "pages/inteligencia-territorial.html"
+    "titulo": "Painel Nacional",
+    "url": "pages/painel-nacional.html",
+    "id": "painel"
+  },
+  {
+    "titulo": "Comparador",
+    "url": "pages/comparador.html",
+    "id": "comparador"
   },
   {
     "titulo": "Educação Digital",
-    "url": "pages/educacao-digital.html"
+    "url": "pages/educacao-digital.html",
+    "id": "educacao"
   },
   {
     "titulo": "Rede de Proteção",
-    "url": "pages/rede-protecao.html"
+    "url": "pages/rede-protecao.html",
+    "id": "rede"
   },
   {
-    "titulo": "Dados Abertos",
-    "url": "pages/dados-abertos.html"
+    "titulo": "Dados & API",
+    "url": "pages/dados-abertos.html",
+    "id": "dados"
   },
   {
     "titulo": "Pesquisa",
-    "url": "pages/pesquisa.html"
+    "url": "pages/pesquisa.html",
+    "id": "pesquisa"
   },
   {
     "titulo": "Governança",
-    "url": "pages/governanca.html"
+    "url": "pages/governanca.html",
+    "id": "governanca"
+  },
+  {
+    "titulo": "Transparência",
+    "url": "pages/transparencia.html",
+    "id": "transparencia"
   },
   {
     "titulo": "Sobre",
-    "url": "pages/sobre.html"
+    "url": "pages/sobre.html",
+    "id": "sobre"
   }
 ]

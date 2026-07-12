@@ -1,4 +1,4 @@
-name: Publicar Protege.Dados 2.0
+name: Publicar Protege.Dados 4.0
 on:
   push:
     branches: [main]
@@ -15,26 +15,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verificar estrutura
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validar ecossistema
+        run: python -m src.protege_dados.quality.validate
+      - name: Construir API estática e manifesto
+        run: python -m src.protege_dados.pipelines.build_static_api
+      - name: Verificar links locais, imagens e JSON
+        run: python scripts/verificar_submissao.py
+      - name: Testes
         run: |
-          set -e
-          test -f web/index.html
-          test -f web/assets/css/main.css
-          test -f web/assets/js/site.js
-          test -f web/assets/js/dashboard.js
-          test -f web/config/portal.json
-          test -f web/config/menu.json
-          test -f web/config/indicadores.json
-          test -f web/data/ivpd_uf_v1.json
-      - name: Validar JSON
-        run: |
-          python -m json.tool web/config/portal.json > /dev/null
-          python -m json.tool web/config/menu.json > /dev/null
-          python -m json.tool web/config/indicadores.json > /dev/null
-          python -m json.tool web/config/fontes.json > /dev/null
-          python -m json.tool web/config/publicos.json > /dev/null
-          python -m json.tool web/config/atualizacoes.json > /dev/null
-          python -m json.tool web/data/ivpd_uf_v1.json > /dev/null
+          python -m pip install -r requirements-dev.txt
+          pytest -q
+      - name: Preservar artefatos gerados
+        uses: actions/upload-artifact@v4
+        with:
+          name: protege-dados-api-v1
+          path: web/api/v1
   deploy:
     needs: validate
     environment:
@@ -43,6 +41,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m src.protege_dados.pipelines.build_static_api
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
