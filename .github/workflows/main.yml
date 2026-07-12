@@ -37,7 +37,7 @@ jobs:
           python -m pip install -e .
 
       - name: Validar ecossistema
-        run: python -m protege_dados.quality.validate
+        run: python scripts/validate_release.py
 
       - name: Construir API estática e manifesto
         run: python -m protege_dados.pipelines.build_static_api
