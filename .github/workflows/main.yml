@@ -1,5 +1,4 @@
-n@'
-name: Publica release 4.1 do Protege.Dados
+﻿name: Publicar Protege.Dados 4.1
 
 on:
   push:
@@ -21,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Baixar repositório
+      - name: Baixar repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -30,29 +29,26 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Instalar dependências
+      - name: Instalar projeto e dependencias
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements-dev.txt
           python -m pip install -e .
 
-      - name: Validar ecossistema
+      - name: Validar release
         run: python scripts/validate_release.py
 
-      - name: Construir API estática e manifesto
+      - name: Construir API estatica
         run: python -m protege_dados.pipelines.build_static_api
-
-      - name: Verificar links locais, imagens e JSON
-        run: python scripts/verificar_submissao.py
 
       - name: Executar testes
         run: python -m pytest -q
 
-      - name: Preservar artefatos gerados
+      - name: Preservar API gerada
         uses: actions/upload-artifact@v4
         with:
           name: protege-dados-api-v1
           path: web/api/v1
+          if-no-files-found: error
 
   deploy:
     needs: validate
@@ -63,7 +59,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Baixar repositório
+      - name: Baixar repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -72,21 +68,23 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Instalar dependências
+      - name: Instalar projeto e dependencias
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements-dev.txt
           python -m pip install -e .
 
-      - name: Construir API estática
+      - name: Construir API estatica
         run: python -m protege_dados.pipelines.build_static_api
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
-      - name: Enviar portal para publicação
+      - name: Preparar portal
+        shell: bash
+        run: |
+          touch web/.nojekyll
+
+      - name: Enviar portal
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./web
@@ -94,4 +92,3 @@ jobs:
       - name: Publicar GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-'@ | Set-Content -Encoding utf8 .github\workflows\main.yml

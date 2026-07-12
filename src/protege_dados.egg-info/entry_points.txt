@@ -1,2 +1,0 @@
-[console_scripts]
-protege-dados = protege_dados.cli:main
