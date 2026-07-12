@@ -3,14 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Protege.Dados — Observatório de Proteção Digital Infantojuvenil. Plataforma pública de reúso responsável de dados abertos.">
+  <meta name="theme-color" content="#073b68">
+  <meta name="description" content="Protege.Dados — Observatório de Proteção Digital Infantojuvenil. Plataforma pública de reúso responsável de dados governamentais.">
   <meta name="author" content="Ana Maria Carvalheiro — Pretos Na Era Digital Ltda.">
-  <meta name="theme-color" content="#062f57">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Protege.Dados — Observatório de Proteção Digital Infantojuvenil">
+  <meta property="og:description" content="Dados públicos transformados em informação territorial compreensível, auditável e reutilizável.">
+  <meta property="og:url" content="https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/">
+  <meta property="og:image" content="https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/assets/og-protege-dados.png">
+  <meta property="og:image:alt" content="Capa institucional do portal Protege.Dados">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protege.Dados">
+  <meta name="twitter:description" content="Observatório de Proteção Digital Infantojuvenil.">
+  <meta name="twitter:image" content="https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/assets/og-protege-dados.png">
+
   <title>Protege.Dados — Observatório de Proteção Digital Infantojuvenil</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="institutional-header">
     <div class="container">
@@ -22,13 +38,21 @@
         </div>
 
         <div class="header-side">
-          <div class="seal" aria-label="MVP funcional, IVPD versão 1.1">
+          <div class="seal" aria-label="Versão atual do produto">
             MVP FUNCIONAL<br>IVPD v1.1
           </div>
-          <figure class="qr-box">
-            <img src="assets/qr_portal.png" alt="QR Code para acessar o portal público do Protege.Dados">
-            <figcaption>Acesse o portal</figcaption>
-          </figure>
+
+          <a class="qr-link"
+             href="https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/"
+             aria-label="Abrir o portal Protege.Dados">
+            <figure class="qr-box">
+              <img src="assets/qr_portal.png"
+                   width="92"
+                   height="92"
+                   alt="QR Code para acessar o portal público do Protege.Dados">
+              <figcaption>Acesse o portal</figcaption>
+            </figure>
+          </a>
         </div>
       </div>
 
@@ -42,213 +66,281 @@
         </p>
       </div>
 
-      <div class="status-list" aria-label="Informações técnicas">
-        <span><strong>Versão:</strong> IVPD v1.1</span>
-        <span><strong>Atualização:</strong> 12/07/2026</span>
-        <span><strong>Licença:</strong> MIT</span>
-        <span><strong>Hospedagem:</strong> GitHub Pages</span>
-        <span><strong>Pipeline:</strong> GitHub Actions</span>
+      <div class="status-list" aria-label="Informações da versão">
+        <span>Versão: IVPD v1.1</span>
+        <span>Atualização: <time id="updated-date" datetime="2026-07-12">12/07/2026</time></span>
+        <span>Licença: MIT</span>
+        <span>Hospedagem: GitHub Pages</span>
+        <span>Pipeline: GitHub Actions</span>
       </div>
 
-      <nav class="quick-links" aria-label="Acessos rápidos">
-        <a class="button button-light" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026" target="_blank" rel="noopener noreferrer">Repositório GitHub</a>
-        <a class="button button-outline" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/docs" target="_blank" rel="noopener noreferrer">Documentação</a>
-        <a class="button button-outline" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/docs/submissao-cgu-2026" target="_blank" rel="noopener noreferrer">Documentos da candidatura</a>
+      <div class="quick-links">
+        <a class="button button-light"
+           href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026"
+           target="_blank"
+           rel="noopener noreferrer">
+          Repositório GitHub <span class="sr-only">(abre em nova aba)</span>
+        </a>
+        <a class="button button-outline"
+           href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/docs"
+           target="_blank"
+           rel="noopener noreferrer">
+          Documentação <span class="sr-only">(abre em nova aba)</span>
+        </a>
+        <a class="button button-outline"
+           href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/docs/submissao-cgu-2026"
+           target="_blank"
+           rel="noopener noreferrer">
+          Documentos da candidatura <span class="sr-only">(abre em nova aba)</span>
+        </a>
         <a class="button button-outline" href="#downloads">Downloads</a>
-      </nav>
+      </div>
     </div>
   </header>
 
   <nav class="main-nav" aria-label="Navegação principal">
-    <div class="container nav-row">
-      <a href="#resultados">Resultados</a>
-      <a href="#painel">Painel</a>
-      <a href="#downloads">Downloads</a>
-      <a href="#metodo">Metodologia</a>
-      <a href="#arquitetura">Arquitetura</a>
-      <a href="#governanca">Governança</a>
+    <div class="container nav-shell">
+      <button class="menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="menu-principal">
+        Menu
+      </button>
+      <div id="menu-principal" class="nav-row">
+        <a href="#resultados">Resultados</a>
+        <a href="#painel">Painel</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#metodologia">Metodologia</a>
+        <a href="#arquitetura">Arquitetura</a>
+        <a href="#governanca">Governança</a>
+      </div>
     </div>
   </nav>
 
-  <main id="main" class="container main-content">
-    <section class="notice" aria-label="Aviso de leitura responsável">
-      <strong>Leitura responsável:</strong>
-      a IVPD é um instrumento experimental de apoio à análise territorial. Não constitui ranking,
-      não mede prevalência, não identifica pessoas e não realiza previsão individual.
-    </section>
+  <main id="conteudo" class="main-content">
+    <div class="container">
+      <aside class="notice" aria-label="Aviso metodológico">
+        <strong>Leitura responsável:</strong> a IVPD é um instrumento experimental de apoio à análise
+        territorial. Não constitui ranking, não mede prevalência, não identifica pessoas e não realiza
+        previsão individual.
+      </aside>
 
-    <section id="resultados" class="surface">
-      <p class="eyebrow">Resultados do MVP</p>
-      <h2>Dimensão da iniciativa</h2>
-      <div class="metrics-grid">
-        <article><b>27</b><span>Unidades federativas</span></article>
-        <article><b>3</b><span>Grupos de fontes oficiais</span></article>
-        <article><b>181.065</b><span>Escolas analisadas</span></article>
-        <article><b>47.088.922</b><span>Matrículas consideradas</span></article>
-        <article><b>294.592</b><span>Denúncias no recorte de 2025</span></article>
-        <article><b>7/7</b><span>Verificações técnicas aprovadas</span></article>
-      </div>
-    </section>
+      <section id="resultados" class="surface" aria-labelledby="titulo-resultados">
+        <p class="eyebrow">Resultados do MVP</p>
+        <h2 id="titulo-resultados">Dimensão da iniciativa</h2>
 
-    <section id="painel" class="surface" aria-labelledby="painel-title">
-      <div class="panel-header">
-        <div>
-          <p class="eyebrow">Visão por unidade federativa</p>
-          <h2 id="painel-title">Indicadores territoriais</h2>
+        <div class="metrics-grid">
+          <article><b>27</b><span>Unidades federativas</span></article>
+          <article><b>3</b><span>Grupos de fontes oficiais</span></article>
+          <article><b>181.065</b><span>Escolas analisadas</span></article>
+          <article><b>47.088.922</b><span>Matrículas consideradas</span></article>
+          <article><b>294.592</b><span>Denúncias no recorte de 2025</span></article>
+          <article><b>7/7</b><span>Verificações técnicas aprovadas</span></article>
+        </div>
+      </section>
+
+      <section id="painel" class="surface" aria-labelledby="titulo-painel" aria-busy="true">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Visão por unidade federativa</p>
+            <h2 id="titulo-painel">Indicadores territoriais</h2>
+          </div>
+
+          <label for="uf">
+            Unidade Federativa
+            <select id="uf" disabled>
+              <option>Carregando...</option>
+            </select>
+          </label>
         </div>
 
-        <label for="uf">
-          Unidade Federativa
-          <select id="uf" aria-label="Selecionar unidade federativa"></select>
-        </label>
-      </div>
-
-      <div class="cards">
-        <article>
-          <span>Eixo de vulnerabilidade</span>
-          <b id="vuln" aria-live="polite">—</b>
-          <small>escala experimental de 0 a 100</small>
-        </article>
-
-        <article>
-          <span>Taxa de denúncias</span>
-          <b id="taxa" aria-live="polite">—</b>
-          <small>por 100 mil habitantes</small>
-        </article>
-
-        <article>
-          <span>Escolas com internet</span>
-          <b id="internet" aria-live="polite">—</b>
-          <small>Censo Escolar 2024</small>
-        </article>
-      </div>
-
-      <div class="components-panel">
-        <h3>Componentes normalizados</h3>
-        <div id="bars" aria-live="polite"></div>
-      </div>
-
-      <div class="action-row">
-        <button id="download" type="button">Baixar recorte Excel da UF</button>
-        <button id="download-standard" type="button" class="secondary">Baixar recorte CSV padrão</button>
-      </div>
-
-      <p id="download-message" class="form-message" aria-live="polite"></p>
-    </section>
-
-    <section id="downloads" class="surface" aria-labelledby="downloads-title">
-      <p class="eyebrow">Dados e documentação</p>
-      <h2 id="downloads-title">Downloads e materiais técnicos</h2>
-      <p class="muted">Acesse dados derivados e documentos para compreender, auditar e reutilizar a iniciativa.</p>
-
-      <div class="download-grid">
-        <a class="download-card" href="data/ivpd_uf_v1.json" download>
-          <strong>Base completa em JSON</strong>
-          <span>Resultados agregados das 27 unidades federativas.</span>
-          <em>JSON</em>
-        </a>
-
-        <a class="download-card" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/raw/main/data/processed/ivpd_uf_v1.csv">
-          <strong>Base completa em CSV</strong>
-          <span>Arquivo tabular padrão internacional.</span>
-          <em>CSV</em>
-        </a>
-
-        <a class="download-card" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/blob/main/docs/DICIONARIO_DADOS.md" target="_blank" rel="noopener noreferrer">
-          <strong>Dicionário de dados</strong>
-          <span>Descrição dos campos, tipos, unidades e limitações.</span>
-          <em>DOCUMENTAÇÃO</em>
-        </a>
-
-        <a class="download-card" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/blob/main/docs/METODOLOGIA.md" target="_blank" rel="noopener noreferrer">
-          <strong>Metodologia</strong>
-          <span>Fontes, pesos, normalização e decisões técnicas.</span>
-          <em>DOCUMENTAÇÃO</em>
-        </a>
-
-        <a class="download-card" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/docs/submissao-cgu-2026" target="_blank" rel="noopener noreferrer">
-          <strong>Memorial e candidatura</strong>
-          <span>Documentos institucionais preparados para a CGU.</span>
-          <em>DOCX/PDF</em>
-        </a>
-
-        <a class="download-card" href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/evidence" target="_blank" rel="noopener noreferrer">
-          <strong>Evidências técnicas</strong>
-          <span>Manifestos, hashes, resultados e testes.</span>
-          <em>REPOSITÓRIO</em>
-        </a>
-      </div>
-    </section>
-
-    <section id="metodo" class="surface">
-      <p class="eyebrow">Método aberto e documentado</p>
-      <h2>Metodologia</h2>
-      <p>
-        O eixo experimental combina a taxa de denúncias do Disque 100 em 2025, com peso de 50%,
-        o déficit de internet escolar em 2024, com peso de 25%, e o déficit de banda larga escolar
-        em 2024, também com peso de 25%.
-      </p>
-      <p>
-        A normalização utiliza limites robustos nos percentis 5 e 95.
-        O eixo de capacidade territorial de proteção não é publicado enquanto não houver
-        fonte comparável, territorialmente adequada e metodologicamente validada.
-      </p>
-
-      <aside class="automation-note">
-        <h3>Publicação, versionamento e rastreabilidade</h3>
-        <p>
-          Este portal é publicado automaticamente pelo GitHub Actions, utilizando versionamento Git
-          e hospedagem no GitHub Pages.
+        <p id="loading-status" class="loading-status" role="status" aria-live="polite">
+          Carregando indicadores...
         </p>
-        <a href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions" target="_blank" rel="noopener noreferrer">Consultar o histórico de publicações</a>
-      </aside>
-    </section>
 
-    <section id="arquitetura" class="surface">
-      <p class="eyebrow">Fluxo técnico</p>
-      <h2>Arquitetura da solução</h2>
-      <div class="architecture">
-        <span>IBGE</span><span>Inep</span><span>Disque 100</span>
-        <i>↓</i>
-        <strong>Processamento e validação em Python</strong>
-        <i>↓</i>
-        <strong>Indicadores e IVPD</strong>
-        <i>↓</i>
-        <span>CSV</span><span>JSON</span>
-        <i>↓</i>
-        <strong>GitHub Actions → GitHub Pages</strong>
-      </div>
-    </section>
+        <div class="cards">
+          <article>
+            <span>Eixo de vulnerabilidade</span>
+            <b id="vuln">—</b>
+            <small>Escala experimental de 0 a 100</small>
+          </article>
+          <article>
+            <span>Taxa de denúncias</span>
+            <b id="taxa">—</b>
+            <small>Por 100 mil habitantes</small>
+          </article>
+          <article>
+            <span>Escolas com internet</span>
+            <b id="internet">—</b>
+            <small>Censo Escolar 2024</small>
+          </article>
+        </div>
 
-    <section id="governanca" class="surface">
-      <p class="eyebrow">Uso responsável</p>
-      <h2>Governança, privacidade e integridade</h2>
-      <p>
-        O Protege.Dados publica apenas resultados agregados e adota minimização,
-        rastreabilidade das fontes, documentação das transformações, versionamento,
-        revisão humana e transparência sobre limitações.
-      </p>
-      <p>
-        A iniciativa não publica dados pessoais, não identifica vítimas ou denunciantes,
-        não classifica indivíduos e não utiliza resultados para decisões automatizadas.
-      </p>
-    </section>
+        <div class="components-panel">
+          <h3>Componentes normalizados</h3>
+          <div id="bars" aria-live="polite"></div>
+        </div>
+
+        <div class="action-row">
+          <button id="download" type="button" disabled>
+            Baixar CSV compatível com Excel
+          </button>
+          <button id="download-standard" class="secondary" type="button" disabled>
+            Baixar CSV padrão internacional
+          </button>
+        </div>
+
+        <p id="download-message" class="form-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="downloads" class="surface" aria-labelledby="titulo-downloads">
+        <p class="eyebrow">Dados e documentação</p>
+        <h2 id="titulo-downloads">Downloads e materiais técnicos</h2>
+        <p class="muted">
+          Acesse dados derivados e documentos para compreender, auditar e reutilizar a iniciativa.
+        </p>
+
+        <div class="download-grid">
+          <a class="download-card" href="data/ivpd_uf_v1.json" download>
+            <strong>Base completa em JSON</strong>
+            <span>Resultados agregados das 27 unidades federativas.</span>
+            <em>JSON</em>
+          </a>
+
+          <a class="download-card"
+             href="https://raw.githubusercontent.com/anacarvalheiro-ai/protege-dados-cgu-2026/main/data/processed/ivpd_uf_v1.csv"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Base completa em CSV</strong>
+            <span>Arquivo tabular padrão internacional.</span>
+            <em>CSV — abre em nova aba</em>
+          </a>
+
+          <a class="download-card"
+             href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/blob/main/docs/DICIONARIO_DE_DADOS.md"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Dicionário de dados</strong>
+            <span>Descrição dos campos, tipos, unidades e limitações.</span>
+            <em>DOCUMENTAÇÃO</em>
+          </a>
+
+          <a class="download-card"
+             href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/blob/main/docs/METODOLOGIA.md"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Metodologia</strong>
+            <span>Fontes, pesos, normalização e decisões técnicas.</span>
+            <em>DOCUMENTAÇÃO</em>
+          </a>
+
+          <a class="download-card"
+             href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/docs/submissao-cgu-2026"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Memorial e candidatura</strong>
+            <span>Documentos institucionais preparados para a CGU.</span>
+            <em>DOCX/PDF</em>
+          </a>
+
+          <a class="download-card"
+             href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/tree/main/evidence"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Evidências técnicas</strong>
+            <span>Manifestos, hashes, resultados e testes.</span>
+            <em>REPOSITÓRIO</em>
+          </a>
+        </div>
+      </section>
+
+      <section id="metodologia" class="surface" aria-labelledby="titulo-metodologia">
+        <p class="eyebrow">Método aberto e documentado</p>
+        <h2 id="titulo-metodologia">Metodologia</h2>
+        <p>
+          O eixo experimental combina a taxa de denúncias do Disque 100 em 2025, com peso de 50%,
+          o déficit de internet escolar em 2024, com peso de 25%, e o déficit de banda larga escolar
+          em 2024, também com peso de 25%.
+        </p>
+        <p>
+          A normalização utiliza limites robustos nos percentis 5 e 95. O eixo de capacidade territorial
+          de proteção não é publicado enquanto não houver fonte comparável, territorialmente adequada
+          e metodologicamente validada.
+        </p>
+
+        <div class="automation-note">
+          <h3>Publicação, versionamento e rastreabilidade</h3>
+          <p>
+            Este portal é publicado automaticamente pelo GitHub Actions, utilizando versionamento Git
+            e hospedagem no GitHub Pages.
+          </p>
+          <a href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions"
+             target="_blank"
+             rel="noopener noreferrer">
+            Consultar o histórico de publicações <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="arquitetura" class="surface" aria-labelledby="titulo-arquitetura">
+        <p class="eyebrow">Fluxo técnico</p>
+        <h2 id="titulo-arquitetura">Arquitetura da solução</h2>
+        <div class="architecture" aria-label="Fluxo de processamento dos dados">
+          <span>IBGE</span>
+          <span>Inep</span>
+          <span>Disque 100</span>
+          <i aria-hidden="true">↓</i>
+          <strong>Processamento e validação em Python</strong>
+          <i aria-hidden="true">↓</i>
+          <strong>Indicadores e IVPD</strong>
+          <i aria-hidden="true">↓</i>
+          <span>CSV</span>
+          <span>JSON</span>
+          <i aria-hidden="true">↓</i>
+          <strong>GitHub Actions → GitHub Pages</strong>
+        </div>
+      </section>
+
+      <section id="governanca" class="surface" aria-labelledby="titulo-governanca">
+        <p class="eyebrow">Uso responsável</p>
+        <h2 id="titulo-governanca">Governança, privacidade e integridade</h2>
+        <p>
+          O Protege.Dados publica apenas resultados agregados e adota minimização, rastreabilidade
+          das fontes, documentação das transformações, versionamento, revisão humana e transparência
+          sobre limitações.
+        </p>
+        <p>
+          A iniciativa não publica dados pessoais, não identifica vítimas ou denunciantes, não
+          classifica indivíduos e não utiliza resultados para decisões automatizadas.
+        </p>
+      </section>
+    </div>
   </main>
 
   <footer class="institutional-footer">
     <div class="container footer-layout">
       <div>
         <strong>Protege.Dados — IVPD v1.1</strong>
-        <p>Observatório de Proteção Digital Infantojuvenil</p>
-        <p class="small">Responsável: Ana Maria Carvalheiro · Pretos Na Era Digital Ltda. · Brasília/DF</p>
+        <p class="small">
+          Observatório de Proteção Digital Infantojuvenil<br>
+          Responsável: Ana Maria Carvalheiro · Pretos Na Era Digital Ltda. · Brasília/DF
+        </p>
       </div>
-      <figure class="qr-box footer-qr">
-        <img src="assets/qr_repositorio.png" alt="QR Code para acessar o repositório público">
-        <figcaption>Repositório público</figcaption>
-      </figure>
+
+      <a class="qr-link"
+         href="https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Abrir o repositório público do Protege.Dados em nova aba">
+        <figure class="qr-box">
+          <img src="assets/qr_repositorio.png"
+               width="92"
+               height="92"
+               alt="QR Code para acessar o repositório público">
+          <figcaption>Repositório público</figcaption>
+        </figure>
+      </a>
     </div>
   </footer>
-
-  <script src="assets/app.js"></script>
 </body>
 </html>

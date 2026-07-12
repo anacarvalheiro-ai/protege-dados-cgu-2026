@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,11 +16,43 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    name: Validar portal
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivos obrigatórios
+        run: |
+          test -f web/index.html
+          test -f web/assets/app.js
+          test -f web/assets/style.css
+          test -f web/data/ivpd_uf_v1.json
+          test -f web/assets/qr_portal.png
+          test -f web/assets/qr_repositorio.png
+
+      - name: Validar JSON
+        run: python -m json.tool web/data/ivpd_uf_v1.json > /dev/null
+
+      - name: Verificar links internos e HTML
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept 200,204,206,429
+            --exclude-mail
+            web/index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   deploy:
+    name: Publicar
+    needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
 
     steps:
