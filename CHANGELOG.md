@@ -1,22 +1,27 @@
 # Changelog
 
-## [1.1.0] — 2026-07-12
+## [4.1.0] — 2026-07-12
 
-### Adicionado
+### Release candidata
 
-- novo projeto limpo e consolidado;
-- cabeçalho institucional;
-- QR Code do portal;
-- QR Code do repositório;
-- resultados do MVP;
-- downloads em CSV padrão e Excel brasileiro;
-- arquitetura da solução;
-- documentos atualizados da candidatura;
-- documentação de dados e limitações.
+- painel nacional;
+- inteligência territorial por UF;
+- comparador de até três UFs;
+- CSV compatível com Excel brasileiro;
+- CSV padrão internacional;
+- JSON completo;
+- API estática com cinco endpoints;
+- catálogo de indicadores e fontes;
+- endpoint de qualidade;
+- QR Codes com correção alta;
+- identidade institucional 4.1;
+- workflow com validação e deploy;
+- documentação de aceite;
+- salvaguardas éticas e interpretação responsável.
 
-### Corrigido
+### Correções
 
-- estrutura da pasta `web`;
-- remoção de arquivos duplicados;
-- compatibilidade do CSV com Excel brasileiro;
-- caminhos do CSS e JavaScript.
+- estrutura única de `web/assets`;
+- remoção de workflows provisórios;
+- caminhos consistentes;
+- validação prévia ao deploy.

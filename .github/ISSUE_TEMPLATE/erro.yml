@@ -1,0 +1,28 @@
+name: Relatar erro
+description: Informe problema de dados, método, acessibilidade ou interface.
+title: "[ERRO] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - Dados
+        - Metodologia
+        - Interface
+        - Acessibilidade
+        - Documentação
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição
+      description: Explique o que ocorreu e, quando possível, informe UF, indicador e navegador.
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidência ou passos para reproduzir

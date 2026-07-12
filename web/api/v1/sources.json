@@ -1,86 +1,38 @@
 {
-  "schema_version": "1.0",
+  "api_version": "v1",
+  "project_version": "4.1",
   "sources": [
     {
-      "id": "ibge_pop",
-      "organization": "IBGE",
-      "dataset": "Estimativas populacionais",
-      "status": "integrada",
-      "territorial_level": [
-        "UF"
+      "id": "ibge-populacao",
+      "institution": "IBGE",
+      "dataset": "Estimativas municipais de população",
+      "reference_years": [
+        2024,
+        2025
       ],
-      "frequency": "anual",
-      "license": "dados públicos oficiais",
-      "personal_data": false,
-      "purpose": "denominadores e contexto territorial"
+      "role": "Denominadores populacionais e harmonização territorial",
+      "status": "processada"
     },
     {
-      "id": "inep_censo",
-      "organization": "Inep",
-      "dataset": "Censo Escolar",
-      "status": "integrada",
-      "territorial_level": [
-        "UF"
+      "id": "inep-censo-escolar",
+      "institution": "Inep/MEC",
+      "dataset": "Microdados do Censo Escolar",
+      "reference_years": [
+        2024
       ],
-      "frequency": "anual",
-      "license": "dados públicos oficiais",
-      "personal_data": false,
-      "purpose": "escolas, matrículas e conectividade"
+      "role": "Infraestrutura escolar, conectividade e matrículas",
+      "status": "processada"
     },
     {
-      "id": "mdhc_disque100",
-      "organization": "MDHC",
-      "dataset": "Disque 100 / denúncias agregadas",
-      "status": "integrada",
-      "territorial_level": [
-        "UF"
+      "id": "mdhc-disque100",
+      "institution": "MDHC/ONDH",
+      "dataset": "Dados públicos do Disque 100",
+      "reference_years": [
+        "2º semestre de 2024",
+        "2025"
       ],
-      "frequency": "conforme publicação",
-      "license": "dados públicos oficiais",
-      "personal_data": false,
-      "purpose": "registros administrativos agregados"
-    },
-    {
-      "id": "censo_suas",
-      "organization": "MDS",
-      "dataset": "Censo SUAS",
-      "status": "planejada",
-      "territorial_level": [
-        "UF",
-        "município"
-      ],
-      "frequency": "anual",
-      "license": "a validar",
-      "personal_data": false,
-      "purpose": "capacidade territorial da assistência social"
-    },
-    {
-      "id": "cadastro_ct",
-      "organization": "Fontes oficiais competentes",
-      "dataset": "Conselhos Tutelares",
-      "status": "planejada",
-      "territorial_level": [
-        "município"
-      ],
-      "frequency": "a validar",
-      "license": "a validar",
-      "personal_data": false,
-      "purpose": "cobertura da rede de proteção"
-    },
-    {
-      "id": "cetic_domicilios",
-      "organization": "Cetic.br/NIC.br",
-      "dataset": "TIC Domicílios / TIC Kids Online Brasil",
-      "status": "planejada",
-      "territorial_level": [
-        "regional",
-        "amostral"
-      ],
-      "frequency": "anual",
-      "license": "a validar",
-      "personal_data": false,
-      "purpose": "contexto de acesso e práticas digitais"
+      "role": "Registros administrativos do recorte infantojuvenil",
+      "status": "processada"
     }
-  ],
-  "rule": "Nenhuma fonte planejada será incorporada ao indicador sem validação de licença, cobertura, comparabilidade, granularidade e risco de estigmatização."
+  ]
 }

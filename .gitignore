@@ -1,23 +1,18 @@
-﻿# Python
-__pycache__/
-*.py[cod]
-.pytest_cache/
+# Ambientes e caches
 .venv/
-venv/
-env/
-*.egg-info/
-
-# IDE e sistema
-.vscode/
-.idea/
+__pycache__/
+.pytest_cache/
+*.pyc
 .DS_Store
-Thumbs.db
+
+# Dados brutos e arquivos grandes
+data/raw/
+*.parquet
+*.zip
+*.xls
+*.xlsx
 
 # Segredos
 .env
 *.pem
 *.key
-
-# Pacotes e dados brutos
-*.zip
-data/raw/

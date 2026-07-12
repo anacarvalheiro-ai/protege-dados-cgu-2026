@@ -1,25 +1,14 @@
 {
-  "name": "Protege.Dados Static API",
-  "version": "v1",
-  "base_url": "./",
-  "endpoints": [
-    {
-      "path": "territories.json",
-      "description": "Indicadores agregados por UF",
-      "status": "generated from web/data/ivpd_uf_v1.json during pipeline"
-    },
-    {
-      "path": "indicators.json",
-      "description": "Catálogo de indicadores"
-    },
-    {
-      "path": "sources.json",
-      "description": "Catálogo de fontes"
-    },
-    {
-      "path": "quality.json",
-      "description": "Metadados de qualidade e governança"
-    }
-  ],
-  "note": "API estática para reúso em GitHub Pages; sem autenticação e sem dados pessoais."
+  "name": "Protege.Dados API",
+  "description": "API estática, pública, somente leitura e sem autenticação, com dados agregados e metadados.",
+  "api_version": "v1",
+  "project_version": "4.1",
+  "updated_at": "2026-07-12",
+  "license": "Consulte DATA_LICENSE.md no repositório",
+  "endpoints": {
+    "territories": "./territories.json",
+    "indicators": "./indicators.json",
+    "sources": "./sources.json",
+    "quality": "./quality.json"
+  }
 }

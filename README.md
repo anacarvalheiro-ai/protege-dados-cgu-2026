@@ -1,131 +1,99 @@
-# Protege.Dados — Observatório de Proteção Digital Infantojuvenil
+# Protege.Dados 4.1 — Ecossistema Nacional de Proteção Digital Infantojuvenil
 
-[![Portal público](https://img.shields.io/badge/portal-online-brightgreen)](https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/)
-[![GitHub Pages](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/pages.yml/badge.svg)](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/pages.yml)
-[![Testes](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/tests.yml/badge.svg)](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/tests.yml)
-[![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-blue)](LICENSE)
-[![IVPD](https://img.shields.io/badge/IVPD-v1.1-C79A28)](docs/METODOLOGIA.md)
+[![Portal](https://img.shields.io/badge/portal-GitHub%20Pages-0b73b9)](https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/)
+[![Deploy](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/deploy.yml/badge.svg)](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/deploy.yml)
+[![Release](https://img.shields.io/badge/release-4.1-d4a72c)](CHANGELOG.md)
+[![Licença](https://img.shields.io/badge/c%C3%B3digo-MIT-06365f)](LICENSE)
+[![Dados](https://img.shields.io/badge/dados-CSV%20%7C%20JSON-0873ba)](data/processed/ivpd_uf_v1.csv)
 
-## Candidatura ao 2º Concurso de Reúso de Dados Abertos da CGU
+## Release candidata ao 2º Concurso de Reúso de Dados Abertos da CGU
 
-O **Protege.Dados** é uma iniciativa de reúso responsável de dados abertos voltada à produção de indicadores territoriais relacionados à proteção digital de crianças e adolescentes.
+O **Protege.Dados 4.1** integra dados oficiais de população, educação, conectividade e denúncias administrativas e disponibiliza resultados agregados para as 27 unidades federativas.
 
-O projeto integra dados oficiais do IBGE, do Censo Escolar/Inep e do Disque 100/Observatório Nacional dos Direitos Humanos, harmoniza códigos territoriais e disponibiliza resultados agregados para as 27 unidades federativas.
+A release inclui:
 
-> **Leitura responsável:** a IVPD é experimental. Não constitui ranking, não mede prevalência, não identifica pessoas e não realiza previsão individual.
+- painel nacional;
+- consulta por UF;
+- comparador de até três UFs;
+- CSV completo e recortes por UF;
+- CSV compatível com Excel brasileiro;
+- JSON;
+- API estática;
+- catálogo de indicadores;
+- catálogo de fontes;
+- endpoint de qualidade;
+- metodologia, governança, limitações e dicionário;
+- código aberto;
+- testes de aceite;
+- publicação automatizada;
+- QR Codes do portal e do repositório.
 
-## Acesso
+> **Leitura responsável:** a IVPD é experimental. Não constitui ranking, não mede prevalência real, não identifica pessoas e não realiza decisões automatizadas.
 
-- **Portal:** https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
-- **Repositório:** https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026
-- **Documentação:** [docs/](docs/)
-- **Documentos da candidatura:** [docs/submissao-cgu-2026/](docs/submissao-cgu-2026/)
-- **Evidências:** [evidence/](evidence/)
+## Acessos
 
-## Resultados do MVP
+- Portal: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
+- Repositório: https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026
+- API: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/index.json
+- Documentação: [docs/](docs/)
+- Dossiê e anexos: [docs/submissao-cgu-2026/](docs/submissao-cgu-2026/)
+
+## Resultados atuais
 
 | Evidência | Resultado |
 |---|---:|
-| Unidades federativas | 27 |
+| UFs | 27 |
 | Grupos de fontes oficiais | 3 |
 | Escolas analisadas | 181.065 |
 | Matrículas consideradas | 47.088.922 |
 | Escolas com internet | 166.771 |
 | Escolas com banda larga | 145.195 |
 | Denúncias no recorte de 2025 | 294.592 |
-| Verificações técnicas | 7 de 7 |
 
-## Recursos
+## API estática
 
-- portal público funcional;
-- seletor por UF;
-- indicadores territoriais;
-- download Excel brasileiro;
-- download CSV internacional;
-- base completa em CSV e JSON;
-- metodologia aberta;
-- dicionário de dados;
-- evidências técnicas;
-- QR Code para o portal e para o repositório;
-- GitHub Pages;
-- GitHub Actions;
-- testes automatizados;
-- versionamento Git.
+- `web/api/v1/index.json`
+- `web/api/v1/territories.json`
+- `web/api/v1/indicators.json`
+- `web/api/v1/sources.json`
+- `web/api/v1/quality.json`
+
+## Publicação
+
+Este pacote foi preparado para upload integral na raiz do repositório `protege-dados-cgu-2026`.
+
+Após o upload:
+
+1. abra **Settings → Pages**;
+2. em **Source**, selecione **GitHub Actions**;
+3. abra **Actions**;
+4. execute ou reexecute `Publicar Protege.Dados 4.1`;
+5. aguarde os jobs `validate` e `deploy` ficarem verdes.
+
+O workflow também tenta habilitar o Pages automaticamente com `enablement: true`.
+
+## Validação local
+
+```bash
+python scripts/validate_release.py
+```
+
+Resultado esperado:
+
+```text
+VALIDAÇÃO APROVADA — PROTEGE.DADOS 4.1
+```
 
 ## QR Codes
 
 - `web/assets/qr_portal.png`
 - `web/assets/qr_repositorio.png`
-- versões SVG correspondentes.
+- versões SVG equivalentes.
 
-Os QR Codes foram gerados para:
-
-- Portal: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
-- Repositório: https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026
-
-## Fontes oficiais
-
-1. IBGE — estimativas municipais de população.
-2. Inep — Microdados do Censo Escolar 2024.
-3. MDHC/ONDH — dados públicos do Disque 100.
-
-## IVPD experimental
-
-| Componente | Peso |
-|---|---:|
-| Taxa de denúncias por 100 mil habitantes | 50% |
-| Déficit de internet escolar | 25% |
-| Déficit de banda larga escolar | 25% |
-
-## Estrutura
-
-```text
-protege-dados-cgu-2026/
-├── .github/
-├── config/
-├── data/processed/
-├── docs/
-├── evidence/
-├── src/
-├── tests/
-├── web/
-│   ├── assets/
-│   │   ├── app.js
-│   │   ├── style.css
-│   │   ├── qr_portal.png
-│   │   └── qr_repositorio.png
-│   ├── data/
-│   └── index.html
-├── README.md
-├── LICENSE
-└── pyproject.toml
-```
-
-## Publicação
-
-1. Crie um repositório público chamado `protege-dados-cgu-2026`.
-2. Envie todo o conteúdo deste pacote para a raiz do repositório.
-3. Abra **Settings → Pages**.
-4. Em **Source**, selecione **GitHub Actions**.
-5. Abra a aba **Actions** e aguarde os workflows ficarem verdes.
-6. Acesse: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
-
-## Testes
-
-```bash
-python -m venv .venv
-pip install -e .
-pytest -q
-```
-
-## Licenças
-
-- Código: [MIT](LICENSE)
-- Dados derivados: [DATA_LICENSE.md](DATA_LICENSE.md)
+Os QR Codes usam correção de erros alta e apontam para os acessos oficiais.
 
 ## Autoria
 
 **Ana Maria Carvalheiro**  
 Pretos Na Era Digital Ltda.  
-Brasília — DF  
-E-mail: anacarvalheiro@gmail.com
+Brasília/DF — 2026

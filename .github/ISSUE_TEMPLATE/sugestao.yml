@@ -1,0 +1,15 @@
+name: Sugerir melhoria
+description: Proponha melhoria de dados, método, documentação ou experiência.
+title: "[SUGESTÃO] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta
+    validations:
+      required: true
+  - type: textarea
+    id: beneficio
+    attributes:
+      label: Benefício público esperado

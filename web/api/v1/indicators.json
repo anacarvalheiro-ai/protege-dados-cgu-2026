@@ -1,108 +1,43 @@
-[
-  {
-    "id": "taxa_denuncias",
-    "nome": "Taxa de denúncias",
-    "descricao": "Registros administrativos de denúncias por 100 mil habitantes; a evolução adotará, quando disponível, o denominador de crianças e adolescentes.",
-    "unidade": "por 100 mil",
-    "dimensao": "Vulnerabilidade e exposição",
-    "status": "publicado",
-    "limitacao": "Não representa prevalência real e pode ser influenciada por acesso aos canais e subnotificação.",
-    "quality": {
-      "source_documented": true,
-      "calculation_documented": true,
-      "human_review": true
+{
+  "api_version": "v1",
+  "project_version": "4.1",
+  "updated_at": "2026-07-12",
+  "indicators": [
+    {
+      "id": "eixo_vulnerabilidade",
+      "name": "Eixo experimental de vulnerabilidade",
+      "unit": "escala 0–100",
+      "published": true,
+      "formula": "0,50 × denúncias normalizadas + 0,25 × déficit de internet + 0,25 × déficit de banda larga",
+      "interpretation": "Valor sintético experimental. Não é ranking nem estimativa de prevalência."
+    },
+    {
+      "id": "taxa_denuncias_100mil",
+      "name": "Taxa administrativa de denúncias",
+      "unit": "registros por 100 mil habitantes",
+      "published": true,
+      "interpretation": "Registros administrativos sujeitos a cobertura, acesso aos canais e subnotificação."
+    },
+    {
+      "id": "perc_escolas_internet",
+      "name": "Escolas com internet",
+      "unit": "%",
+      "published": true,
+      "interpretation": "Percentual das escolas ativas analisadas no Censo Escolar 2024."
+    },
+    {
+      "id": "perc_escolas_banda_larga",
+      "name": "Escolas com banda larga",
+      "unit": "%",
+      "published": true,
+      "interpretation": "Percentual das escolas ativas analisadas no Censo Escolar 2024."
+    },
+    {
+      "id": "eixo_protecao",
+      "name": "Eixo de capacidade territorial de proteção",
+      "unit": "escala 0–100",
+      "published": false,
+      "reason": "Fonte territorial comparável ainda não validada; o campo permanece nulo."
     }
-  },
-  {
-    "id": "internet_escolar",
-    "nome": "Escolas com internet",
-    "descricao": "Proporção de escolas com acesso à internet.",
-    "unidade": "percentual",
-    "dimensao": "Conectividade e educação digital",
-    "status": "publicado",
-    "limitacao": "Disponibilidade não mede qualidade, velocidade ou uso pedagógico.",
-    "quality": {
-      "source_documented": true,
-      "calculation_documented": true,
-      "human_review": true
-    }
-  },
-  {
-    "id": "banda_larga_escolar",
-    "nome": "Escolas com banda larga",
-    "descricao": "Proporção de escolas com infraestrutura de banda larga.",
-    "unidade": "percentual",
-    "dimensao": "Conectividade e educação digital",
-    "status": "publicado",
-    "limitacao": "A existência declarada não assegura velocidade adequada.",
-    "quality": {
-      "source_documented": true,
-      "calculation_documented": true,
-      "human_review": true
-    }
-  },
-  {
-    "id": "capacidade_protecao",
-    "nome": "Capacidade territorial de proteção",
-    "descricao": "Cobertura de Conselhos Tutelares, assistência social e serviços especializados.",
-    "unidade": "módulo",
-    "dimensao": "Capacidade de proteção",
-    "status": "em desenvolvimento",
-    "limitacao": "Não será calculado sem fonte oficial comparável e validada.",
-    "quality": {
-      "source_documented": true,
-      "calculation_documented": true,
-      "human_review": true
-    }
-  },
-  {
-    "id": "qualidade_dados",
-    "nome": "Qualidade e transparência dos dados",
-    "descricao": "Atualização, completude, cobertura, documentação, licença e rastreabilidade.",
-    "unidade": "painel de qualidade",
-    "dimensao": "Governança de dados",
-    "status": "em desenvolvimento",
-    "limitacao": "Critérios devem ser publicados e testados antes de pontuação sintética.",
-    "quality": {
-      "source_documented": true,
-      "calculation_documented": true,
-      "human_review": true
-    }
-  },
-  {
-    "id": "cobertura_rede_protecao",
-    "nome": "Cobertura da rede de proteção",
-    "descricao": "Disponibilidade territorial de serviços e equipamentos de proteção, quando houver fonte comparável.",
-    "unidade": "indicadores separados, sem síntese prematura",
-    "dimensao": "Capacidade de proteção",
-    "publicos": [
-      "gestão pública",
-      "rede de proteção",
-      "órgãos de controle"
-    ],
-    "status": "planejado",
-    "limitacao": "Não publicado até validação das fontes e denominadores.",
-    "quality": {
-      "source_documented": false,
-      "calculation_documented": false,
-      "human_review": true
-    }
-  },
-  {
-    "id": "prontidao_dados",
-    "nome": "Prontidão dos dados",
-    "descricao": "Painel de atualização, cobertura, completude, licença, documentação e reprodutibilidade.",
-    "unidade": "seis dimensões de qualidade",
-    "dimensao": "Governança de dados",
-    "publicos": [
-      "todos"
-    ],
-    "status": "publicado como metadado",
-    "limitacao": "Não deve ser confundido com qualidade da política pública.",
-    "quality": {
-      "source_documented": true,
-      "calculation_documented": true,
-      "human_review": true
-    }
-  }
-]
+  ]
+}
