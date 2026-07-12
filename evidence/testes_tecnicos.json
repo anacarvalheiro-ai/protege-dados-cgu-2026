@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "27 UFs no IVPD": true,
+    "População positiva": true,
+    "Denúncias não negativas": true,
+    "Eixo de vulnerabilidade em 0-100": true,
+    "Sem publicação artificial do eixo de proteção": true,
+    "Códigos municipais IBGE 7 dígitos em 2025": true,
+    "Sem duplicidade de código municipal em 2025": true
+  },
+  "aprovados": 7,
+  "total": 7
+}

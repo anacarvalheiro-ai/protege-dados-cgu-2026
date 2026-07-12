@@ -1,0 +1,46 @@
+reference_year: 2024
+
+sources:
+  ondh:
+    label: "ONDH / Disque 100"
+    raw_dir: "data/raw/ondh"
+    accepted_extensions: [".csv", ".xlsx", ".xls"]
+    required_semantic_fields:
+      uf: ["uf", "sigla_uf", "estado"]
+      municipality_code: ["codigo_municipio", "cod_mun", "codigo_ibge"]
+      year: ["ano", "ano_denuncia", "data_denuncia"]
+      age_group: ["faixa_etaria", "grupo_vulneravel", "idade"]
+      count: ["quantidade", "qtd", "numero_denuncias"]
+  inep:
+    label: "Censo Escolar"
+    raw_dir: "data/raw/inep"
+    accepted_extensions: [".csv", ".zip"]
+    required_semantic_fields:
+      municipality_code: ["co_municipio", "codigo_municipio"]
+      uf: ["sg_uf", "uf"]
+      active_school: ["tp_situacao_funcionamento", "situacao_funcionamento"]
+      internet: ["in_internet", "internet"]
+      broadband: ["in_banda_larga", "banda_larga"]
+      admin_internet: ["in_internet_administrativo"]
+      learning_internet: ["in_internet_aprendizagem"]
+      student_devices: ["qt_desktop_aluno", "qt_comp_portatil_aluno", "qt_tablet_aluno"]
+  anatel:
+    label: "Banda Larga Fixa"
+    raw_dir: "data/raw/anatel"
+    accepted_extensions: [".csv", ".xlsx"]
+    required_semantic_fields:
+      municipality_code: ["codigo_ibge", "cod_municipio"]
+      uf: ["uf", "sigla_uf"]
+      year: ["ano"]
+      month: ["mes"]
+      accesses: ["acessos", "quantidade_acessos"]
+      technology: ["tecnologia"]
+      speed: ["faixa_velocidade", "velocidade"]
+  ibge:
+    label: "Estimativas populacionais"
+    raw_dir: "data/raw/ibge"
+    accepted_extensions: [".xlsx", ".xls", ".csv"]
+    required_semantic_fields:
+      municipality_code: ["codigo_municipio", "cod_mun", "codigo_ibge"]
+      uf: ["uf", "sigla_uf"]
+      population: ["populacao", "populacao_estimada"]

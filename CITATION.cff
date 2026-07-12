@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Ao reutilizar este projeto, cite a iniciativa conforme abaixo."
+title: "Protege.Dados — Observatório de Proteção Digital Infantojuvenil"
+type: software
+version: "1.0.0"
+date-released: "2026-07-12"
+authors:
+  - family-names: "Carvalheiro"
+    given-names: "Ana Maria"
+    email: "anacarvalheiro@gmail.com"
+publisher: "Pretos Na Era Digital Ltda."
+license: "MIT"
+keywords:
+  - dados abertos
+  - proteção infantojuvenil
+  - transparência pública
+  - cidadania digital
+  - IVPD

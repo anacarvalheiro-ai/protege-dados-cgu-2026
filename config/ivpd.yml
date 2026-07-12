@@ -1,0 +1,18 @@
+version: "1.0"
+territorial_level: "uf"
+minimum_coverage: 0.80
+normalization: "minmax"
+weights:
+  violation_rate: 0.25
+  school_no_internet: 0.25
+  school_no_broadband: 0.20
+  low_blf_density: 0.30
+
+suppression:
+  small_cell_threshold: 5
+  enable_secondary_suppression: true
+
+publication:
+  include_raw_counts: false
+  decimals: 2
+  show_ranking: false

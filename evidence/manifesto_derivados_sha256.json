@@ -1,0 +1,47 @@
+[
+  {
+    "arquivo": "censo_escolar_2024_escolas_ativas.parquet",
+    "bytes": 1623928,
+    "sha256": "8c78653117f5fce7f305cbbf4a5ef18ae1cc475fac9c56555d16e26eb80b0f0a"
+  },
+  {
+    "arquivo": "censo_escolar_2024_uf.csv",
+    "bytes": 4856,
+    "sha256": "2f6534cd87b60eff78b21dfae5dc9c74b3d1cb5ed9c34dae1c7944e3ce1298fd"
+  },
+  {
+    "arquivo": "disque100_2024_2sem_denuncias_unicas.parquet",
+    "bytes": 9953088,
+    "sha256": "569216c5fb831e274c6058864a753cd8e57b6e9a1eb7257767699258abdf41e5"
+  },
+  {
+    "arquivo": "disque100_2024_2sem_uf.csv",
+    "bytes": 542,
+    "sha256": "f8b610cf72fd27295de8aa9f4e12b8aff91860d4f4faf0c1c48b10ca98124161"
+  },
+  {
+    "arquivo": "disque100_2025_denuncias_unicas.parquet",
+    "bytes": 20301399,
+    "sha256": "d5ffb349617e3c8b66d951a5bf7ac974bd54bc8fda7e24f18a36acee5c4a7d1c"
+  },
+  {
+    "arquivo": "disque100_2025_uf.csv",
+    "bytes": 561,
+    "sha256": "e3e2b3accedd49dad9c8e16d8b72303ac43c94dca3fc69ae2d8ba713b181bffd"
+  },
+  {
+    "arquivo": "ibge_populacao_municipios_2024.csv",
+    "bytes": 204728,
+    "sha256": "32efe689278c63390e678ed5502d13adc40adad9cf9c5312f3d3ff61062e7360"
+  },
+  {
+    "arquivo": "ibge_populacao_municipios_2025.csv",
+    "bytes": 204728,
+    "sha256": "59dd450ceca7af0f8d6d11c9a5ae493046d1c459576908da5586e13708000193"
+  },
+  {
+    "arquivo": "ivpd_uf_v1.csv",
+    "bytes": 13571,
+    "sha256": "6fd8e984a0b6b8917cfb9c662513dcb63174ed7a2548473448d1bc22893bc0c7"
+  }
+]

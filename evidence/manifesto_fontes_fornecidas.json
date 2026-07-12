@@ -1,0 +1,50 @@
+[
+  {
+    "arquivo": "Dados/disque100-primeiro-semestre-2025.csv",
+    "bytes": 1475223102,
+    "bytes_compactados": 53977349,
+    "crc32": "e701b791"
+  },
+  {
+    "arquivo": "Dados/disque100-primeiro-semestre-2026.csv",
+    "bytes": 1931449033,
+    "bytes_compactados": 68871042,
+    "crc32": "9a11b066"
+  },
+  {
+    "arquivo": "Dados/disque100-segundo-semestre-2024.csv",
+    "bytes": 1332415417,
+    "bytes_compactados": 49380326,
+    "crc32": "c9403987"
+  },
+  {
+    "arquivo": "Dados/disque100-segundo-semestre-2025.csv",
+    "bytes": 1648711984,
+    "bytes_compactados": 59626204,
+    "crc32": "a9554c67"
+  },
+  {
+    "arquivo": "Dados/estimativa_dou_2025.xls",
+    "bytes": 830976,
+    "bytes_compactados": 209931,
+    "crc32": "e23aee0b"
+  },
+  {
+    "arquivo": "Dados/microdados_censo_escolar_2024.zip",
+    "bytes": 33829396,
+    "bytes_compactados": 33864657,
+    "crc32": "042c49be"
+  },
+  {
+    "arquivo": "Dados/POP2024_20241230.xls",
+    "bytes": 822272,
+    "bytes_compactados": 223467,
+    "crc32": "6db1a205"
+  },
+  {
+    "arquivo": "Dados/POP2025_20260113.xls",
+    "bytes": 800768,
+    "bytes_compactados": 212248,
+    "crc32": "7b47f3b6"
+  }
+]

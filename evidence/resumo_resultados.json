@@ -1,0 +1,36 @@
+{
+  "ibge_2024": {
+    "municipios": 5571,
+    "populacao": 212583750
+  },
+  "ibge_2025": {
+    "municipios": 5571,
+    "populacao": 213421037
+  },
+  "censo_2024": {
+    "escolas_ativas": 181065,
+    "ufs": 27,
+    "matriculas": 47088922,
+    "escolas_com_internet": 166771,
+    "escolas_com_banda_larga": 145195
+  },
+  "disque100_2024_2sem": {
+    "denuncias_unicas": 144500,
+    "ufs": 27,
+    "municipios_com_registro": 4087,
+    "vitimas_estimadas_soma": 216098
+  },
+  "disque100_2025": {
+    "denuncias_unicas": 294592,
+    "ufs": 27,
+    "municipios_com_registro": 4900,
+    "vitimas_estimadas_soma": 429948
+  },
+  "ivpd": {
+    "ufs": 27,
+    "fontes_integradas": 3,
+    "indicadores_publicados": 3,
+    "eixo_protecao_publicado": false,
+    "metodo": "normalização min-max robusta P5-P95; pesos 50/25/25"
+  }
+}
