@@ -1,0 +1,14 @@
+{
+  "nome": "Protege.Dados",
+  "subtitulo": "Observatório de Proteção Digital Infantojuvenil",
+  "versao": "2.0 — Fundação",
+  "dataAtualizacao": "2026-07-12",
+  "responsavel": "Ana Maria Carvalheiro",
+  "instituicao": "Pretos Na Era Digital Ltda.",
+  "cidade": "Brasília/DF",
+  "repositorio": "https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026",
+  "portal": "https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/",
+  "licenca": "MIT",
+  "proposito": "Transformar dados públicos em inteligência territorial acessível, transparente e reutilizável para apoiar a proteção digital de crianças e adolescentes.",
+  "compromisso": "Produzir informação útil sem identificar pessoas, estigmatizar territórios ou substituir a análise humana."
+}

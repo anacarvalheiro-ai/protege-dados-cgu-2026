@@ -1,71 +1,51 @@
-﻿name: Publicar Protege.Dados
-
+name: Publicar Protege.Dados 2.0
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
-
 jobs:
   validate:
-    name: Validar portal
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Verificar arquivos obrigatÃ³rios
+      - uses: actions/checkout@v4
+      - name: Verificar estrutura
         run: |
+          set -e
           test -f web/index.html
-          test -f web/assets/app.js
-          test -f web/assets/style.css
+          test -f web/assets/css/main.css
+          test -f web/assets/js/site.js
+          test -f web/assets/js/dashboard.js
+          test -f web/config/portal.json
+          test -f web/config/menu.json
+          test -f web/config/indicadores.json
           test -f web/data/ivpd_uf_v1.json
-          test -f web/assets/qr_portal.png
-          test -f web/assets/qr_repositorio.png
-
       - name: Validar JSON
-        run: python -m json.tool web/data/ivpd_uf_v1.json > /dev/null
-
-      - name: Verificar links internos e HTML
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: >-
-            --no-progress
-            --accept 200,204,206,429
-            web/index.html
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        run: |
+          python -m json.tool web/config/portal.json > /dev/null
+          python -m json.tool web/config/menu.json > /dev/null
+          python -m json.tool web/config/indicadores.json > /dev/null
+          python -m json.tool web/config/fontes.json > /dev/null
+          python -m json.tool web/config/publicos.json > /dev/null
+          python -m json.tool web/config/atualizacoes.json > /dev/null
+          python -m json.tool web/data/ivpd_uf_v1.json > /dev/null
   deploy:
-    name: Publicar
     needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Configurar Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload do portal
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./web
-
-      - name: Publicar
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4

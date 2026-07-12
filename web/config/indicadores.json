@@ -1,0 +1,47 @@
+[
+  {
+    "id": "taxa_denuncias",
+    "nome": "Taxa de denúncias",
+    "descricao": "Registros administrativos de denúncias por 100 mil habitantes; a evolução adotará, quando disponível, o denominador de crianças e adolescentes.",
+    "unidade": "por 100 mil",
+    "dimensao": "Vulnerabilidade e exposição",
+    "status": "publicado",
+    "limitacao": "Não representa prevalência real e pode ser influenciada por acesso aos canais e subnotificação."
+  },
+  {
+    "id": "internet_escolar",
+    "nome": "Escolas com internet",
+    "descricao": "Proporção de escolas com acesso à internet.",
+    "unidade": "percentual",
+    "dimensao": "Conectividade e educação digital",
+    "status": "publicado",
+    "limitacao": "Disponibilidade não mede qualidade, velocidade ou uso pedagógico."
+  },
+  {
+    "id": "banda_larga_escolar",
+    "nome": "Escolas com banda larga",
+    "descricao": "Proporção de escolas com infraestrutura de banda larga.",
+    "unidade": "percentual",
+    "dimensao": "Conectividade e educação digital",
+    "status": "publicado",
+    "limitacao": "A existência declarada não assegura velocidade adequada."
+  },
+  {
+    "id": "capacidade_protecao",
+    "nome": "Capacidade territorial de proteção",
+    "descricao": "Cobertura de Conselhos Tutelares, assistência social e serviços especializados.",
+    "unidade": "módulo",
+    "dimensao": "Capacidade de proteção",
+    "status": "em desenvolvimento",
+    "limitacao": "Não será calculado sem fonte oficial comparável e validada."
+  },
+  {
+    "id": "qualidade_dados",
+    "nome": "Qualidade e transparência dos dados",
+    "descricao": "Atualização, completude, cobertura, documentação, licença e rastreabilidade.",
+    "unidade": "painel de qualidade",
+    "dimensao": "Governança de dados",
+    "status": "em desenvolvimento",
+    "limitacao": "Critérios devem ser publicados e testados antes de pontuação sintética."
+  }
+]

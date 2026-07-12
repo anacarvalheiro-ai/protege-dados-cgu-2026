@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Gestão pública",
+    "descricao": "Diagnóstico territorial, planejamento e priorização de aprofundamentos."
+  },
+  {
+    "titulo": "Educação",
+    "descricao": "Conectividade, alcance escolar, prevenção e educação digital."
+  },
+  {
+    "titulo": "Rede de proteção",
+    "descricao": "Leitura de registros, cobertura institucional e fluxos de resposta."
+  },
+  {
+    "titulo": "Pesquisa",
+    "descricao": "Dados abertos, metodologia, documentação e reprodutibilidade."
+  },
+  {
+    "titulo": "Sociedade civil e cidadania",
+    "descricao": "Transparência, controle social e desenvolvimento de projetos."
+  }
+]

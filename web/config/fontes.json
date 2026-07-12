@@ -1,0 +1,26 @@
+[
+  {
+    "orgao": "IBGE",
+    "base": "Estimativas populacionais",
+    "uso": "Denominadores e contexto territorial",
+    "status": "utilizada"
+  },
+  {
+    "orgao": "Inep",
+    "base": "Censo Escolar",
+    "uso": "Escolas, matrículas e conectividade",
+    "status": "utilizada"
+  },
+  {
+    "orgao": "MDHC",
+    "base": "Disque 100",
+    "uso": "Registros administrativos agregados",
+    "status": "utilizada"
+  },
+  {
+    "orgao": "Fontes futuras",
+    "base": "Rede de proteção",
+    "uso": "Capacidade territorial de resposta",
+    "status": "em validação"
+  }
+]

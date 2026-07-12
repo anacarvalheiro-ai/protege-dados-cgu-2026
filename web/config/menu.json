@@ -1,0 +1,34 @@
+[
+  {
+    "titulo": "Observatório",
+    "url": "index.html"
+  },
+  {
+    "titulo": "Inteligência Territorial",
+    "url": "pages/inteligencia-territorial.html"
+  },
+  {
+    "titulo": "Educação Digital",
+    "url": "pages/educacao-digital.html"
+  },
+  {
+    "titulo": "Rede de Proteção",
+    "url": "pages/rede-protecao.html"
+  },
+  {
+    "titulo": "Dados Abertos",
+    "url": "pages/dados-abertos.html"
+  },
+  {
+    "titulo": "Pesquisa",
+    "url": "pages/pesquisa.html"
+  },
+  {
+    "titulo": "Governança",
+    "url": "pages/governanca.html"
+  },
+  {
+    "titulo": "Sobre",
+    "url": "pages/sobre.html"
+  }
+]
