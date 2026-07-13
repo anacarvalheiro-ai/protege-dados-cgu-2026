@@ -1,449 +1,184 @@
-﻿(() => {
+(() => {
   "use strict";
+  const DATA_URL = "data/ivpd_uf_v1.json?v=5.1.0";
+  const $ = (id) => document.getElementById(id);
+  const expected = new Set(["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"]);
+  let rows = [], selected = null, comparisonRows = [];
 
-  const DATA_URL = "data/ivpd_uf_v1.json";
-
-  function byId(id) {
-    return document.getElementById(id);
-  }
-
-  function toNumber(value) {
-    if (typeof value === "number") return value;
+  function numberValue(value) {
+    if (typeof value === "number") return Number.isFinite(value) ? value : NaN;
     if (value === null || value === undefined || value === "") return NaN;
-
     const text = String(value).trim();
-    return Number(
-      text.includes(",")
-        ? text.replace(/\./g, "").replace(",", ".")
-        : text
+    const result = Number(text.includes(",") ? text.replace(/\./g,"").replace(",",".") : text);
+    return Number.isFinite(result) ? result : NaN;
+  }
+  function formatNumber(value, digits=1) {
+    const valueNumber = numberValue(value);
+    return Number.isFinite(valueNumber)
+      ? new Intl.NumberFormat("pt-BR",{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(valueNumber)
+      : "—";
+  }
+  const formatPercent = (value) => Number.isFinite(numberValue(value)) ? `${formatNumber(value,1)}%` : "—";
+  function setNotice(text, error=false) {
+    const notice = $("portal-status");
+    if (!notice) return;
+    notice.textContent = text;
+    notice.className = error ? "notice error" : "notice";
+  }
+  function setMessage(text, error=false) {
+    const message = $("download-message");
+    if (!message) return;
+    message.textContent = text;
+    message.style.color = error ? "#a22929" : "#117443";
+  }
+  async function loadRows() {
+    const response = await fetch(DATA_URL,{cache:"no-store",headers:{Accept:"application/json"}});
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    const list = Array.isArray(payload) ? payload : payload.territories;
+    if (!Array.isArray(list)) throw new Error("Formato de dados inválido");
+    const map = new Map();
+    for (const item of list) {
+      const uf = String(item.uf || "").trim().toUpperCase();
+      if (expected.has(uf)) map.set(uf,{...item,uf});
+    }
+    const normalized = [...map.values()].sort((a,b)=>a.uf.localeCompare(b.uf,"pt-BR"));
+    if (normalized.length !== 27) throw new Error(`A base contém ${normalized.length} UFs; eram esperadas 27`);
+    return normalized;
+  }
+  function fillSelect(select, allowEmpty=false) {
+    if (!select) return;
+    select.replaceChildren();
+    if (allowEmpty) select.add(new Option("Nenhuma",""));
+    for (const row of rows) select.add(new Option(row.uf,row.uf));
+  }
+  function makeBar(label, value) {
+    const raw = numberValue(value);
+    const width = Number.isFinite(raw) ? Math.max(0,Math.min(100,raw)) : 0;
+    const el = document.createElement("div");
+    el.innerHTML = `<div class="bar-title"><strong>${label}</strong><span>${formatNumber(width)}</span></div><div class="bar"><i style="width:${width}%"></i></div>`;
+    return el;
+  }
+  function renderUf(row) {
+    if (!row) return;
+    selected = row;
+    $("vuln").textContent = formatNumber(row.eixo_vulnerabilidade);
+    $("taxa").textContent = formatNumber(row.taxa_denuncias_100mil);
+    $("internet").textContent = formatPercent(row.perc_escolas_internet);
+    $("banda").textContent = formatPercent(row.perc_escolas_banda_larga);
+    $("bars").replaceChildren(
+      makeBar("Denúncias notificadas",row.n_taxa_denuncias),
+      makeBar("Déficit de internet escolar",row.n_deficit_internet),
+      makeBar("Déficit de banda larga escolar",row.n_deficit_banda_larga)
     );
   }
-
-  function formatNumber(value, decimals = 1) {
-    const number = toNumber(value);
-
-    if (!Number.isFinite(number)) return "—";
-
-    return new Intl.NumberFormat("pt-BR", {
-      minimumFractionDigits: decimals,
-      maximumFractionDigits: decimals
-    }).format(number);
+  function comparisonCard(row) {
+    const card = document.createElement("article");
+    card.className = "compare-card";
+    card.innerHTML = `<h3>${row.uf}</h3>
+      <div class="compare-row"><span>IVPD</span><b>${formatNumber(row.eixo_vulnerabilidade)}</b></div>
+      <div class="compare-row"><span>Taxa de denúncias</span><b>${formatNumber(row.taxa_denuncias_100mil)}</b></div>
+      <div class="compare-row"><span>Internet escolar</span><b>${formatPercent(row.perc_escolas_internet)}</b></div>
+      <div class="compare-row"><span>Banda larga escolar</span><b>${formatPercent(row.perc_escolas_banda_larga)}</b></div>
+      <div class="compare-row"><span>Escolas</span><b>${formatNumber(row.escolas,0)}</b></div>
+      <div class="compare-row"><span>Matrículas</span><b>${formatNumber(row.matriculas,0)}</b></div>`;
+    return card;
   }
-
-  function formatPercent(value) {
-    const number = toNumber(value);
-    return Number.isFinite(number) ? `${formatNumber(number, 1)}%` : "—";
-  }
-
-  function escapeCsv(value, separator) {
-    const text = value === null || value === undefined ? "" : String(value);
-
-    if (
-      text.includes('"') ||
-      text.includes("\n") ||
-      text.includes("\r") ||
-      text.includes(separator)
-    ) {
-      return `"${text.replace(/"/g, '""')}"`;
-    }
-
-    return text;
-  }
-
-  function createCsv(rows, separator = ";", decimalComma = true) {
-    if (!Array.isArray(rows) || rows.length === 0) return "";
-
-    const keys = Object.keys(rows[0]);
-    const output = [keys.map(key => escapeCsv(key, separator)).join(separator)];
-
-    for (const row of rows) {
-      output.push(
-        keys.map(key => {
-          let value = row[key];
-
-          if (typeof value === "number" && decimalComma) {
-            value = String(value).replace(".", ",");
-          }
-
-          return escapeCsv(value, separator);
-        }).join(separator)
-      );
-    }
-
-    return "\uFEFF" + output.join("\r\n") + "\r\n";
-  }
-
-  function saveFile(content, filename) {
-    const blob = new Blob([content], {
-      type: "text/csv;charset=utf-8;"
-    });
-
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-
-    anchor.href = url;
-    anchor.download = filename;
-    anchor.style.display = "none";
-
-    document.body.appendChild(anchor);
-    anchor.click();
-    anchor.remove();
-
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-
-  function createBar(label, value) {
-    const number = toNumber(value);
-    const safeValue = Number.isFinite(number)
-      ? Math.max(0, Math.min(100, number))
-      : 0;
-
-    const element = document.createElement("div");
-    element.className = "indicator-bar";
-    element.innerHTML = `
-      <div style="display:flex;justify-content:space-between;gap:12px;margin:10px 0 5px">
-        <strong>${label}</strong>
-        <span>${formatNumber(safeValue, 1)}</span>
-      </div>
-      <div class="mini-bar">
-        <i style="width:${safeValue}%"></i>
-      </div>
-    `;
-
-    return element;
-  }
-
-  function startApplication() {
-    const ui = {
-      uf: byId("uf"),
-      vulnerability: byId("vuln"),
-      complaintRate: byId("taxa"),
-      internet: byId("internet"),
-      broadband: byId("banda"),
-      bars: byId("bars"),
-      download: byId("download"),
-      downloadStandard: byId("download-standard"),
-      message: byId("download-message"),
-      compare1: byId("compare-1"),
-      compare2: byId("compare-2"),
-      compare3: byId("compare-3"),
-      compareButton: byId("compare-button"),
-      comparison: byId("comparison"),
-      downloadComparison: byId("download-comparison")
-    };
-
-    const required = [
-      "uf",
-      "vulnerability",
-      "complaintRate",
-      "internet",
-      "broadband",
-      "bars"
-    ];
-
-    const missing = required.filter(key => !ui[key]);
-
-    if (missing.length > 0) {
-      console.error("Elementos obrigatórios ausentes:", missing);
+  function renderComparison() {
+    const container = $("comparison");
+    if (!container) return;
+    const ids = [$("compare-1")?.value,$("compare-2")?.value,$("compare-3")?.value].filter(Boolean);
+    comparisonRows = [...new Set(ids)].map(uf=>rows.find(row=>row.uf===uf)).filter(Boolean);
+    container.replaceChildren();
+    if (!comparisonRows.length) {
+      container.textContent = "Selecione pelo menos uma UF para comparar.";
       return;
     }
-
-    let records = [];
-    let selectedRecord = null;
-    let comparisonRecords = [];
-
-    function showMessage(text, isError = false) {
-      if (!ui.message) return;
-
-      ui.message.textContent = text;
-      ui.message.style.color = isError ? "#9b1c1c" : "#126d3a";
-    }
-
-    function normalizeRecord(row) {
-      return {
-        ...row,
-        uf: String(row.uf || "").trim().toUpperCase()
-      };
-    }
-
-    function renderRecord(record) {
-      if (!record) return;
-
-      selectedRecord = record;
-
-      ui.vulnerability.textContent = formatNumber(
-        record.eixo_vulnerabilidade,
-        1
-      );
-
-      ui.complaintRate.textContent = formatNumber(
-        record.taxa_denuncias_100mil,
-        1
-      );
-
-      ui.internet.textContent = formatPercent(
-        record.perc_escolas_internet
-      );
-
-      ui.broadband.textContent = formatPercent(
-        record.perc_escolas_banda_larga
-      );
-
-      ui.bars.innerHTML = "";
-      ui.bars.append(
-        createBar("Denúncias notificadas", record.n_taxa_denuncias),
-        createBar(
-          "Déficit de internet escolar",
-          record.n_deficit_internet
-        ),
-        createBar(
-          "Déficit de banda larga escolar",
-          record.n_deficit_banda_larga
-        )
-      );
-    }
-
-    function createComparisonCard(record) {
-      const card = document.createElement("article");
-      card.className = "compare-card";
-      card.innerHTML = `
-        <h3>${record.uf}</h3>
-        <div class="compare-row">
-          <span>IVPD</span>
-          <b>${formatNumber(record.eixo_vulnerabilidade, 1)}</b>
-        </div>
-        <div class="mini-bar">
-          <i style="width:${Math.max(
-            0,
-            Math.min(100, toNumber(record.eixo_vulnerabilidade) || 0)
-          )}%"></i>
-        </div>
-        <div class="compare-row">
-          <span>Taxa de denúncias</span>
-          <b>${formatNumber(record.taxa_denuncias_100mil, 1)}</b>
-        </div>
-        <div class="compare-row">
-          <span>Internet escolar</span>
-          <b>${formatPercent(record.perc_escolas_internet)}</b>
-        </div>
-        <div class="compare-row">
-          <span>Banda larga escolar</span>
-          <b>${formatPercent(record.perc_escolas_banda_larga)}</b>
-        </div>
-        <div class="compare-row">
-          <span>Escolas</span>
-          <b>${formatNumber(record.escolas, 0)}</b>
-        </div>
-        <div class="compare-row">
-          <span>Matrículas</span>
-          <b>${formatNumber(record.matriculas, 0)}</b>
-        </div>
-      `;
-
-      return card;
-    }
-
-    function updateComparison() {
-      if (
-        !ui.compare1 ||
-        !ui.compare2 ||
-        !ui.compare3 ||
-        !ui.comparison
-      ) {
-        return;
-      }
-
-      const selectedUfs = [
-        ui.compare1.value,
-        ui.compare2.value,
-        ui.compare3.value
-      ].filter(Boolean);
-
-      const uniqueUfs = [...new Set(selectedUfs)];
-
-      comparisonRecords = uniqueUfs
-        .map(uf => records.find(record => record.uf === uf))
-        .filter(Boolean);
-
-      ui.comparison.innerHTML = "";
-
-      for (const record of comparisonRecords) {
-        ui.comparison.appendChild(createComparisonCard(record));
-      }
-
-      if (comparisonRecords.length === 0) {
-        ui.comparison.textContent =
-          "Selecione pelo menos uma UF para comparar.";
-      }
-    }
-
-    function fillSelect(select, includeEmpty = false) {
-      if (!select) return;
-
-      const options = [];
-
-      if (includeEmpty) {
-        options.push('<option value="">Nenhuma</option>');
-      }
-
-      for (const record of records) {
-        options.push(
-          `<option value="${record.uf}">${record.uf}</option>`
-        );
-      }
-
-      select.innerHTML = options.join("");
-    }
-
-    async function loadData() {
-      const response = await fetch(DATA_URL, {
-        cache: "no-store",
-        headers: {
-          Accept: "application/json"
-        }
-      });
-
-      if (!response.ok) {
-        throw new Error(`Falha ao carregar os dados: HTTP ${response.status}`);
-      }
-
-      const payload = await response.json();
-
-      if (!Array.isArray(payload)) {
-        throw new Error("O arquivo de dados não contém uma lista de UFs.");
-      }
-
-      records = payload
-        .map(normalizeRecord)
-        .filter(record => record.uf);
-
-      records.sort((a, b) => a.uf.localeCompare(b.uf, "pt-BR"));
-
-      if (records.length !== 27) {
-        console.warn(
-          `Foram carregadas ${records.length} UFs; eram esperadas 27.`
-        );
-      }
-    }
-
-    async function initialize() {
-      try {
-        loadButtonListeners();
-
-        await loadData();
-
-        fillSelect(ui.uf);
-        fillSelect(ui.compare1);
-        fillSelect(ui.compare2);
-        fillSelect(ui.compare3, true);
-
-        const initial = records.find(record => record.uf === "DF") || records[0];
-
-        if (!initial) {
-          throw new Error("Nenhuma UF foi encontrada no arquivo de dados.");
-        }
-
-        ui.uf.value = initial.uf;
-        renderRecord(initial);
-
-        if (ui.compare1) ui.compare1.value = "DF";
-        if (ui.compare2) ui.compare2.value = "SP";
-        if (ui.compare3) ui.compare3.value = "BA";
-
-        updateComparison();
-        showMessage("");
-      } catch (error) {
-        console.error(error);
-
-        ui.uf.innerHTML =
-          '<option value="">Erro ao carregar as UFs</option>';
-
-        showMessage(
-          "Não foi possível carregar os indicadores. Atualize a página com Ctrl+F5.",
-          true
-        );
-      }
-    }
-
-    function loadButtonListeners() {
-      ui.uf.addEventListener("change", () => {
-        const record = records.find(item => item.uf === ui.uf.value);
-        renderRecord(record);
-      });
-
-      if (ui.compareButton) {
-        ui.compareButton.addEventListener("click", event => {
-          event.preventDefault();
-          updateComparison();
-        });
-      }
-
-      if (ui.download) {
-        ui.download.addEventListener("click", event => {
-          event.preventDefault();
-
-          if (!selectedRecord) {
-            showMessage("Selecione uma UF.", true);
-            return;
-          }
-
-          saveFile(
-            createCsv([selectedRecord], ";", true),
-            `protege-dados-4-1-${selectedRecord.uf}-excel.csv`
-          );
-
-          showMessage(
-            "Arquivo compatível com Excel brasileiro gerado."
-          );
-        });
-      }
-
-      if (ui.downloadStandard) {
-        ui.downloadStandard.addEventListener("click", event => {
-          event.preventDefault();
-
-          if (!selectedRecord) {
-            showMessage("Selecione uma UF.", true);
-            return;
-          }
-
-          saveFile(
-            createCsv([selectedRecord], ",", false),
-            `protege-dados-4-1-${selectedRecord.uf}.csv`
-          );
-
-          showMessage("CSV padrão internacional gerado.");
-        });
-      }
-
-      if (ui.downloadComparison) {
-        ui.downloadComparison.addEventListener("click", event => {
-          event.preventDefault();
-
-          if (comparisonRecords.length === 0) {
-            showMessage(
-              "Selecione UFs e atualize a comparação.",
-              true
-            );
-            return;
-          }
-
-          saveFile(
-            createCsv(comparisonRecords, ";", true),
-            "protege-dados-4-1-comparacao-excel.csv"
-          );
-
-          showMessage("Comparação exportada com sucesso.");
-        });
-      }
-    }
-
-    initialize();
+    comparisonRows.forEach(row=>container.appendChild(comparisonCard(row)));
   }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", startApplication);
-  } else {
-    startApplication();
+  function csvCell(value, separator) {
+    const text = value == null ? "" : String(value);
+    return text.includes('"') || text.includes("\r") || text.includes("\n") || text.includes(separator)
+      ? `"${text.replace(/"/g,'""')}"` : text;
   }
+  function createCsv(data, separator=";", decimalComma=true) {
+    if (!data.length) return "";
+    const keys = Object.keys(data[0]);
+    const lines = [keys.map(key=>csvCell(key,separator)).join(separator)];
+    for (const row of data) {
+      lines.push(keys.map(key=>{
+        let value = row[key];
+        if (typeof value === "number" && decimalComma) value = String(value).replace(".",",");
+        return csvCell(value,separator);
+      }).join(separator));
+    }
+    return "\uFEFF"+lines.join("\r\n")+"\r\n";
+  }
+  function download(content, filename) {
+    const blob = new Blob([content],{type:"text/csv;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href=url; anchor.download=filename; anchor.hidden=true;
+    document.body.appendChild(anchor); anchor.click(); anchor.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  function bindControls() {
+    const uf = $("uf");
+    if (uf) uf.addEventListener("change",()=>renderUf(rows.find(row=>row.uf===uf.value)));
+    $("compare-button")?.addEventListener("click",(event)=>{event.preventDefault();renderComparison();});
+    $("download")?.addEventListener("click",()=>{
+      if (!selected) return setMessage("Selecione uma UF.",true);
+      download(createCsv([selected],";",true),`protege-dados-${selected.uf}-excel.csv`);
+      setMessage("Arquivo compatível com Excel gerado com sucesso.");
+    });
+    $("download-standard")?.addEventListener("click",()=>{
+      if (!selected) return setMessage("Selecione uma UF.",true);
+      download(createCsv([selected],",",false),`protege-dados-${selected.uf}.csv`);
+      setMessage("CSV padrão gerado com sucesso.");
+    });
+    $("download-comparison")?.addEventListener("click",()=>{
+      if (!comparisonRows.length) return setMessage("Atualize a comparação antes de exportar.",true);
+      download(createCsv(comparisonRows,";",true),"protege-dados-comparacao.csv");
+      setMessage("Comparação exportada com sucesso.");
+    });
+  }
+  function renderTable() {
+    const body = $("uf-table-body");
+    if (!body) return;
+    body.replaceChildren();
+    for (const row of rows) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td><strong>${row.uf}</strong></td><td>${formatNumber(row.eixo_vulnerabilidade)}</td><td>${formatNumber(row.taxa_denuncias_100mil)}</td><td>${formatPercent(row.perc_escolas_internet)}</td><td>${formatPercent(row.perc_escolas_banda_larga)}</td>`;
+      body.appendChild(tr);
+    }
+  }
+  async function init() {
+    try {
+      rows = await loadRows();
+      fillSelect($("uf"));
+      fillSelect($("compare-1"));
+      fillSelect($("compare-2"));
+      fillSelect($("compare-3"),true);
+      if ($("uf")) {
+        $("uf").value="DF";
+        renderUf(rows.find(row=>row.uf==="DF")||rows[0]);
+      }
+      if ($("compare-1")) $("compare-1").value="DF";
+      if ($("compare-2")) $("compare-2").value="SP";
+      if ($("compare-3")) $("compare-3").value="BA";
+      renderComparison();
+      renderTable();
+      bindControls();
+      setNotice("Portal carregado com sucesso: 27 UFs disponíveis.");
+    } catch (error) {
+      console.error(error);
+      setNotice(`Não foi possível carregar os dados: ${error.message}`,true);
+      for (const id of ["uf","compare-1","compare-2","compare-3"]) {
+        const select=$(id);
+        if (select) select.replaceChildren(new Option("Dados indisponíveis",""));
+      }
+    }
+  }
+  if (document.readyState==="loading") document.addEventListener("DOMContentLoaded",init,{once:true});
+  else init();
 })();

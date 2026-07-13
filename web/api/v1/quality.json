@@ -1,54 +1,14 @@
 {
-  "api_version": "v1",
-  "project_version": "4.1",
-  "updated_at": "2026-07-12",
-  "coverage": {
-    "federative_units_expected": 27,
-    "federative_units_published": 27,
-    "complete": true
+  "status": "aprovado",
+  "checks": {
+    "ufs": 27,
+    "strict_json": true,
+    "null_instead_of_nan": true,
+    "utf8": true
   },
-  "checks": [
-    {
-      "id": "ufs-27",
-      "status": "passed",
-      "description": "As 27 UFs estão presentes."
-    },
-    {
-      "id": "uf-unique",
-      "status": "passed",
-      "description": "Não há duplicidade de UF."
-    },
-    {
-      "id": "population-positive",
-      "status": "passed",
-      "description": "Populações são positivas."
-    },
-    {
-      "id": "complaints-nonnegative",
-      "status": "passed",
-      "description": "Denúncias não são negativas."
-    },
-    {
-      "id": "index-range",
-      "status": "passed",
-      "description": "IVPD permanece entre 0 e 100."
-    },
-    {
-      "id": "protection-not-fabricated",
-      "status": "passed",
-      "description": "Eixo de proteção permanece nulo."
-    },
-    {
-      "id": "open-formats",
-      "status": "passed",
-      "description": "CSV, JSON e API estática publicados."
-    }
-  ],
   "limitations": [
-    "A IVPD é experimental.",
-    "Não constitui ranking.",
-    "Não mede prevalência real.",
-    "Registros administrativos podem refletir subnotificação.",
-    "As fontes possuem períodos de referência distintos."
+    "A IVPD é experimental e não constitui ranking.",
+    "Denúncias são registros administrativos sujeitos a subnotificação e diferenças de acesso aos canais.",
+    "Os anos de referência das fontes não são idênticos."
   ]
 }

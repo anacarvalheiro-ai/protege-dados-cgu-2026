@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.1.0 — reconstrução profissional autocontida
+
+- Publicador incluído no próprio pacote.
+- Inicialização por duplo clique em `PUBLICAR_AGORA.bat`.
+- Portal de seis páginas, UTF-8, 27 UFs e JSON estrito.
+- Seletores, comparador, tabela e downloads validados.
+- Workflow único de GitHub Pages.
+
+# Changelog
+
 ## [4.1.0] — 2026-07-12
 
 ### Release candidata
@@ -25,3 +35,11 @@
 - remoção de workflows provisórios;
 - caminhos consistentes;
 - validação prévia ao deploy.
+
+
+## 5.0.0
+- Reconstrução integral da camada web em UTF-8.
+- JSON estrito sem NaN.
+- Seis páginas estáticas profissionais.
+- Painel, comparador, downloads e API validados.
+- Workflow único de publicação.

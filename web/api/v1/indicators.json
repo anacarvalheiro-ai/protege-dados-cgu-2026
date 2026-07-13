@@ -1,43 +1,26 @@
 {
-  "api_version": "v1",
-  "project_version": "4.1",
-  "updated_at": "2026-07-12",
+  "version": "5.0.0",
   "indicators": [
     {
-      "id": "eixo_vulnerabilidade",
-      "name": "Eixo experimental de vulnerabilidade",
-      "unit": "escala 0–100",
-      "published": true,
-      "formula": "0,50 × denúncias normalizadas + 0,25 × déficit de internet + 0,25 × déficit de banda larga",
-      "interpretation": "Valor sintético experimental. Não é ranking nem estimativa de prevalência."
+      "field": "eixo_vulnerabilidade",
+      "label": "IVPD experimental",
+      "unit": "0–100",
+      "interpretation": "Indicador sintético experimental; não constitui ranking."
     },
     {
-      "id": "taxa_denuncias_100mil",
-      "name": "Taxa administrativa de denúncias",
-      "unit": "registros por 100 mil habitantes",
-      "published": true,
-      "interpretation": "Registros administrativos sujeitos a cobertura, acesso aos canais e subnotificação."
+      "field": "taxa_denuncias_100mil",
+      "label": "Taxa de denúncias",
+      "unit": "por 100 mil habitantes"
     },
     {
-      "id": "perc_escolas_internet",
-      "name": "Escolas com internet",
-      "unit": "%",
-      "published": true,
-      "interpretation": "Percentual das escolas ativas analisadas no Censo Escolar 2024."
+      "field": "perc_escolas_internet",
+      "label": "Escolas com internet",
+      "unit": "%"
     },
     {
-      "id": "perc_escolas_banda_larga",
-      "name": "Escolas com banda larga",
-      "unit": "%",
-      "published": true,
-      "interpretation": "Percentual das escolas ativas analisadas no Censo Escolar 2024."
-    },
-    {
-      "id": "eixo_protecao",
-      "name": "Eixo de capacidade territorial de proteção",
-      "unit": "escala 0–100",
-      "published": false,
-      "reason": "Fonte territorial comparável ainda não validada; o campo permanece nulo."
+      "field": "perc_escolas_banda_larga",
+      "label": "Escolas com banda larga",
+      "unit": "%"
     }
   ]
 }

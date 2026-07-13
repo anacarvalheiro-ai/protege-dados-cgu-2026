@@ -1,38 +1,19 @@
 {
-  "api_version": "v1",
-  "project_version": "4.1",
   "sources": [
     {
-      "id": "ibge-populacao",
-      "institution": "IBGE",
-      "dataset": "Estimativas municipais de população",
-      "reference_years": [
-        2024,
-        2025
-      ],
-      "role": "Denominadores populacionais e harmonização territorial",
-      "status": "processada"
+      "name": "Disque 100",
+      "period": "2025",
+      "use": "denúncias agregadas por UF"
     },
     {
-      "id": "inep-censo-escolar",
-      "institution": "Inep/MEC",
-      "dataset": "Microdados do Censo Escolar",
-      "reference_years": [
-        2024
-      ],
-      "role": "Infraestrutura escolar, conectividade e matrículas",
-      "status": "processada"
+      "name": "IBGE",
+      "period": "2025",
+      "use": "população por UF"
     },
     {
-      "id": "mdhc-disque100",
-      "institution": "MDHC/ONDH",
-      "dataset": "Dados públicos do Disque 100",
-      "reference_years": [
-        "2º semestre de 2024",
-        "2025"
-      ],
-      "role": "Registros administrativos do recorte infantojuvenil",
-      "status": "processada"
+      "name": "Censo Escolar/Inep",
+      "period": "2024",
+      "use": "infraestrutura escolar por UF"
     }
   ]
 }

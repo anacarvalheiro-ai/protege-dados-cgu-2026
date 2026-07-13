@@ -1,14 +1,11 @@
 {
-  "name": "Protege.Dados API",
-  "description": "API estática, pública, somente leitura e sem autenticação, com dados agregados e metadados.",
-  "api_version": "v1",
-  "project_version": "4.1",
-  "updated_at": "2026-07-12",
-  "license": "Consulte DATA_LICENSE.md no repositório",
+  "name": "Protege.Dados API estática",
+  "version": "5.0.0",
+  "format": "JSON",
   "endpoints": {
-    "territories": "./territories.json",
-    "indicators": "./indicators.json",
-    "sources": "./sources.json",
-    "quality": "./quality.json"
+    "territories": "territories.json",
+    "indicators": "indicators.json",
+    "sources": "sources.json",
+    "quality": "quality.json"
   }
 }
