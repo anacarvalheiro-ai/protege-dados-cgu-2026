@@ -1,20 +1,449 @@
-(() => {
-"use strict";
-const DATA_URL="data/ivpd_uf_v1.json";
-const $=id=>document.getElementById(id);
-const ui={uf:$("uf"),vuln:$("vuln"),taxa:$("taxa"),internet:$("internet"),banda:$("banda"),bars:$("bars"),download:$("download"),downloadStandard:$("download-standard"),message:$("download-message"),c1:$("compare-1"),c2:$("compare-2"),c3:$("compare-3"),compare:$("compare-button"),comparison:$("comparison"),downloadComparison:$("download-comparison")};
-let data=[],selected=null,comparisonRows=[];
-const n=v=>{if(typeof v==="number")return v;if(v===null||v===undefined||v==="")return NaN;const s=String(v).trim();return Number(s.includes(",")?s.replace(/\./g,"").replace(",","."):s)};
-const fmt=(v,d=1)=>Number.isFinite(n(v))?new Intl.NumberFormat("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n(v)):"—";
-const pct=v=>Number.isFinite(n(v))?fmt(v,1)+"%":"—";
-function bar(label,value){const x=Number.isFinite(n(value))?Math.max(0,Math.min(100,n(value))):0;const box=document.createElement("div");box.innerHTML=`<div style="display:flex;justify-content:space-between;gap:12px;margin:10px 0 5px"><strong>${label}</strong><span>${fmt(x)}</span></div><div class="mini-bar"><i style="width:${x}%"></i></div>`;return box}
-function render(r){selected=r;ui.vuln.textContent=fmt(r.eixo_vulnerabilidade);ui.taxa.textContent=fmt(r.taxa_denuncias_100mil);ui.internet.textContent=pct(r.perc_escolas_internet);ui.banda.textContent=pct(r.perc_escolas_banda_larga);ui.bars.innerHTML="";ui.bars.append(bar("Denúncias notificadas",r.n_taxa_denuncias),bar("Déficit de internet escolar",r.n_deficit_internet),bar("Déficit de banda larga escolar",r.n_deficit_banda_larga))}
-const esc=(v,sep)=>{const s=v==null?"":String(v);return s.includes('"')||s.includes("\n")||s.includes(sep)?`"${s.replace(/"/g,'""')}"`:s};
-function csv(rows,sep=";",decimalComma=true){if(!rows.length)return"";const keys=Object.keys(rows[0]);const lines=[keys.map(k=>esc(k,sep)).join(sep)];for(const row of rows){lines.push(keys.map(k=>{let v=row[k];if(typeof v==="number"&&decimalComma)v=String(v).replace(".",",");return esc(v,sep)}).join(sep))}return"\uFEFF"+lines.join("\r\n")+"\r\n"}
-function save(content,name){const blob=new Blob([content],{type:"text/csv;charset=utf-8;"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
-function message(text,error=false){ui.message.textContent=text;ui.message.style.color=error?"#9b1c1c":"#126d3a"}
-function comparisonCard(r){const el=document.createElement("article");el.className="compare-card";el.innerHTML=`<h3>${r.uf}</h3><div class="compare-row"><span>IVPD</span><b>${fmt(r.eixo_vulnerabilidade)}</b></div><div class="mini-bar"><i style="width:${Math.max(0,Math.min(100,n(r.eixo_vulnerabilidade)||0))}%"></i></div><div class="compare-row"><span>Taxa de denúncias</span><b>${fmt(r.taxa_denuncias_100mil)}</b></div><div class="compare-row"><span>Internet escolar</span><b>${pct(r.perc_escolas_internet)}</b></div><div class="compare-row"><span>Banda larga escolar</span><b>${pct(r.perc_escolas_banda_larga)}</b></div><div class="compare-row"><span>Escolas</span><b>${fmt(r.escolas,0)}</b></div><div class="compare-row"><span>Matrículas</span><b>${fmt(r.matriculas,0)}</b></div>`;return el}
-function compare(){const ufs=[ui.c1.value,ui.c2.value,ui.c3.value].filter(Boolean);const unique=[...new Set(ufs)];comparisonRows=unique.map(uf=>data.find(r=>r.uf===uf)).filter(Boolean);ui.comparison.innerHTML="";comparisonRows.forEach(r=>ui.comparison.append(comparisonCard(r)))}
-async function init(){try{const res=await fetch(DATA_URL,{cache:"no-store"});if(!res.ok)throw new Error(`HTTP ${res.status}`);data=await res.json();data.sort((a,b)=>a.uf.localeCompare(b.uf,"pt-BR"));const opts=data.map(r=>`<option value="${r.uf}">${r.uf}</option>`).join("");ui.uf.innerHTML=opts;ui.c1.innerHTML=opts;ui.c2.innerHTML=opts;ui.c3.innerHTML='<option value="">Nenhuma</option>'+opts;ui.uf.value="DF";ui.c1.value="DF";ui.c2.value="SP";ui.c3.value="BA";render(data.find(r=>r.uf==="DF")||data[0]);compare();ui.uf.addEventListener("change",()=>render(data.find(r=>r.uf===ui.uf.value)));ui.compare.addEventListener("click",compare);ui.download.addEventListener("click",()=>{if(!selected)return message("Selecione uma UF.",true);save(csv([selected],";",true),`protege-dados-4-1-${selected.uf}-excel.csv`);message("Arquivo compatível com Excel brasileiro gerado.")});ui.downloadStandard.addEventListener("click",()=>{if(!selected)return message("Selecione uma UF.",true);save(csv([selected],",",false),`protege-dados-4-1-${selected.uf}.csv`);message("CSV padrão internacional gerado.")});ui.downloadComparison.addEventListener("click",()=>{if(!comparisonRows.length)return;save(csv(comparisonRows,";",true),"protege-dados-4-1-comparacao-excel.csv")})}catch(err){console.error(err);message("Não foi possível carregar os indicadores. Consulte o repositório.",true)}}
-init();
+﻿(() => {
+  "use strict";
+
+  const DATA_URL = "data/ivpd_uf_v1.json";
+
+  function byId(id) {
+    return document.getElementById(id);
+  }
+
+  function toNumber(value) {
+    if (typeof value === "number") return value;
+    if (value === null || value === undefined || value === "") return NaN;
+
+    const text = String(value).trim();
+    return Number(
+      text.includes(",")
+        ? text.replace(/\./g, "").replace(",", ".")
+        : text
+    );
+  }
+
+  function formatNumber(value, decimals = 1) {
+    const number = toNumber(value);
+
+    if (!Number.isFinite(number)) return "—";
+
+    return new Intl.NumberFormat("pt-BR", {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    }).format(number);
+  }
+
+  function formatPercent(value) {
+    const number = toNumber(value);
+    return Number.isFinite(number) ? `${formatNumber(number, 1)}%` : "—";
+  }
+
+  function escapeCsv(value, separator) {
+    const text = value === null || value === undefined ? "" : String(value);
+
+    if (
+      text.includes('"') ||
+      text.includes("\n") ||
+      text.includes("\r") ||
+      text.includes(separator)
+    ) {
+      return `"${text.replace(/"/g, '""')}"`;
+    }
+
+    return text;
+  }
+
+  function createCsv(rows, separator = ";", decimalComma = true) {
+    if (!Array.isArray(rows) || rows.length === 0) return "";
+
+    const keys = Object.keys(rows[0]);
+    const output = [keys.map(key => escapeCsv(key, separator)).join(separator)];
+
+    for (const row of rows) {
+      output.push(
+        keys.map(key => {
+          let value = row[key];
+
+          if (typeof value === "number" && decimalComma) {
+            value = String(value).replace(".", ",");
+          }
+
+          return escapeCsv(value, separator);
+        }).join(separator)
+      );
+    }
+
+    return "\uFEFF" + output.join("\r\n") + "\r\n";
+  }
+
+  function saveFile(content, filename) {
+    const blob = new Blob([content], {
+      type: "text/csv;charset=utf-8;"
+    });
+
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+
+    anchor.href = url;
+    anchor.download = filename;
+    anchor.style.display = "none";
+
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function createBar(label, value) {
+    const number = toNumber(value);
+    const safeValue = Number.isFinite(number)
+      ? Math.max(0, Math.min(100, number))
+      : 0;
+
+    const element = document.createElement("div");
+    element.className = "indicator-bar";
+    element.innerHTML = `
+      <div style="display:flex;justify-content:space-between;gap:12px;margin:10px 0 5px">
+        <strong>${label}</strong>
+        <span>${formatNumber(safeValue, 1)}</span>
+      </div>
+      <div class="mini-bar">
+        <i style="width:${safeValue}%"></i>
+      </div>
+    `;
+
+    return element;
+  }
+
+  function startApplication() {
+    const ui = {
+      uf: byId("uf"),
+      vulnerability: byId("vuln"),
+      complaintRate: byId("taxa"),
+      internet: byId("internet"),
+      broadband: byId("banda"),
+      bars: byId("bars"),
+      download: byId("download"),
+      downloadStandard: byId("download-standard"),
+      message: byId("download-message"),
+      compare1: byId("compare-1"),
+      compare2: byId("compare-2"),
+      compare3: byId("compare-3"),
+      compareButton: byId("compare-button"),
+      comparison: byId("comparison"),
+      downloadComparison: byId("download-comparison")
+    };
+
+    const required = [
+      "uf",
+      "vulnerability",
+      "complaintRate",
+      "internet",
+      "broadband",
+      "bars"
+    ];
+
+    const missing = required.filter(key => !ui[key]);
+
+    if (missing.length > 0) {
+      console.error("Elementos obrigatórios ausentes:", missing);
+      return;
+    }
+
+    let records = [];
+    let selectedRecord = null;
+    let comparisonRecords = [];
+
+    function showMessage(text, isError = false) {
+      if (!ui.message) return;
+
+      ui.message.textContent = text;
+      ui.message.style.color = isError ? "#9b1c1c" : "#126d3a";
+    }
+
+    function normalizeRecord(row) {
+      return {
+        ...row,
+        uf: String(row.uf || "").trim().toUpperCase()
+      };
+    }
+
+    function renderRecord(record) {
+      if (!record) return;
+
+      selectedRecord = record;
+
+      ui.vulnerability.textContent = formatNumber(
+        record.eixo_vulnerabilidade,
+        1
+      );
+
+      ui.complaintRate.textContent = formatNumber(
+        record.taxa_denuncias_100mil,
+        1
+      );
+
+      ui.internet.textContent = formatPercent(
+        record.perc_escolas_internet
+      );
+
+      ui.broadband.textContent = formatPercent(
+        record.perc_escolas_banda_larga
+      );
+
+      ui.bars.innerHTML = "";
+      ui.bars.append(
+        createBar("Denúncias notificadas", record.n_taxa_denuncias),
+        createBar(
+          "Déficit de internet escolar",
+          record.n_deficit_internet
+        ),
+        createBar(
+          "Déficit de banda larga escolar",
+          record.n_deficit_banda_larga
+        )
+      );
+    }
+
+    function createComparisonCard(record) {
+      const card = document.createElement("article");
+      card.className = "compare-card";
+      card.innerHTML = `
+        <h3>${record.uf}</h3>
+        <div class="compare-row">
+          <span>IVPD</span>
+          <b>${formatNumber(record.eixo_vulnerabilidade, 1)}</b>
+        </div>
+        <div class="mini-bar">
+          <i style="width:${Math.max(
+            0,
+            Math.min(100, toNumber(record.eixo_vulnerabilidade) || 0)
+          )}%"></i>
+        </div>
+        <div class="compare-row">
+          <span>Taxa de denúncias</span>
+          <b>${formatNumber(record.taxa_denuncias_100mil, 1)}</b>
+        </div>
+        <div class="compare-row">
+          <span>Internet escolar</span>
+          <b>${formatPercent(record.perc_escolas_internet)}</b>
+        </div>
+        <div class="compare-row">
+          <span>Banda larga escolar</span>
+          <b>${formatPercent(record.perc_escolas_banda_larga)}</b>
+        </div>
+        <div class="compare-row">
+          <span>Escolas</span>
+          <b>${formatNumber(record.escolas, 0)}</b>
+        </div>
+        <div class="compare-row">
+          <span>Matrículas</span>
+          <b>${formatNumber(record.matriculas, 0)}</b>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function updateComparison() {
+      if (
+        !ui.compare1 ||
+        !ui.compare2 ||
+        !ui.compare3 ||
+        !ui.comparison
+      ) {
+        return;
+      }
+
+      const selectedUfs = [
+        ui.compare1.value,
+        ui.compare2.value,
+        ui.compare3.value
+      ].filter(Boolean);
+
+      const uniqueUfs = [...new Set(selectedUfs)];
+
+      comparisonRecords = uniqueUfs
+        .map(uf => records.find(record => record.uf === uf))
+        .filter(Boolean);
+
+      ui.comparison.innerHTML = "";
+
+      for (const record of comparisonRecords) {
+        ui.comparison.appendChild(createComparisonCard(record));
+      }
+
+      if (comparisonRecords.length === 0) {
+        ui.comparison.textContent =
+          "Selecione pelo menos uma UF para comparar.";
+      }
+    }
+
+    function fillSelect(select, includeEmpty = false) {
+      if (!select) return;
+
+      const options = [];
+
+      if (includeEmpty) {
+        options.push('<option value="">Nenhuma</option>');
+      }
+
+      for (const record of records) {
+        options.push(
+          `<option value="${record.uf}">${record.uf}</option>`
+        );
+      }
+
+      select.innerHTML = options.join("");
+    }
+
+    async function loadData() {
+      const response = await fetch(DATA_URL, {
+        cache: "no-store",
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Falha ao carregar os dados: HTTP ${response.status}`);
+      }
+
+      const payload = await response.json();
+
+      if (!Array.isArray(payload)) {
+        throw new Error("O arquivo de dados não contém uma lista de UFs.");
+      }
+
+      records = payload
+        .map(normalizeRecord)
+        .filter(record => record.uf);
+
+      records.sort((a, b) => a.uf.localeCompare(b.uf, "pt-BR"));
+
+      if (records.length !== 27) {
+        console.warn(
+          `Foram carregadas ${records.length} UFs; eram esperadas 27.`
+        );
+      }
+    }
+
+    async function initialize() {
+      try {
+        loadButtonListeners();
+
+        await loadData();
+
+        fillSelect(ui.uf);
+        fillSelect(ui.compare1);
+        fillSelect(ui.compare2);
+        fillSelect(ui.compare3, true);
+
+        const initial = records.find(record => record.uf === "DF") || records[0];
+
+        if (!initial) {
+          throw new Error("Nenhuma UF foi encontrada no arquivo de dados.");
+        }
+
+        ui.uf.value = initial.uf;
+        renderRecord(initial);
+
+        if (ui.compare1) ui.compare1.value = "DF";
+        if (ui.compare2) ui.compare2.value = "SP";
+        if (ui.compare3) ui.compare3.value = "BA";
+
+        updateComparison();
+        showMessage("");
+      } catch (error) {
+        console.error(error);
+
+        ui.uf.innerHTML =
+          '<option value="">Erro ao carregar as UFs</option>';
+
+        showMessage(
+          "Não foi possível carregar os indicadores. Atualize a página com Ctrl+F5.",
+          true
+        );
+      }
+    }
+
+    function loadButtonListeners() {
+      ui.uf.addEventListener("change", () => {
+        const record = records.find(item => item.uf === ui.uf.value);
+        renderRecord(record);
+      });
+
+      if (ui.compareButton) {
+        ui.compareButton.addEventListener("click", event => {
+          event.preventDefault();
+          updateComparison();
+        });
+      }
+
+      if (ui.download) {
+        ui.download.addEventListener("click", event => {
+          event.preventDefault();
+
+          if (!selectedRecord) {
+            showMessage("Selecione uma UF.", true);
+            return;
+          }
+
+          saveFile(
+            createCsv([selectedRecord], ";", true),
+            `protege-dados-4-1-${selectedRecord.uf}-excel.csv`
+          );
+
+          showMessage(
+            "Arquivo compatível com Excel brasileiro gerado."
+          );
+        });
+      }
+
+      if (ui.downloadStandard) {
+        ui.downloadStandard.addEventListener("click", event => {
+          event.preventDefault();
+
+          if (!selectedRecord) {
+            showMessage("Selecione uma UF.", true);
+            return;
+          }
+
+          saveFile(
+            createCsv([selectedRecord], ",", false),
+            `protege-dados-4-1-${selectedRecord.uf}.csv`
+          );
+
+          showMessage("CSV padrão internacional gerado.");
+        });
+      }
+
+      if (ui.downloadComparison) {
+        ui.downloadComparison.addEventListener("click", event => {
+          event.preventDefault();
+
+          if (comparisonRecords.length === 0) {
+            showMessage(
+              "Selecione UFs e atualize a comparação.",
+              true
+            );
+            return;
+          }
+
+          saveFile(
+            createCsv(comparisonRecords, ";", true),
+            "protege-dados-4-1-comparacao-excel.csv"
+          );
+
+          showMessage("Comparação exportada com sucesso.");
+        });
+      }
+    }
+
+    initialize();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startApplication);
+  } else {
+    startApplication();
+  }
 })();

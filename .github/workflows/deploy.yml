@@ -37,6 +37,9 @@ jobs:
       - name: Validar release
         run: python scripts/validate_release.py
 
+      - name: Validar JavaScript
+        run: node --check web/assets/app.js
+
       - name: Executar testes
         run: python -m pytest -q
 
@@ -62,3 +65,4 @@ jobs:
       - name: Publicar GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
