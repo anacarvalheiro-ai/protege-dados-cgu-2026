@@ -1,4 +1,4 @@
-# PUBLICAÇÃO DEFINITIVA — PROTEGE.DADOS 5.1
+# PUBLICAÇÃO DEFINITIVA — PROTEGE.DADOS 5.0
 
 1. Coloque `Protege_Dados_5_0_PROFISSIONAL.zip` e `Publicar_Protege_Dados_5_0.ps1` na pasta Downloads.
 2. Execute no PowerShell:

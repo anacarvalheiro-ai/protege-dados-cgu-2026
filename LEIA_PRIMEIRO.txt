@@ -1,9 +1,9 @@
-PROTEGE.DADOS 5.1 — PUBLICAÇÃO
+PROTEGE.DADOS 5.2 — PUBLICAÇÃO
 
 1. Extraia TODO o conteúdo deste ZIP.
 2. Abra a pasta extraída.
 3. Dê dois cliques em PUBLICAR_AGORA.bat.
-4. Aguarde a mensagem “PUBLICAÇÃO 5.1 ENVIADA AO GITHUB”.
+4. Aguarde a mensagem “PUBLICAÇÃO 5.2 ENVIADA AO GITHUB”.
 5. No GitHub, aguarde validate e deploy ficarem verdes.
 6. Abra o portal em janela anônima ou use Ctrl+Shift+R.
 

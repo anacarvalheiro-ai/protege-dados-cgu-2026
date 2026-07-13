@@ -1,5 +1,12 @@
 # Changelog
 
+## 5.2.0 — 13/07/2026
+- Reconstrução visual responsiva das seis telas públicas.
+- Novo catálogo filtrável de dados e endpoints.
+- Metodologia e governança reorganizadas em páginas auditáveis.
+- Controles persistentes de acessibilidade.
+- Manutenção integral dos downloads, API estática e comparador funcional.
+
 ## 5.1.0 — reconstrução profissional autocontida
 
 - Publicador incluído no próprio pacote.

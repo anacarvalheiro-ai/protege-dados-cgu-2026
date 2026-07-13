@@ -1,4 +1,4 @@
-# API e Dados Abertos — Protege.Dados 5.1
+# API e Dados Abertos — Protege.Dados 4.1
 
 A API é estática, pública, somente leitura e sem autenticação. Publica exclusivamente dados agregados e metadados.
 

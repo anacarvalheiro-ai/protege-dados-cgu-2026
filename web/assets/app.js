@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const DATA_URL = "data/ivpd_uf_v1.json?v=5.1.0";
+  const DATA_URL = "data/ivpd_uf_v1.json?v=5.2.0";
   const $ = (id) => document.getElementById(id);
   const expected = new Set(["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"]);
   let rows = [], selected = null, comparisonRows = [];
@@ -182,3 +182,5 @@
   if (document.readyState==="loading") document.addEventListener("DOMContentLoaded",init,{once:true});
   else init();
 })();
+
+;(()=>{try{const r=document.documentElement,b=document.body;b.classList.toggle("high-contrast",localStorage.getItem("pd-contrast")==="1");b.classList.toggle("links-underlined",localStorage.getItem("pd-links")==="1");r.classList.toggle("font-large",localStorage.getItem("pd-font")==="1");}catch(_){}})();

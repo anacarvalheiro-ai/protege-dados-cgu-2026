@@ -1,4 +1,4 @@
-name: Publicar Protege.Dados 5.1
+name: Publicar Protege.Dados 5.0
 
 on:
   push:

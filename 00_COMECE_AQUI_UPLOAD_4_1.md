@@ -1,4 +1,4 @@
-# COMEÇAR AQUI — Upload da Release 5.1
+# COMEÇAR AQUI — Upload da Release 4.1
 
 ## Você já criou o repositório correto
 
@@ -15,7 +15,7 @@
 6. Confirme na branch `main`.
 7. Abra **Settings → Pages**.
 8. Em **Source**, selecione **GitHub Actions**.
-9. Abra **Actions → Publicar Protege.Dados 5.1**.
+9. Abra **Actions → Publicar Protege.Dados 4.1**.
 10. Caso necessário, clique em **Run workflow** ou **Re-run all jobs**.
 11. Aguarde `validate` e `deploy` ficarem verdes.
 12. Abra o portal:

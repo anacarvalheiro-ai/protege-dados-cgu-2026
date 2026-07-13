@@ -1,9 +1,0 @@
-{
-  "name": "Protege.Dados",
-  "short_name": "Protege.Dados",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f5f9fc",
-  "theme_color": "#062f55",
-  "lang": "pt-BR"
-}
