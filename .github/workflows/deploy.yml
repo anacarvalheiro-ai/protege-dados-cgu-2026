@@ -37,9 +37,6 @@ jobs:
       - name: Validar release
         run: python scripts/validate_release.py
 
-      - name: Construir API estatica
-        run: python -m protege_dados.pipelines.build_static_api
-
       - name: Executar testes
         run: python -m pytest -q
 
@@ -48,7 +45,7 @@ jobs:
         run: |
           touch web/.nojekyll
 
-      - name: Criar artefato unico do GitHub Pages
+      - name: Criar artefato do GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./web
