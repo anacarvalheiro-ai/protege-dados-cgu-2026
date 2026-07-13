@@ -71,4 +71,4 @@ if errors:
         print("-",error)
     sys.exit(1)
 
-print("VALIDAÇÃO APROVADA — PROTEGE.DADOS 5.0")
+print("VALIDAÇÃO APROVADA — PROTEGE.DADOS 5.1")

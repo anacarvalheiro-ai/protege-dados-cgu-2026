@@ -1,14 +1,14 @@
-# Protege.Dados 4.1 — Ecossistema Nacional de Proteção Digital Infantojuvenil
+# Protege.Dados 5.1 — Ecossistema Nacional de Proteção Digital Infantojuvenil
 
 [![Portal](https://img.shields.io/badge/portal-GitHub%20Pages-0b73b9)](https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/)
 [![Deploy](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/deploy.yml/badge.svg)](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/deploy.yml)
-[![Release](https://img.shields.io/badge/release-4.1-d4a72c)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/release-5.1-d4a72c)](CHANGELOG.md)
 [![Licença](https://img.shields.io/badge/c%C3%B3digo-MIT-06365f)](LICENSE)
 [![Dados](https://img.shields.io/badge/dados-CSV%20%7C%20JSON-0873ba)](data/processed/ivpd_uf_v1.csv)
 
 ## Release candidata ao 2º Concurso de Reúso de Dados Abertos da CGU
 
-O **Protege.Dados 4.1** integra dados oficiais de população, educação, conectividade e denúncias administrativas e disponibiliza resultados agregados para as 27 unidades federativas.
+O **Protege.Dados 5.1** integra dados oficiais de população, educação, conectividade e denúncias administrativas e disponibiliza resultados agregados para as 27 unidades federativas.
 
 A release inclui:
 
@@ -67,7 +67,7 @@ Após o upload:
 1. abra **Settings → Pages**;
 2. em **Source**, selecione **GitHub Actions**;
 3. abra **Actions**;
-4. execute ou reexecute `Publicar Protege.Dados 4.1`;
+4. execute ou reexecute `Publicar Protege.Dados 5.1`;
 5. aguarde os jobs `validate` e `deploy` ficarem verdes.
 
 O workflow também tenta habilitar o Pages automaticamente com `enablement: true`.
@@ -81,7 +81,7 @@ python scripts/validate_release.py
 Resultado esperado:
 
 ```text
-VALIDAÇÃO APROVADA — PROTEGE.DADOS 4.1
+VALIDAÇÃO APROVADA — PROTEGE.DADOS 5.1
 ```
 
 ## QR Codes

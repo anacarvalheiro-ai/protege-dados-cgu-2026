@@ -1,4 +1,4 @@
-# Critérios de Aceite — Release 4.1
+# Critérios de Aceite — Release 5.1
 
 - [ ] Portal abre em janela anônima.
 - [ ] GitHub Actions verde.

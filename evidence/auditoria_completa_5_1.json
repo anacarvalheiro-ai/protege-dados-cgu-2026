@@ -1,0 +1,1694 @@
+{
+  "version": "5.1.0",
+  "total_checks": 337,
+  "passed": 337,
+  "failed": 0,
+  "issues": [],
+  "checks": [
+    {
+      "name": "Quantidade de páginas HTML",
+      "ok": true,
+      "detail": "7 páginas"
+    },
+    {
+      "name": "404.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "404.html: título",
+      "ok": true,
+      "detail": "<title>Página não encontrada — Protege.Dados</title>"
+    },
+    {
+      "name": "404.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "404.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "404.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "404.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "404.html: IDs únicos",
+      "ok": true,
+      "detail": "1 IDs"
+    },
+    {
+      "name": "404.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "404.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "404.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "404.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "acessibilidade.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "acessibilidade.html: título",
+      "ok": true,
+      "detail": "<title>Acessibilidade — Protege.Dados</title>"
+    },
+    {
+      "name": "acessibilidade.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "acessibilidade.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "acessibilidade.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "acessibilidade.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "acessibilidade.html: IDs únicos",
+      "ok": true,
+      "detail": "1 IDs"
+    },
+    {
+      "name": "acessibilidade.html: rótulo da navegação",
+      "ok": true,
+      "detail": "aria-label"
+    },
+    {
+      "name": "acessibilidade.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "acessibilidade.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "acessibilidade.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "acessibilidade.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "acessibilidade.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "acessibilidade.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "acessibilidade.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "acessibilidade.html: recurso metodologia.html",
+      "ok": true,
+      "detail": "web/metodologia.html"
+    },
+    {
+      "name": "acessibilidade.html: recurso governanca.html",
+      "ok": true,
+      "detail": "web/governanca.html"
+    },
+    {
+      "name": "acessibilidade.html: recurso acessibilidade.html",
+      "ok": true,
+      "detail": "web/acessibilidade.html"
+    },
+    {
+      "name": "dados.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "dados.html: título",
+      "ok": true,
+      "detail": "<title>Dados e API — Protege.Dados</title>"
+    },
+    {
+      "name": "dados.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "dados.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "dados.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "dados.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "dados.html: IDs únicos",
+      "ok": true,
+      "detail": "1 IDs"
+    },
+    {
+      "name": "dados.html: rótulo da navegação",
+      "ok": true,
+      "detail": "aria-label"
+    },
+    {
+      "name": "dados.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "dados.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "dados.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "dados.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "dados.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "dados.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "dados.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "dados.html: recurso metodologia.html",
+      "ok": true,
+      "detail": "web/metodologia.html"
+    },
+    {
+      "name": "dados.html: recurso governanca.html",
+      "ok": true,
+      "detail": "web/governanca.html"
+    },
+    {
+      "name": "dados.html: recurso acessibilidade.html",
+      "ok": true,
+      "detail": "web/acessibilidade.html"
+    },
+    {
+      "name": "dados.html: recurso data/ivpd_uf_v1.json",
+      "ok": true,
+      "detail": "web/data/ivpd_uf_v1.json"
+    },
+    {
+      "name": "dados.html: recurso downloads/ivpd_uf_v1_excel.csv",
+      "ok": true,
+      "detail": "web/downloads/ivpd_uf_v1_excel.csv"
+    },
+    {
+      "name": "dados.html: recurso downloads/ivpd_uf_v1.csv",
+      "ok": true,
+      "detail": "web/downloads/ivpd_uf_v1.csv"
+    },
+    {
+      "name": "dados.html: recurso api/v1/index.json",
+      "ok": true,
+      "detail": "web/api/v1/index.json"
+    },
+    {
+      "name": "dados.html: recurso api/v1/territories.json",
+      "ok": true,
+      "detail": "web/api/v1/territories.json"
+    },
+    {
+      "name": "dados.html: recurso api/v1/indicators.json",
+      "ok": true,
+      "detail": "web/api/v1/indicators.json"
+    },
+    {
+      "name": "dados.html: recurso api/v1/sources.json",
+      "ok": true,
+      "detail": "web/api/v1/sources.json"
+    },
+    {
+      "name": "dados.html: recurso api/v1/quality.json",
+      "ok": true,
+      "detail": "web/api/v1/quality.json"
+    },
+    {
+      "name": "governanca.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "governanca.html: título",
+      "ok": true,
+      "detail": "<title>Governança — Protege.Dados</title>"
+    },
+    {
+      "name": "governanca.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "governanca.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "governanca.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "governanca.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "governanca.html: IDs únicos",
+      "ok": true,
+      "detail": "1 IDs"
+    },
+    {
+      "name": "governanca.html: rótulo da navegação",
+      "ok": true,
+      "detail": "aria-label"
+    },
+    {
+      "name": "governanca.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "governanca.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "governanca.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "governanca.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "governanca.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "governanca.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "governanca.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "governanca.html: recurso metodologia.html",
+      "ok": true,
+      "detail": "web/metodologia.html"
+    },
+    {
+      "name": "governanca.html: recurso governanca.html",
+      "ok": true,
+      "detail": "web/governanca.html"
+    },
+    {
+      "name": "governanca.html: recurso acessibilidade.html",
+      "ok": true,
+      "detail": "web/acessibilidade.html"
+    },
+    {
+      "name": "index.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "index.html: título",
+      "ok": true,
+      "detail": "<title>Início — Protege.Dados</title>"
+    },
+    {
+      "name": "index.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "index.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "index.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "index.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "index.html: IDs únicos",
+      "ok": true,
+      "detail": "2 IDs"
+    },
+    {
+      "name": "index.html: rótulo da navegação",
+      "ok": true,
+      "detail": "aria-label"
+    },
+    {
+      "name": "index.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "index.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "index.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "index.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "index.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "index.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "index.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "index.html: recurso metodologia.html",
+      "ok": true,
+      "detail": "web/metodologia.html"
+    },
+    {
+      "name": "index.html: recurso governanca.html",
+      "ok": true,
+      "detail": "web/governanca.html"
+    },
+    {
+      "name": "index.html: recurso acessibilidade.html",
+      "ok": true,
+      "detail": "web/acessibilidade.html"
+    },
+    {
+      "name": "index.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "index.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "index.html: recurso assets/app.js?v=5.1.0",
+      "ok": true,
+      "detail": "web/assets/app.js"
+    },
+    {
+      "name": "metodologia.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "metodologia.html: título",
+      "ok": true,
+      "detail": "<title>Metodologia — Protege.Dados</title>"
+    },
+    {
+      "name": "metodologia.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "metodologia.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "metodologia.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "metodologia.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "metodologia.html: IDs únicos",
+      "ok": true,
+      "detail": "1 IDs"
+    },
+    {
+      "name": "metodologia.html: rótulo da navegação",
+      "ok": true,
+      "detail": "aria-label"
+    },
+    {
+      "name": "metodologia.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "metodologia.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "metodologia.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "metodologia.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "metodologia.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "metodologia.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "metodologia.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "metodologia.html: recurso metodologia.html",
+      "ok": true,
+      "detail": "web/metodologia.html"
+    },
+    {
+      "name": "metodologia.html: recurso governanca.html",
+      "ok": true,
+      "detail": "web/governanca.html"
+    },
+    {
+      "name": "metodologia.html: recurso acessibilidade.html",
+      "ok": true,
+      "detail": "web/acessibilidade.html"
+    },
+    {
+      "name": "painel.html: idioma",
+      "ok": true,
+      "detail": "lang=pt-BR"
+    },
+    {
+      "name": "painel.html: título",
+      "ok": true,
+      "detail": "<title>Painel e comparador — Protege.Dados</title>"
+    },
+    {
+      "name": "painel.html: viewport",
+      "ok": true,
+      "detail": "meta viewport"
+    },
+    {
+      "name": "painel.html: descrição",
+      "ok": true,
+      "detail": "meta description"
+    },
+    {
+      "name": "painel.html: conteúdo principal",
+      "ok": true,
+      "detail": "main#conteudo único"
+    },
+    {
+      "name": "painel.html: pular conteúdo",
+      "ok": true,
+      "detail": "skip link"
+    },
+    {
+      "name": "painel.html: IDs únicos",
+      "ok": true,
+      "detail": "18 IDs"
+    },
+    {
+      "name": "painel.html: rótulo da navegação",
+      "ok": true,
+      "detail": "aria-label"
+    },
+    {
+      "name": "painel.html: recurso site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "painel.html: recurso assets/favicon.svg",
+      "ok": true,
+      "detail": "web/assets/favicon.svg"
+    },
+    {
+      "name": "painel.html: recurso assets/style.css",
+      "ok": true,
+      "detail": "web/assets/style.css"
+    },
+    {
+      "name": "painel.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "painel.html: recurso index.html",
+      "ok": true,
+      "detail": "web/index.html"
+    },
+    {
+      "name": "painel.html: recurso painel.html",
+      "ok": true,
+      "detail": "web/painel.html"
+    },
+    {
+      "name": "painel.html: recurso dados.html",
+      "ok": true,
+      "detail": "web/dados.html"
+    },
+    {
+      "name": "painel.html: recurso metodologia.html",
+      "ok": true,
+      "detail": "web/metodologia.html"
+    },
+    {
+      "name": "painel.html: recurso governanca.html",
+      "ok": true,
+      "detail": "web/governanca.html"
+    },
+    {
+      "name": "painel.html: recurso acessibilidade.html",
+      "ok": true,
+      "detail": "web/acessibilidade.html"
+    },
+    {
+      "name": "painel.html: recurso assets/app.js?v=5.1.0",
+      "ok": true,
+      "detail": "web/assets/app.js"
+    },
+    {
+      "name": "JSON principal: lista",
+      "ok": true,
+      "detail": "lista JSON"
+    },
+    {
+      "name": "JSON principal: 27 registros",
+      "ok": true,
+      "detail": "27"
+    },
+    {
+      "name": "JSON principal: UFs exatas",
+      "ok": true,
+      "detail": "AC,AL,AM,AP,BA,CE,DF,ES,GO,MA,MG,MS,MT,PA,PB,PE,PI,PR,RJ,RN,RO,RR,RS,SC,SE,SP,TO"
+    },
+    {
+      "name": "AC: campo populacao",
+      "ok": true,
+      "detail": "884372.0"
+    },
+    {
+      "name": "AC: campo escolas",
+      "ok": true,
+      "detail": "1523"
+    },
+    {
+      "name": "AC: campo matriculas",
+      "ok": true,
+      "detail": "248340.0"
+    },
+    {
+      "name": "AC: campo denuncias",
+      "ok": true,
+      "detail": "691"
+    },
+    {
+      "name": "AC: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "56.8309425897"
+    },
+    {
+      "name": "AC: IVPD 0-100",
+      "ok": true,
+      "detail": "56.8309425897"
+    },
+    {
+      "name": "AL: campo populacao",
+      "ok": true,
+      "detail": "3220848.0"
+    },
+    {
+      "name": "AL: campo escolas",
+      "ok": true,
+      "detail": "2937"
+    },
+    {
+      "name": "AL: campo matriculas",
+      "ok": true,
+      "detail": "863732.0"
+    },
+    {
+      "name": "AL: campo denuncias",
+      "ok": true,
+      "detail": "3614"
+    },
+    {
+      "name": "AL: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "28.0412869717"
+    },
+    {
+      "name": "AL: IVPD 0-100",
+      "ok": true,
+      "detail": "28.0412869717"
+    },
+    {
+      "name": "AM: campo populacao",
+      "ok": true,
+      "detail": "4321616.0"
+    },
+    {
+      "name": "AM: campo escolas",
+      "ok": true,
+      "detail": "5542"
+    },
+    {
+      "name": "AM: campo matriculas",
+      "ok": true,
+      "detail": "1153833.0"
+    },
+    {
+      "name": "AM: campo denuncias",
+      "ok": true,
+      "detail": "6546"
+    },
+    {
+      "name": "AM: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "87.386709165"
+    },
+    {
+      "name": "AM: IVPD 0-100",
+      "ok": true,
+      "detail": "87.386709165"
+    },
+    {
+      "name": "AP: campo populacao",
+      "ok": true,
+      "detail": "806517.0"
+    },
+    {
+      "name": "AP: campo escolas",
+      "ok": true,
+      "detail": "877"
+    },
+    {
+      "name": "AP: campo matriculas",
+      "ok": true,
+      "detail": "213712.0"
+    },
+    {
+      "name": "AP: campo denuncias",
+      "ok": true,
+      "detail": "487"
+    },
+    {
+      "name": "AP: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "42.8978301129"
+    },
+    {
+      "name": "AP: IVPD 0-100",
+      "ok": true,
+      "detail": "42.8978301129"
+    },
+    {
+      "name": "BA: campo populacao",
+      "ok": true,
+      "detail": "14870907.0"
+    },
+    {
+      "name": "BA: campo escolas",
+      "ok": true,
+      "detail": "16094"
+    },
+    {
+      "name": "BA: campo matriculas",
+      "ok": true,
+      "detail": "3416549.0"
+    },
+    {
+      "name": "BA: campo denuncias",
+      "ok": true,
+      "detail": "14736"
+    },
+    {
+      "name": "BA: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "29.4295172189"
+    },
+    {
+      "name": "BA: IVPD 0-100",
+      "ok": true,
+      "detail": "29.4295172189"
+    },
+    {
+      "name": "CE: campo populacao",
+      "ok": true,
+      "detail": "9268836.0"
+    },
+    {
+      "name": "CE: campo escolas",
+      "ok": true,
+      "detail": "7719"
+    },
+    {
+      "name": "CE: campo matriculas",
+      "ok": true,
+      "detail": "2132934.0"
+    },
+    {
+      "name": "CE: campo denuncias",
+      "ok": true,
+      "detail": "8561"
+    },
+    {
+      "name": "CE: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "19.101203173"
+    },
+    {
+      "name": "CE: IVPD 0-100",
+      "ok": true,
+      "detail": "19.101203173"
+    },
+    {
+      "name": "DF: campo populacao",
+      "ok": true,
+      "detail": "2996899.0"
+    },
+    {
+      "name": "DF: campo escolas",
+      "ok": true,
+      "detail": "1325"
+    },
+    {
+      "name": "DF: campo matriculas",
+      "ok": true,
+      "detail": "629593.0"
+    },
+    {
+      "name": "DF: campo denuncias",
+      "ok": true,
+      "detail": "5157"
+    },
+    {
+      "name": "DF: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "46.0265110924"
+    },
+    {
+      "name": "DF: IVPD 0-100",
+      "ok": true,
+      "detail": "46.0265110924"
+    },
+    {
+      "name": "ES: campo populacao",
+      "ok": true,
+      "detail": "4126854.0"
+    },
+    {
+      "name": "ES: campo escolas",
+      "ok": true,
+      "detail": "3064"
+    },
+    {
+      "name": "ES: campo matriculas",
+      "ok": true,
+      "detail": "869379.0"
+    },
+    {
+      "name": "ES: campo denuncias",
+      "ok": true,
+      "detail": "6699"
+    },
+    {
+      "name": "ES: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "47.4258317768"
+    },
+    {
+      "name": "ES: IVPD 0-100",
+      "ok": true,
+      "detail": "47.4258317768"
+    },
+    {
+      "name": "GO: campo populacao",
+      "ok": true,
+      "detail": "7423629.0"
+    },
+    {
+      "name": "GO: campo escolas",
+      "ok": true,
+      "detail": "4746"
+    },
+    {
+      "name": "GO: campo matriculas",
+      "ok": true,
+      "detail": "1550149.0"
+    },
+    {
+      "name": "GO: campo denuncias",
+      "ok": true,
+      "detail": "8734"
+    },
+    {
+      "name": "GO: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "24.1704122358"
+    },
+    {
+      "name": "GO: IVPD 0-100",
+      "ok": true,
+      "detail": "24.1704122358"
+    },
+    {
+      "name": "MA: campo populacao",
+      "ok": true,
+      "detail": "7018211.0"
+    },
+    {
+      "name": "MA: campo escolas",
+      "ok": true,
+      "detail": "11357"
+    },
+    {
+      "name": "MA: campo matriculas",
+      "ok": true,
+      "detail": "1850984.0"
+    },
+    {
+      "name": "MA: campo denuncias",
+      "ok": true,
+      "detail": "3488"
+    },
+    {
+      "name": "MA: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "28.3777049678"
+    },
+    {
+      "name": "MA: IVPD 0-100",
+      "ok": true,
+      "detail": "28.3777049678"
+    },
+    {
+      "name": "MG: campo populacao",
+      "ok": true,
+      "detail": "21393441.0"
+    },
+    {
+      "name": "MG: campo escolas",
+      "ok": true,
+      "detail": "15843"
+    },
+    {
+      "name": "MG: campo matriculas",
+      "ok": true,
+      "detail": "4294157.0"
+    },
+    {
+      "name": "MG: campo denuncias",
+      "ok": true,
+      "detail": "32129"
+    },
+    {
+      "name": "MG: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "41.1082446484"
+    },
+    {
+      "name": "MG: IVPD 0-100",
+      "ok": true,
+      "detail": "41.1082446484"
+    },
+    {
+      "name": "MS: campo populacao",
+      "ok": true,
+      "detail": "2924631.0"
+    },
+    {
+      "name": "MS: campo escolas",
+      "ok": true,
+      "detail": "1841"
+    },
+    {
+      "name": "MS: campo matriculas",
+      "ok": true,
+      "detail": "679596.0"
+    },
+    {
+      "name": "MS: campo denuncias",
+      "ok": true,
+      "detail": "4279"
+    },
+    {
+      "name": "MS: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "36.6707806067"
+    },
+    {
+      "name": "MS: IVPD 0-100",
+      "ok": true,
+      "detail": "36.6707806067"
+    },
+    {
+      "name": "MT: campo populacao",
+      "ok": true,
+      "detail": "3893659.0"
+    },
+    {
+      "name": "MT: campo escolas",
+      "ok": true,
+      "detail": "2722"
+    },
+    {
+      "name": "MT: campo matriculas",
+      "ok": true,
+      "detail": "898482.0"
+    },
+    {
+      "name": "MT: campo denuncias",
+      "ok": true,
+      "detail": "2576"
+    },
+    {
+      "name": "MT: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "10.4499427741"
+    },
+    {
+      "name": "MT: IVPD 0-100",
+      "ok": true,
+      "detail": "10.4499427741"
+    },
+    {
+      "name": "PA: campo populacao",
+      "ok": true,
+      "detail": "8711196.0"
+    },
+    {
+      "name": "PA: campo escolas",
+      "ok": true,
+      "detail": "10591"
+    },
+    {
+      "name": "PA: campo matriculas",
+      "ok": true,
+      "detail": "2206871.0"
+    },
+    {
+      "name": "PA: campo denuncias",
+      "ok": true,
+      "detail": "5654"
+    },
+    {
+      "name": "PA: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "42.084960184"
+    },
+    {
+      "name": "PA: IVPD 0-100",
+      "ok": true,
+      "detail": "42.084960184"
+    },
+    {
+      "name": "PB: campo populacao",
+      "ok": true,
+      "detail": "4164468.0"
+    },
+    {
+      "name": "PB: campo escolas",
+      "ok": true,
+      "detail": "4653"
+    },
+    {
+      "name": "PB: campo matriculas",
+      "ok": true,
+      "detail": "949125.0"
+    },
+    {
+      "name": "PB: campo denuncias",
+      "ok": true,
+      "detail": "4848"
+    },
+    {
+      "name": "PB: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "36.3843674413"
+    },
+    {
+      "name": "PB: IVPD 0-100",
+      "ok": true,
+      "detail": "36.3843674413"
+    },
+    {
+      "name": "PE: campo populacao",
+      "ok": true,
+      "detail": "9562007.0"
+    },
+    {
+      "name": "PE: campo escolas",
+      "ok": true,
+      "detail": "8013"
+    },
+    {
+      "name": "PE: campo matriculas",
+      "ok": true,
+      "detail": "2121954.0"
+    },
+    {
+      "name": "PE: campo denuncias",
+      "ok": true,
+      "detail": "10859"
+    },
+    {
+      "name": "PE: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "31.3890481322"
+    },
+    {
+      "name": "PE: IVPD 0-100",
+      "ok": true,
+      "detail": "31.3890481322"
+    },
+    {
+      "name": "PI: campo populacao",
+      "ok": true,
+      "detail": "3384547.0"
+    },
+    {
+      "name": "PI: campo escolas",
+      "ok": true,
+      "detail": "4179"
+    },
+    {
+      "name": "PI: campo matriculas",
+      "ok": true,
+      "detail": "829549.0"
+    },
+    {
+      "name": "PI: campo denuncias",
+      "ok": true,
+      "detail": "2845"
+    },
+    {
+      "name": "PI: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "22.5973791954"
+    },
+    {
+      "name": "PI: IVPD 0-100",
+      "ok": true,
+      "detail": "22.5973791954"
+    },
+    {
+      "name": "PR: campo populacao",
+      "ok": true,
+      "detail": "11890517.0"
+    },
+    {
+      "name": "PR: campo escolas",
+      "ok": true,
+      "detail": "9573"
+    },
+    {
+      "name": "PR: campo matriculas",
+      "ok": true,
+      "detail": "2498963.0"
+    },
+    {
+      "name": "PR: campo denuncias",
+      "ok": true,
+      "detail": "13287"
+    },
+    {
+      "name": "PR: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "29.7439328822"
+    },
+    {
+      "name": "PR: IVPD 0-100",
+      "ok": true,
+      "detail": "29.7439328822"
+    },
+    {
+      "name": "RJ: campo populacao",
+      "ok": true,
+      "detail": "17223547.0"
+    },
+    {
+      "name": "RJ: campo escolas",
+      "ok": true,
+      "detail": "11761"
+    },
+    {
+      "name": "RJ: campo matriculas",
+      "ok": true,
+      "detail": "3421235.0"
+    },
+    {
+      "name": "RJ: campo denuncias",
+      "ok": true,
+      "detail": "34718"
+    },
+    {
+      "name": "RJ: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "50.873779523"
+    },
+    {
+      "name": "RJ: IVPD 0-100",
+      "ok": true,
+      "detail": "50.873779523"
+    },
+    {
+      "name": "RN: campo populacao",
+      "ok": true,
+      "detail": "3455236.0"
+    },
+    {
+      "name": "RN: campo escolas",
+      "ok": true,
+      "detail": "3462"
+    },
+    {
+      "name": "RN: campo matriculas",
+      "ok": true,
+      "detail": "783190.0"
+    },
+    {
+      "name": "RN: campo denuncias",
+      "ok": true,
+      "detail": "4565"
+    },
+    {
+      "name": "RN: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "39.8975104005"
+    },
+    {
+      "name": "RN: IVPD 0-100",
+      "ok": true,
+      "detail": "39.8975104005"
+    },
+    {
+      "name": "RO: campo populacao",
+      "ok": true,
+      "detail": "1751950.0"
+    },
+    {
+      "name": "RO: campo escolas",
+      "ok": true,
+      "detail": "1243"
+    },
+    {
+      "name": "RO: campo matriculas",
+      "ok": true,
+      "detail": "383849.0"
+    },
+    {
+      "name": "RO: campo denuncias",
+      "ok": true,
+      "detail": "1590"
+    },
+    {
+      "name": "RO: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "23.6745993869"
+    },
+    {
+      "name": "RO: IVPD 0-100",
+      "ok": true,
+      "detail": "23.6745993869"
+    },
+    {
+      "name": "RR: campo populacao",
+      "ok": true,
+      "detail": "738772.0"
+    },
+    {
+      "name": "RR: campo escolas",
+      "ok": true,
+      "detail": "911"
+    },
+    {
+      "name": "RR: campo matriculas",
+      "ok": true,
+      "detail": "185657.0"
+    },
+    {
+      "name": "RR: campo denuncias",
+      "ok": true,
+      "detail": "508"
+    },
+    {
+      "name": "RR: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "50.2846576929"
+    },
+    {
+      "name": "RR: IVPD 0-100",
+      "ok": true,
+      "detail": "50.2846576929"
+    },
+    {
+      "name": "RS: campo populacao",
+      "ok": true,
+      "detail": "11233263.0"
+    },
+    {
+      "name": "RS: campo escolas",
+      "ok": true,
+      "detail": "10000"
+    },
+    {
+      "name": "RS: campo matriculas",
+      "ok": true,
+      "detail": "2227679.0"
+    },
+    {
+      "name": "RS: campo denuncias",
+      "ok": true,
+      "detail": "16440"
+    },
+    {
+      "name": "RS: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "41.6540936912"
+    },
+    {
+      "name": "RS: IVPD 0-100",
+      "ok": true,
+      "detail": "41.6540936912"
+    },
+    {
+      "name": "SC: campo populacao",
+      "ok": true,
+      "detail": "8187029.0"
+    },
+    {
+      "name": "SC: campo escolas",
+      "ok": true,
+      "detail": "6710"
+    },
+    {
+      "name": "SC: campo matriculas",
+      "ok": true,
+      "detail": "1768874.0"
+    },
+    {
+      "name": "SC: campo denuncias",
+      "ok": true,
+      "detail": "12155"
+    },
+    {
+      "name": "SC: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "37.2837168524"
+    },
+    {
+      "name": "SC: IVPD 0-100",
+      "ok": true,
+      "detail": "37.2837168524"
+    },
+    {
+      "name": "SE: campo populacao",
+      "ok": true,
+      "detail": "2299425.0"
+    },
+    {
+      "name": "SE: campo escolas",
+      "ok": true,
+      "detail": "2045"
+    },
+    {
+      "name": "SE: campo matriculas",
+      "ok": true,
+      "detail": "526786.0"
+    },
+    {
+      "name": "SE: campo denuncias",
+      "ok": true,
+      "detail": "2729"
+    },
+    {
+      "name": "SE: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "26.8857994426"
+    },
+    {
+      "name": "SE: IVPD 0-100",
+      "ok": true,
+      "detail": "26.8857994426"
+    },
+    {
+      "name": "SP: campo populacao",
+      "ok": true,
+      "detail": "46081801.0"
+    },
+    {
+      "name": "SP: campo escolas",
+      "ok": true,
+      "detail": "30746"
+    },
+    {
+      "name": "SP: campo matriculas",
+      "ok": true,
+      "detail": "9998443.0"
+    },
+    {
+      "name": "SP: campo denuncias",
+      "ok": true,
+      "detail": "85660"
+    },
+    {
+      "name": "SP: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "52.0560916283"
+    },
+    {
+      "name": "SP: IVPD 0-100",
+      "ok": true,
+      "detail": "52.0560916283"
+    },
+    {
+      "name": "TO: campo populacao",
+      "ok": true,
+      "detail": "1586859.0"
+    },
+    {
+      "name": "TO: campo escolas",
+      "ok": true,
+      "detail": "1588"
+    },
+    {
+      "name": "TO: campo matriculas",
+      "ok": true,
+      "detail": "385307.0"
+    },
+    {
+      "name": "TO: campo denuncias",
+      "ok": true,
+      "detail": "1037"
+    },
+    {
+      "name": "TO: campo eixo_vulnerabilidade",
+      "ok": true,
+      "detail": "5.9672677685"
+    },
+    {
+      "name": "TO: IVPD 0-100",
+      "ok": true,
+      "detail": "5.9672677685"
+    },
+    {
+      "name": "API territórios: 27 registros",
+      "ok": true,
+      "detail": "27"
+    },
+    {
+      "name": "API territórios igual ao JSON principal",
+      "ok": true,
+      "detail": "conteúdo idêntico"
+    },
+    {
+      "name": "API index.json: JSON válido",
+      "ok": true,
+      "detail": "válido"
+    },
+    {
+      "name": "API index.json: versão 5.1.0",
+      "ok": true,
+      "detail": "5.1.0"
+    },
+    {
+      "name": "API indicators.json: JSON válido",
+      "ok": true,
+      "detail": "válido"
+    },
+    {
+      "name": "API indicators.json: versão 5.1.0",
+      "ok": true,
+      "detail": "5.1.0"
+    },
+    {
+      "name": "API quality.json: JSON válido",
+      "ok": true,
+      "detail": "válido"
+    },
+    {
+      "name": "API sources.json: JSON válido",
+      "ok": true,
+      "detail": "válido"
+    },
+    {
+      "name": "API territories.json: JSON válido",
+      "ok": true,
+      "detail": "válido"
+    },
+    {
+      "name": "ivpd_uf_v1.csv: 27 linhas",
+      "ok": true,
+      "detail": "27"
+    },
+    {
+      "name": "ivpd_uf_v1.csv: UFs exatas",
+      "ok": true,
+      "detail": "27 UFs"
+    },
+    {
+      "name": "ivpd_uf_v1_excel.csv: 27 linhas",
+      "ok": true,
+      "detail": "27"
+    },
+    {
+      "name": "ivpd_uf_v1_excel.csv: UFs exatas",
+      "ok": true,
+      "detail": "27 UFs"
+    },
+    {
+      "name": "ivpd_uf_v1.csv: 27 linhas",
+      "ok": true,
+      "detail": "27"
+    },
+    {
+      "name": "ivpd_uf_v1.csv: UFs exatas",
+      "ok": true,
+      "detail": "27 UFs"
+    },
+    {
+      "name": "JavaScript: função loadRows",
+      "ok": true,
+      "detail": "loadRows"
+    },
+    {
+      "name": "JavaScript: função renderUf",
+      "ok": true,
+      "detail": "renderUf"
+    },
+    {
+      "name": "JavaScript: função renderComparison",
+      "ok": true,
+      "detail": "renderComparison"
+    },
+    {
+      "name": "JavaScript: função createCsv",
+      "ok": true,
+      "detail": "createCsv"
+    },
+    {
+      "name": "JavaScript: função download",
+      "ok": true,
+      "detail": "download"
+    },
+    {
+      "name": "JavaScript: função renderTable",
+      "ok": true,
+      "detail": "renderTable"
+    },
+    {
+      "name": "JavaScript: versão de cache 5.1.0",
+      "ok": true,
+      "detail": "5.1.0"
+    },
+    {
+      "name": "Painel: controle uf",
+      "ok": true,
+      "detail": "uf"
+    },
+    {
+      "name": "Painel: controle compare-1",
+      "ok": true,
+      "detail": "compare-1"
+    },
+    {
+      "name": "Painel: controle compare-2",
+      "ok": true,
+      "detail": "compare-2"
+    },
+    {
+      "name": "Painel: controle compare-3",
+      "ok": true,
+      "detail": "compare-3"
+    },
+    {
+      "name": "Painel: controle compare-button",
+      "ok": true,
+      "detail": "compare-button"
+    },
+    {
+      "name": "Painel: controle download",
+      "ok": true,
+      "detail": "download"
+    },
+    {
+      "name": "Painel: controle download-standard",
+      "ok": true,
+      "detail": "download-standard"
+    },
+    {
+      "name": "Painel: controle download-comparison",
+      "ok": true,
+      "detail": "download-comparison"
+    },
+    {
+      "name": "Painel: controle uf-table-body",
+      "ok": true,
+      "detail": "uf-table-body"
+    },
+    {
+      "name": "Consistência da versão 5.1",
+      "ok": true,
+      "detail": "sem rótulos 5.0 ativos"
+    },
+    {
+      "name": "Arquivo de implantação web/.nojekyll",
+      "ok": true,
+      "detail": "web/.nojekyll"
+    },
+    {
+      "name": "Arquivo de implantação web/404.html",
+      "ok": true,
+      "detail": "web/404.html"
+    },
+    {
+      "name": "Arquivo de implantação web/robots.txt",
+      "ok": true,
+      "detail": "web/robots.txt"
+    },
+    {
+      "name": "Arquivo de implantação web/site.webmanifest",
+      "ok": true,
+      "detail": "web/site.webmanifest"
+    },
+    {
+      "name": "Arquivo de implantação LICENSE",
+      "ok": true,
+      "detail": "LICENSE"
+    },
+    {
+      "name": "Arquivo de implantação README.md",
+      "ok": true,
+      "detail": "README.md"
+    },
+    {
+      "name": "Arquivo de implantação CHANGELOG.md",
+      "ok": true,
+      "detail": "CHANGELOG.md"
+    },
+    {
+      "name": "Arquivo de implantação SECURITY.md",
+      "ok": true,
+      "detail": "SECURITY.md"
+    }
+  ]
+}

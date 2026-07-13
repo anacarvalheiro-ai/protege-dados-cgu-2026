@@ -1,4 +1,4 @@
-# Publicar o Protege.Dados 4.1 no GitHub
+# Publicar o Protege.Dados 5.1 no GitHub
 
 Repositório de destino:
 `https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026`
@@ -14,7 +14,7 @@ Repositório de destino:
 7. No GitHub Desktop, escreva o resumo: `Publica release 4.1 do Protege.Dados`.
 8. Clique em **Commit to main** e depois em **Push origin**.
 9. No GitHub, abra **Settings > Pages** e escolha **GitHub Actions** como fonte.
-10. Abra **Actions** e acompanhe o workflow **Publicar Protege.Dados 4.1**.
+10. Abra **Actions** e acompanhe o workflow **Publicar Protege.Dados 5.1**.
 
 Portal esperado:
 `https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/`
