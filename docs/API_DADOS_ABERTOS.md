@@ -1,15 +1,19 @@
-# API e Dados Abertos — Protege.Dados 4.1
+# API e dados abertos — Protege.Dados 5.1
 
-A API é estática, pública, somente leitura e sem autenticação. Publica exclusivamente dados agregados e metadados.
+A API é estática, pública, somente leitura e não exige autenticação.
 
 ## Endpoints
 
-- `https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/index.json`
-- `https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/territories.json`
-- `https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/indicators.json`
-- `https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/sources.json`
-- `https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/quality.json`
+- `web/api/v1/index.json`
+- `web/api/v1/territories.json`
+- `web/api/v1/indicators.json`
+- `web/api/v1/sources.json`
+- `web/api/v1/quality.json`
 
-## Condições de reúso
+## Downloads
 
-Consulte `DATA_LICENSE.md`. Atribua a iniciativa e preserve a referência às fontes oficiais. Não utilize os dados para identificar pessoas, produzir rankings punitivos ou inferir prevalência real.
+- `web/downloads/ivpd_uf_v1.csv`: padrão internacional;
+- `web/downloads/ivpd_uf_v1_excel.csv`: separador ponto e vírgula e compatibilidade com Excel brasileiro;
+- `web/data/ivpd_uf_v1.json`: base territorial completa.
+
+Todos os resultados são agregados por unidade federativa e devem ser reutilizados com atribuição às fontes e observância das limitações metodológicas.

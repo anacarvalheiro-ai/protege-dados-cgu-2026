@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: protege-dados
-Version: 1.0.0
+Version: 5.1.0
 Summary: Pipeline reproduzível e painel aberto da IVPD
 Requires-Python: >=3.11
 License-File: LICENSE
@@ -11,4 +11,6 @@ Requires-Dist: pyarrow>=16
 Requires-Dist: pyyaml>=6.0
 Requires-Dist: pydantic>=2.7
 Requires-Dist: pytest>=8.0
+Provides-Extra: audit
+Requires-Dist: playwright>=1.49; extra == "audit"
 Dynamic: license-file

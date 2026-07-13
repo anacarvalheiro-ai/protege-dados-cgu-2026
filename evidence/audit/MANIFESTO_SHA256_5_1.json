@@ -1,0 +1,631 @@
+{
+  "projeto": "Protege.Dados",
+  "versao": "5.1",
+  "arquivos": [
+    {
+      "arquivo": ".github/ISSUE_TEMPLATE/erro.yml",
+      "bytes": 681,
+      "sha256": "deaee73d3c9dbac96a2369765fbe8f7f3888bb417267178100ab657640cc0b28"
+    },
+    {
+      "arquivo": ".github/ISSUE_TEMPLATE/sugestao.yml",
+      "bytes": 364,
+      "sha256": "44073eef4623d6106bbc46ec54cd6f6f62b34274a6ba25673d19d171f6ca9099"
+    },
+    {
+      "arquivo": ".github/workflows/deploy.yml",
+      "bytes": 1448,
+      "sha256": "5ab7270d5087e1b1a4e872817ceb29c30c51cace053ca4ae8604dd8b1e8578ee"
+    },
+    {
+      "arquivo": ".github/workflows/quality.yml",
+      "bytes": 615,
+      "sha256": "65651071bc10ebb11fa6d6f78ff57783c09da7671b69d34461f3ea3060fa7bd7"
+    },
+    {
+      "arquivo": ".gitignore",
+      "bytes": 175,
+      "sha256": "7d6db18eee12bc7a966fca6239dca2a2311f423a318c9031c9de73fc8c35c0f6"
+    },
+    {
+      "arquivo": "00_COMECE_AQUI_UPLOAD_4_1.md",
+      "bytes": 307,
+      "sha256": "94c0695f2eab7cfbcc88903510cd26800fe95a306bfb357f2522b79f381b96f9"
+    },
+    {
+      "arquivo": "ABRIR_PREVIA_LOCAL.bat",
+      "bytes": 381,
+      "sha256": "2891c877548c6f2c16574aab9f667d7edc10f11ff5c2ed7785a2d8fafa3865ec"
+    },
+    {
+      "arquivo": "ATUALIZAR_PROTEGE_DADOS_5_1.bat",
+      "bytes": 568,
+      "sha256": "a2073555eb3103495d89d3dec471982237854407125bfcecc32d76c81e4a2188"
+    },
+    {
+      "arquivo": "Atualizar_Protege_Dados_5_1.ps1",
+      "bytes": 423,
+      "sha256": "356f909041eabd092859d3fdebf16e4f614d47288922c3135b37d1b932751f66"
+    },
+    {
+      "arquivo": "CHANGELOG.md",
+      "bytes": 1471,
+      "sha256": "350c7d7c15fb2765c74ed475d52b853003f06b3dc6e47e83368aa4556bee9dc8"
+    },
+    {
+      "arquivo": "CITATION.cff",
+      "bytes": 512,
+      "sha256": "bf1036e5b5a2e04c3ff433edb58a094255f3e18fe34425fdb01f54791027e0a7"
+    },
+    {
+      "arquivo": "CODE_OF_CONDUCT.md",
+      "bytes": 253,
+      "sha256": "c0869e41762ba850e82292c8efc4c166c735e2fc92261d1156feffd526f9866d"
+    },
+    {
+      "arquivo": "CONTRIBUTING.md",
+      "bytes": 349,
+      "sha256": "4dc09446dc2bd2b696d4ba63db07a49a9d92cee3ace5205e4f9813a61a18d429"
+    },
+    {
+      "arquivo": "DATA_LICENSE.md",
+      "bytes": 507,
+      "sha256": "46ded01d1021822b42fea15d98569ec06f802b820e825fccdac919a3d72b8377"
+    },
+    {
+      "arquivo": "INSTRUCOES_ATUALIZACAO_5_1.txt",
+      "bytes": 1132,
+      "sha256": "00aff432bd07d20246322d88d6b2258e6aa06d727cf75e2845c588ac616bbf6b"
+    },
+    {
+      "arquivo": "LEIA_PRIMEIRO.txt",
+      "bytes": 372,
+      "sha256": "0a25451d1e61dd78e573556a035cd16ef5a1c00aeea0c0b894a51c7ab8370080"
+    },
+    {
+      "arquivo": "LICENSE",
+      "bytes": 665,
+      "sha256": "46c215b1d88e4f0047cec4fae7978a62c1b693b4c5fc647b7d3755d847a44092"
+    },
+    {
+      "arquivo": "PUBLICAR_AGORA.bat",
+      "bytes": 241,
+      "sha256": "a613514922f89c5a1209e8648333148fc825e0c2322e5a4fc1020f4d48381263"
+    },
+    {
+      "arquivo": "PUBLICAR_NO_GITHUB.md",
+      "bytes": 572,
+      "sha256": "20ad6bbfb8304d45dab4af268623ef716ba2cff00e92d11c50c56d5d60034cfe"
+    },
+    {
+      "arquivo": "PUBLICAR_NO_GITHUB_5_1.bat",
+      "bytes": 249,
+      "sha256": "840781a210bdaf17c630068069ebcf5526f4477d0b6b231ad483a8dae55951e6"
+    },
+    {
+      "arquivo": "PUBLICAR_VERSAO_5_0.md",
+      "bytes": 289,
+      "sha256": "7f6a584617fb6d58a20bbc2879c3fbc914746f7b29b0cc80c59d6b152c5a53da"
+    },
+    {
+      "arquivo": "Publicar_No_GitHub_5_1.ps1",
+      "bytes": 1849,
+      "sha256": "288ff03b1421b55766c5a5a26421c115c2d54c4a3b4c6fc678a2730fed2fdf74"
+    },
+    {
+      "arquivo": "Publicar_Protege_Dados_5_1.ps1",
+      "bytes": 256,
+      "sha256": "cff584a38c2725e50cd381b6775adf689e9e00c1e57b0b49d39ff0139b819b08"
+    },
+    {
+      "arquivo": "README.md",
+      "bytes": 4155,
+      "sha256": "33110d8a9be6484953b491ca90c5243d6df7f6b7fd521cdfb5355e9a67356da2"
+    },
+    {
+      "arquivo": "SECURITY.md",
+      "bytes": 277,
+      "sha256": "b14a8a5380882ac449f8bc2fc20d6bd899c1aed94d67eb79d75dbc2e60219da4"
+    },
+    {
+      "arquivo": "atualizar_protege_dados_5_1.py",
+      "bytes": 8413,
+      "sha256": "5fb163705bdeb8959d658b1a12c9f4b8e35dac334e9782f2569c354232d69d2a"
+    },
+    {
+      "arquivo": "config/ivpd.yml",
+      "bytes": 352,
+      "sha256": "3cf4f6313bce60067ab331efe081b334977f37ec9117e0429ef775238c2451ae"
+    },
+    {
+      "arquivo": "config/sources.yml",
+      "bytes": 1769,
+      "sha256": "26c06694d9c9b5b34776c357275c4f057f6630ec43b9173822984c502bfd7c33"
+    },
+    {
+      "arquivo": "data/processed/censo_escolar_2024_uf.csv",
+      "bytes": 4856,
+      "sha256": "2f6534cd87b60eff78b21dfae5dc9c74b3d1cb5ed9c34dae1c7944e3ce1298fd"
+    },
+    {
+      "arquivo": "data/processed/disque100_2024_2sem_uf.csv",
+      "bytes": 542,
+      "sha256": "f8b610cf72fd27295de8aa9f4e12b8aff91860d4f4faf0c1c48b10ca98124161"
+    },
+    {
+      "arquivo": "data/processed/disque100_2025_uf.csv",
+      "bytes": 561,
+      "sha256": "e3e2b3accedd49dad9c8e16d8b72303ac43c94dca3fc69ae2d8ba713b181bffd"
+    },
+    {
+      "arquivo": "data/processed/ivpd_uf_v1.csv",
+      "bytes": 13571,
+      "sha256": "6fd8e984a0b6b8917cfb9c662513dcb63174ed7a2548473448d1bc22893bc0c7"
+    },
+    {
+      "arquivo": "docs/ACEITE_RELEASE_4_1.md",
+      "bytes": 628,
+      "sha256": "7b92d03fc49bdebf49b7a9480b255f650dfadcf731768e8552218ee97cfb189e"
+    },
+    {
+      "arquivo": "docs/ACESSIBILIDADE.md",
+      "bytes": 428,
+      "sha256": "26ece57232dfb71f785aed3d2dda8dfdacae0d01274c8b79a28a04465e753a91"
+    },
+    {
+      "arquivo": "docs/API_DADOS_ABERTOS.md",
+      "bytes": 676,
+      "sha256": "48e5f363278466315a0a506cc35284d449e1e9b7f713b08187fb79d0b03ad3f3"
+    },
+    {
+      "arquivo": "docs/ARQUITETURA.md",
+      "bytes": 537,
+      "sha256": "d7189621b4a358cf7af3051f59b20d22116f9a6b45f0ce2ad2f1590b61fae791"
+    },
+    {
+      "arquivo": "docs/CHECKLIST_PUBLICACAO.md",
+      "bytes": 560,
+      "sha256": "f5135a30084874c0c7fabb4a7662d102211764badfcf866104c33f9f4880e610"
+    },
+    {
+      "arquivo": "docs/DICIONARIO_DADOS.md",
+      "bytes": 1042,
+      "sha256": "e6806d77bf22732aff4b78828b37aba82e4a20d64c2bc93a8dbde17d47d20770"
+    },
+    {
+      "arquivo": "docs/FONTES.md",
+      "bytes": 358,
+      "sha256": "70bc34beeaf1a616248d330878b059841ff71f07cc4b38eeb46af3c0886c9747"
+    },
+    {
+      "arquivo": "docs/GOVERNANCA_DADOS.md",
+      "bytes": 544,
+      "sha256": "4daa6a09dd8c26114c32e8e9809d141de59383c004db06b782039e2d15ebfbab"
+    },
+    {
+      "arquivo": "docs/GUIA_TEMPLATES_VISUAIS_5_1.md",
+      "bytes": 1024,
+      "sha256": "752ff3ee410b41c23b9df89426d35038364d0dafae84427a1149071c3428d97f"
+    },
+    {
+      "arquivo": "docs/LIMITACOES.md",
+      "bytes": 354,
+      "sha256": "9647368c196efb40300a66a4da54ff9df5d723fc0fa184a2858e849beb62c5d7"
+    },
+    {
+      "arquivo": "docs/METODOLOGIA.md",
+      "bytes": 959,
+      "sha256": "2d7eb9f443c8e1519b6f5328db8558d32e48fde0942f0781f110e597da7188e0"
+    },
+    {
+      "arquivo": "docs/PUBLICACAO_PASSO_A_PASSO.md",
+      "bytes": 998,
+      "sha256": "fac1db8a70556afee08f12d2304695d0d5d61737cf735e0d4249ef9b9558d2b3"
+    },
+    {
+      "arquivo": "docs/RELATORIO_ATUALIZACAO_PORTAL_5_1.md",
+      "bytes": 789,
+      "sha256": "344cc3b31104cf2669d63e42e4d8bf58fef640c999ac5c5dfe1a565a27dc479a"
+    },
+    {
+      "arquivo": "docs/assets/censo_escolar.png",
+      "bytes": 87069,
+      "sha256": "1744bdbd9e19a08834b66c46e8341958bd9c31c879bcdc9465bcd2875b7b3d52"
+    },
+    {
+      "arquivo": "docs/assets/distribuicao_ivpd.png",
+      "bytes": 59167,
+      "sha256": "a56e3feae5dc2e08f1dbb0eb74279f9edcefde6576fc00c9103d964c246f8b04"
+    },
+    {
+      "arquivo": "docs/relatorios/Caderno_de_Submissao_Protege_Dados.pdf",
+      "bytes": 76023,
+      "sha256": "ad969d67ccae25717afa2ba3cbeafe776c2dbee4843eaff17ea8eb3d085022dc"
+    },
+    {
+      "arquivo": "docs/relatorios/Projeto_Protege_Dados_CGU_2026_Final_Com_Evidencias.pdf",
+      "bytes": 574304,
+      "sha256": "5f0a321977001f95bbf29ad1c8b719b39aabe627580f417289aaee6c1b2c1fab"
+    },
+    {
+      "arquivo": "docs/relatorios/Relatorio_Tecnico_Evidencias_Protege_Dados.pdf",
+      "bytes": 321357,
+      "sha256": "62668bb82b102133d8b2e22dbb7524cb24678745c5deff9e11f8a272138c1904"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/01_Memorial_Tecnico_Protege_Dados_ABNT_Atualizado.docx",
+      "bytes": 49411,
+      "sha256": "2e220126796053fa35c0b1a3ed6e5eaa0e42dc5c101ddd7808edc76a864e69ad"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/01_Memorial_Tecnico_Protege_Dados_ABNT_Atualizado.pdf",
+      "bytes": 229251,
+      "sha256": "156e49b6550ebf12761c1d308e7d5a0f49dc00952f504cc5fdfa2a2b36dc6233"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/02_Formulario_Inscricao_Respostas_Protege_Dados_Atualizado.docx",
+      "bytes": 41033,
+      "sha256": "9975f9ee1a6e4be30aa43e036677e55476c52056cdc69ec7c795f9b901943e53"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/03_Relatorio_Tecnico_Evidencias_ABNT_Atualizado.docx",
+      "bytes": 43680,
+      "sha256": "f998b2424162952ef33381f7a3b51c6119b6bcc4792e15966de91e9af51dd498"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/03_Relatorio_Tecnico_Evidencias_ABNT_Atualizado.pdf",
+      "bytes": 115353,
+      "sha256": "cea4f6c53099e17f2ae6a32fcd3c0893e56a93ed93ed0abb512bdd5527d7ff2f"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/04_Matriz_Aderencia_Criterios_CGU_Atualizada.docx",
+      "bytes": 39725,
+      "sha256": "7cbd875e80fec5a902ba2060813900dc856517e192ec88f7b3eee0608b989952"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/04_Matriz_Aderencia_Criterios_CGU_Atualizada.pdf",
+      "bytes": 67017,
+      "sha256": "304a9e315a9eea48fbdb8df1814274783a927a68cb2e0a2cbd13900454ce9838"
+    },
+    {
+      "arquivo": "docs/submissao-cgu-2026/05_Checklist_Final_Duas_Etapas_Atualizado.docx",
+      "bytes": 39753,
+      "sha256": "89a2d6ad8d39514dad1a1a6603d0f979b90f16b7aed394574de582ab3df8cd44"
+    },
+    {
+      "arquivo": "evidence/audit/RELATORIO_AUDITORIA_NAVEGADOR_5_1.md",
+      "bytes": 3358,
+      "sha256": "fc833bfd6626bb3af994b4c17d3eedaba037caa6451919be020f32943efd1ef4"
+    },
+    {
+      "arquivo": "evidence/audit/RELATORIO_CONSOLIDADO_AUDITORIA_5_1.md",
+      "bytes": 3034,
+      "sha256": "50e04fa540a1b4f1294485274e68b26d4f6ddfe0004d846a4c9b3ec65e0d2f05"
+    },
+    {
+      "arquivo": "evidence/audit/RELATORIO_DESIGN_5_1.md",
+      "bytes": 1332,
+      "sha256": "c29a8520317796bbfe7c192dfe2bf1d7bdf1bb3d1ea097cc94e63b68e92767a6"
+    },
+    {
+      "arquivo": "evidence/audit/RELATORIO_FINAL_AUDITORIA_5_1.md",
+      "bytes": 2451,
+      "sha256": "5b7f6a62491f9373f6ccf9b66b747bf6c2f20b81777f6b5263399f72cfabb59c"
+    },
+    {
+      "arquivo": "evidence/audit/browser_audit_5_1.json",
+      "bytes": 7501,
+      "sha256": "263337e4a0270c6d2989b13a32ff8d37ffb063bf2db80bd01bbf0d9be1339f8f"
+    },
+    {
+      "arquivo": "evidence/audit/full_audit_5_1.json",
+      "bytes": 3925,
+      "sha256": "c193ba2a61d736b0902a97fca82e495a94491ad5914d2cfeb34b6b49bdaf8cf2"
+    },
+    {
+      "arquivo": "evidence/audit/http_server.log",
+      "bytes": 2309,
+      "sha256": "9aa2238fe27a2dc40c87be3f4aee1286c668ccf2f19917141c513f01248484ce"
+    },
+    {
+      "arquivo": "evidence/manifesto_derivados_sha256.json",
+      "bytes": 1445,
+      "sha256": "8fbd4b6e74d64da9110dcf13a368ac19cd6240e9e1e85a8424b1fcba82b26ebb"
+    },
+    {
+      "arquivo": "evidence/manifesto_fontes_fornecidas.json",
+      "bytes": 1164,
+      "sha256": "f879e165926159d3364cda80e54ede7ec37757d0a01604b1b33ad1cbb1d2c30e"
+    },
+    {
+      "arquivo": "evidence/resumo_resultados.json",
+      "bytes": 820,
+      "sha256": "de9a20b7c5fae51b85be97469a2f2a8e7045b72b8f5fc3cb024cc81f4293b29a"
+    },
+    {
+      "arquivo": "evidence/screenshots/404_desktop.png",
+      "bytes": 398101,
+      "sha256": "6497a36e99298f61f2886bc1a614ce816b3c7fa9ad8d97bf37356ac095d56f1e"
+    },
+    {
+      "arquivo": "evidence/screenshots/acessibilidade_desktop.png",
+      "bytes": 573263,
+      "sha256": "16556becf506d84c6c0d1342be597509bf894d1bf4b9ee089cf5232ad155c21f"
+    },
+    {
+      "arquivo": "evidence/screenshots/dados_desktop.png",
+      "bytes": 599211,
+      "sha256": "176a40ef8d73db6cdf1af6b12149ff8cff41eb7137d6e7ec161af0e975fd6b39"
+    },
+    {
+      "arquivo": "evidence/screenshots/governanca_desktop.png",
+      "bytes": 547134,
+      "sha256": "95998108328dd3d9e6b9b256c03efe36e829a9750646ac0d78ced39273c197c2"
+    },
+    {
+      "arquivo": "evidence/screenshots/index_desktop.png",
+      "bytes": 537045,
+      "sha256": "99ab0da66ac0ecd4f070199cb643c1857f062b978ba8e74230f46b6206830c50"
+    },
+    {
+      "arquivo": "evidence/screenshots/index_mobile.png",
+      "bytes": 345353,
+      "sha256": "b7228645642d7d5f52ca4388c89ed7896d2742cba1b42fd6346e3e59ec9d2c52"
+    },
+    {
+      "arquivo": "evidence/screenshots/metodologia_desktop.png",
+      "bytes": 684860,
+      "sha256": "9dd8467136897d8b22d180f696207552d24572c0f31dbd901e610ceb3b8e74eb"
+    },
+    {
+      "arquivo": "evidence/screenshots/painel_comparacao_desktop.png",
+      "bytes": 566015,
+      "sha256": "d942d4bfed1b0c5d8d689009d2968f5509f2a6acb149c910eb0cc30a7e72c4d4"
+    },
+    {
+      "arquivo": "evidence/screenshots/painel_desktop.png",
+      "bytes": 537775,
+      "sha256": "495ad89349d30b3a6103d02c9187e8fc3cf4ea4c98283acbe7ede8c03a5cba26"
+    },
+    {
+      "arquivo": "evidence/screenshots/painel_mapa_desktop.png",
+      "bytes": 587157,
+      "sha256": "337f2a80652fe704de174e2cf530869c3e7d90ea96a14fb43591142e39f87d54"
+    },
+    {
+      "arquivo": "evidence/testes_tecnicos.json",
+      "bytes": 377,
+      "sha256": "ed8e14c9d001440759e493eaa054fbcfcb1e07439574554c9b3444390f023d19"
+    },
+    {
+      "arquivo": "pyproject.toml",
+      "bytes": 474,
+      "sha256": "1c754809278f4b23b8ef7c3cca1c2d6fe85711f68647d067e9dc85713dd02b89"
+    },
+    {
+      "arquivo": "scripts/browser_audit.py",
+      "bytes": 14866,
+      "sha256": "c425455cca943f41328eed03acf02d6323b725ca80faa2f2ad68f7ac4f03ed15"
+    },
+    {
+      "arquivo": "scripts/full_audit.py",
+      "bytes": 2839,
+      "sha256": "f3cf61d6044a27077946647c1d7098e07f5fa2b9537d0564aa21c5092f4fe962"
+    },
+    {
+      "arquivo": "scripts/test_updater.py",
+      "bytes": 2264,
+      "sha256": "498e397c6bb2824d31a3871814f75fab5cb0c790593ed0f99715a7f38a179cf1"
+    },
+    {
+      "arquivo": "scripts/validate_portal.py",
+      "bytes": 4880,
+      "sha256": "c45dd7136ab371a20ec8b9930dd7d9d17ff3725c4573607fdb641b6b2a10bed9"
+    },
+    {
+      "arquivo": "scripts/validate_release.py",
+      "bytes": 4673,
+      "sha256": "e4bcb2b37c60999beb852eeabe85bd861b6a7e854e6ea89bff0b4bc1beb8e1cf"
+    },
+    {
+      "arquivo": "src/protege_dados/__init__.py",
+      "bytes": 22,
+      "sha256": "9495dbd623594d0e21bfe6b069616db4154dbb27ae23e47d6e94cbceccdcf8fb"
+    },
+    {
+      "arquivo": "src/protege_dados/cli.py",
+      "bytes": 481,
+      "sha256": "78025e3ac15beccf1ec5cd9cd489fd86cfc4f0e7cceda759f05338a1a41d4bf1"
+    },
+    {
+      "arquivo": "src/protege_dados/indicators.py",
+      "bytes": 2244,
+      "sha256": "45defc50182f08bf139f6d88de9a4f28385b0ae990db6968150dd5e9e4de2571"
+    },
+    {
+      "arquivo": "src/protege_dados/pipeline.py",
+      "bytes": 2469,
+      "sha256": "8af4a5f41bf1da3864ca50fff914b0bc412e60d2c325e663801a1e020c200d90"
+    },
+    {
+      "arquivo": "src/protege_dados/processors.py",
+      "bytes": 2995,
+      "sha256": "67e6de2e585c6c3a216d4ca9508c0543a5d104c3348f653df09d81121387113f"
+    },
+    {
+      "arquivo": "src/protege_dados/quality.py",
+      "bytes": 734,
+      "sha256": "04168928802f9c06fafcdfc3b433fbce4127e1a1341cc4b8579a9059e512f228"
+    },
+    {
+      "arquivo": "src/protege_dados/readers.py",
+      "bytes": 1066,
+      "sha256": "8f0a04333c1c4d911352fd366db27394320c59a1136b10327ec4835a51710784"
+    },
+    {
+      "arquivo": "src/protege_dados/schema.py",
+      "bytes": 564,
+      "sha256": "775dbe8e209d249f7dbb3f076de40505446716ee337fa0a1dfdad054c625269a"
+    },
+    {
+      "arquivo": "src/protege_dados/utils.py",
+      "bytes": 973,
+      "sha256": "eb743c0b9cb7291765ba55496853a91f907e47a6147ce555f1604687bde3cccb"
+    },
+    {
+      "arquivo": "tests/test_indicators.py",
+      "bytes": 630,
+      "sha256": "7c60b1be797c30f53d1f94fdd6407ee6f130e13c427a1349581cd037f056cc7d"
+    },
+    {
+      "arquivo": "tests/test_utils.py",
+      "bytes": 360,
+      "sha256": "d59b38bcfd22e9fd48fa63b27aa0b3f2a46200d45e0b2e91662ff915460d9cd8"
+    },
+    {
+      "arquivo": "web/.nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arquivo": "web/404.html",
+      "bytes": 3344,
+      "sha256": "08911c99aa989dc4108fc3d214da3e96c249959a8e7df18728f2f2fbf4a7f442"
+    },
+    {
+      "arquivo": "web/acessibilidade.html",
+      "bytes": 6431,
+      "sha256": "e2a59c947938da655e26cab2ca825f39fc0b33c1eb0e0d7a18b6c1a4508e9d95"
+    },
+    {
+      "arquivo": "web/api/v1/index.json",
+      "bytes": 245,
+      "sha256": "d56385ac5fdaf161f40322367eb08b1bc973701ceab080ffe5320cba6b5890f8"
+    },
+    {
+      "arquivo": "web/api/v1/indicators.json",
+      "bytes": 600,
+      "sha256": "1cb09eb180ff2988d63eb529dba29b44a280a40618964d2886298a77b8b6ac73"
+    },
+    {
+      "arquivo": "web/api/v1/quality.json",
+      "bytes": 391,
+      "sha256": "219ed5f67a6d9d8096b4076a762b7eb05f8afeb23b31deb2c948c923afeff34c"
+    },
+    {
+      "arquivo": "web/api/v1/sources.json",
+      "bytes": 341,
+      "sha256": "611cc80ab801f63c62a779ea03d300fa62935ef98f4500836db8c5b7c706a0dc"
+    },
+    {
+      "arquivo": "web/api/v1/territories.json",
+      "bytes": 37022,
+      "sha256": "bb3c62d0a6788d9422854cf3e7e741e606e0d34352445aeb7875c57eeadca9fc"
+    },
+    {
+      "arquivo": "web/assets/accessibility.js",
+      "bytes": 1675,
+      "sha256": "248d8a4844862a7296d32d3c44b74ab109f16ecbb1eda27370158a38b706033d"
+    },
+    {
+      "arquivo": "web/assets/app.js",
+      "bytes": 13027,
+      "sha256": "b6cfe5f57688d27dda3726f85a079b97b84cca30298f4570af8d9c5a0c67e037"
+    },
+    {
+      "arquivo": "web/assets/favicon.svg",
+      "bytes": 275,
+      "sha256": "f548d92bcfd5824d6bc3957627aca5939f87612e56ca3eb1a813e1e913cbd575"
+    },
+    {
+      "arquivo": "web/assets/qr_portal.png",
+      "bytes": 1278,
+      "sha256": "ba281d3ffda8a4a06174d928f4f69933568a6244a67df573bea8229d2db5f44e"
+    },
+    {
+      "arquivo": "web/assets/qr_portal.svg",
+      "bytes": 16101,
+      "sha256": "c86412466d4757749318b67ca7fd3cda72369ce349bb353e5fb43b02dd99e0ac"
+    },
+    {
+      "arquivo": "web/assets/qr_repositorio.png",
+      "bytes": 1255,
+      "sha256": "53f9ac5ac92efa98606244f16a513c3fed60d72ed498bd852d91ec407b82c2db"
+    },
+    {
+      "arquivo": "web/assets/qr_repositorio.svg",
+      "bytes": 16725,
+      "sha256": "677aba23a5c084de22e3193d07d6a1f712d4f753a0e5fd647fd9baea5cf548a4"
+    },
+    {
+      "arquivo": "web/assets/site.js",
+      "bytes": 4979,
+      "sha256": "070db4fd9c545217f6eda53af2285cea6f921b21edaa72483cea3e8d27906134"
+    },
+    {
+      "arquivo": "web/assets/style.css",
+      "bytes": 22143,
+      "sha256": "7c606f9df0791730e8db4fbb87bf0e43b145132f2cf88f9a2b6980ad236e283d"
+    },
+    {
+      "arquivo": "web/dados.html",
+      "bytes": 8639,
+      "sha256": "068aaaa7978245189cea546abff304490b0b297a0d277aad685395e54c3aff84"
+    },
+    {
+      "arquivo": "web/data/ivpd_uf_v1.json",
+      "bytes": 35202,
+      "sha256": "cff286f144d6de83af753f9fb7c00466bb4a31926bbbff3b8328a24e96249c85"
+    },
+    {
+      "arquivo": "web/docs/DICIONARIO_DADOS.md",
+      "bytes": 1042,
+      "sha256": "e6806d77bf22732aff4b78828b37aba82e4a20d64c2bc93a8dbde17d47d20770"
+    },
+    {
+      "arquivo": "web/downloads/ivpd_uf_v1.csv",
+      "bytes": 13546,
+      "sha256": "7df2c7caee7a134ab28bece00bbe7ba6e6bce038ca59efe357c61247a39b60ac"
+    },
+    {
+      "arquivo": "web/downloads/ivpd_uf_v1_excel.csv",
+      "bytes": 13495,
+      "sha256": "39dcd7b92079106f0a94f0bb44c093d038e7938b73bb0894860d1cdf48129e7b"
+    },
+    {
+      "arquivo": "web/governanca.html",
+      "bytes": 6468,
+      "sha256": "32a40d3173ebb59f0b63e456d3d196aaf803f3a0437f50b450ba79be45d1477e"
+    },
+    {
+      "arquivo": "web/index.html",
+      "bytes": 6333,
+      "sha256": "ba2e2205db6f3d2525f64f4a8932e721f1354cf20172f15d11b120e3ed15c899"
+    },
+    {
+      "arquivo": "web/metodologia.html",
+      "bytes": 7331,
+      "sha256": "53e5d1bb3f1be746d7339c5179cbf4ad212da4cac4c3c0eb342ad392a4e9e56d"
+    },
+    {
+      "arquivo": "web/painel.html",
+      "bytes": 8578,
+      "sha256": "f99a9284687d5dffbf3c6bebf96f8c2b1aeb929ba76ce514ce96772cf6a41f05"
+    },
+    {
+      "arquivo": "web/robots.txt",
+      "bytes": 23,
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    {
+      "arquivo": "web/site.webmanifest",
+      "bytes": 307,
+      "sha256": "4df9984c90d1e00e9c6ccafcbb5f85d1848ffbb003f0b013839f1c3e1c9a3369"
+    },
+    {
+      "arquivo": "web/sitemap.xml",
+      "bytes": 685,
+      "sha256": "d3f6f459bb41d0e09f1b863fb887d2cfc51a7f6e5e26c29fc59c81c842279682"
+    }
+  ]
+}

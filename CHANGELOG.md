@@ -1,52 +1,36 @@
-# Changelog
+# Histórico de versões
 
-## 5.2.0 — 13/07/2026
-- Reconstrução visual responsiva das seis telas públicas.
-- Novo catálogo filtrável de dados e endpoints.
-- Metodologia e governança reorganizadas em páginas auditáveis.
-- Controles persistentes de acessibilidade.
-- Manutenção integral dos downloads, API estática e comparador funcional.
+## 5.1.0 — 13/07/2026
 
-## 5.1.0 — reconstrução profissional autocontida
+### Redesign e experiência
+- reconstrução das seis telas principais com base nos templates institucionais aprovados;
+- cabeçalho e rodapé em azul institucional, sem imagens decorativas;
+- identidade visual consistente, responsiva e autocontida;
+- navegação móvel acessível;
+- cartões, tabelas, filtros e hierarquia tipográfica revisados;
+- cartograma interativo das 27 unidades federativas.
 
-- Publicador incluído no próprio pacote.
-- Inicialização por duplo clique em `PUBLICAR_AGORA.bat`.
-- Portal de seis páginas, UTF-8, 27 UFs e JSON estrito.
-- Seletores, comparador, tabela e downloads validados.
-- Workflow único de GitHub Pages.
+### Funcionalidades preservadas e ampliadas
+- consulta e atualização de indicadores por UF;
+- comparação de até três UFs;
+- exportação em CSV compatível com Excel e CSV internacional;
+- filtros de dados abertos por texto, categoria, formato e escopo;
+- API estática e downloads preservados;
+- preferências persistentes de acessibilidade;
+- nova opção de redução de movimento;
+- página 404, manifesto, robots.txt e sitemap.
 
-# Changelog
-
-## [4.1.0] — 2026-07-12
-
-### Release candidata
-
-- painel nacional;
-- inteligência territorial por UF;
-- comparador de até três UFs;
-- CSV compatível com Excel brasileiro;
-- CSV padrão internacional;
-- JSON completo;
-- API estática com cinco endpoints;
-- catálogo de indicadores e fontes;
-- endpoint de qualidade;
-- QR Codes com correção alta;
-- identidade institucional 4.1;
-- workflow com validação e deploy;
-- documentação de aceite;
-- salvaguardas éticas e interpretação responsável.
-
-### Correções
-
-- estrutura única de `web/assets`;
-- remoção de workflows provisórios;
-- caminhos consistentes;
-- validação prévia ao deploy.
-
+### Qualidade
+- validadores atualizados para a versão 5.1;
+- auditoria funcional automatizada em Chromium;
+- checagem de console, recursos, navegação, downloads e responsividade;
+- evidências de auditoria e capturas de tela incluídas no pacote;
+- scripts de atualização, pré-visualização e publicação assistida para Windows.
 
 ## 5.0.0
-- Reconstrução integral da camada web em UTF-8.
-- JSON estrito sem NaN.
-- Seis páginas estáticas profissionais.
-- Painel, comparador, downloads e API validados.
-- Workflow único de publicação.
+- reconstrução técnica do portal e API estática;
+- publicação em GitHub Pages;
+- validações de dados, links e JavaScript.
+
+## 4.1.0 — 12/07/2026
+- release candidata com documentação, dados derivados e testes iniciais.

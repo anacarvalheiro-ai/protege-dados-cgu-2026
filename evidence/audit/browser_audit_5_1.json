@@ -1,0 +1,348 @@
+{
+  "project": "Protege.Dados",
+  "version": "5.1",
+  "executed_at_utc": "2026-07-13T18:42:40.991392+00:00",
+  "checks": 67,
+  "passed": 67,
+  "failed": 0,
+  "failures": [],
+  "console_errors": [],
+  "failed_requests": [],
+  "results": [
+    {
+      "name": "HTTP index.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título index.html",
+      "passed": true,
+      "detail": "Início — Protege.Dados"
+    },
+    {
+      "name": "Main index.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop index.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "HTTP painel.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título painel.html",
+      "passed": true,
+      "detail": "Painel e comparador — Protege.Dados"
+    },
+    {
+      "name": "Main painel.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop painel.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "HTTP dados.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título dados.html",
+      "passed": true,
+      "detail": "Dados e API — Protege.Dados"
+    },
+    {
+      "name": "Main dados.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop dados.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "HTTP metodologia.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título metodologia.html",
+      "passed": true,
+      "detail": "Metodologia — Protege.Dados"
+    },
+    {
+      "name": "Main metodologia.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop metodologia.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "HTTP governanca.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título governanca.html",
+      "passed": true,
+      "detail": "Governança — Protege.Dados"
+    },
+    {
+      "name": "Main governanca.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop governanca.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "HTTP acessibilidade.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título acessibilidade.html",
+      "passed": true,
+      "detail": "Acessibilidade — Protege.Dados"
+    },
+    {
+      "name": "Main acessibilidade.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop acessibilidade.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "HTTP 404.html",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "Título 404.html",
+      "passed": true,
+      "detail": "Página não encontrada — Protege.Dados"
+    },
+    {
+      "name": "Main 404.html",
+      "passed": true,
+      "detail": "main#conteudo"
+    },
+    {
+      "name": "Sem overflow desktop 404.html",
+      "passed": true,
+      "detail": "scroll=1440 client=1440"
+    },
+    {
+      "name": "Início carrega 27 UFs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Total nacional de escolas",
+      "passed": true,
+      "detail": "181.065"
+    },
+    {
+      "name": "Total nacional de matrículas",
+      "passed": true,
+      "detail": "47.088.922"
+    },
+    {
+      "name": "Total nacional de denúncias",
+      "passed": true,
+      "detail": "294.592"
+    },
+    {
+      "name": "Seletor contém 27 UFs",
+      "passed": true,
+      "detail": "27"
+    },
+    {
+      "name": "Troca de UF atualiza painel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "IVPD selecionado é numérico",
+      "passed": true,
+      "detail": "52,1"
+    },
+    {
+      "name": "Cartograma possui 27 UFs",
+      "passed": true,
+      "detail": "27"
+    },
+    {
+      "name": "Cartograma atualiza UF",
+      "passed": true,
+      "detail": "Distrito Federal (DF)"
+    },
+    {
+      "name": "Comparação gera três cartões",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "name": "Comparação gera três linhas",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "name": "Download da comparação",
+      "passed": true,
+      "detail": "bytes=1844"
+    },
+    {
+      "name": "Download Excel por UF",
+      "passed": true,
+      "detail": "bytes=1017"
+    },
+    {
+      "name": "Tabela contém 27 UFs",
+      "passed": true,
+      "detail": "27"
+    },
+    {
+      "name": "Dados apresenta nove recursos",
+      "passed": true,
+      "detail": "9"
+    },
+    {
+      "name": "Filtro por API",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "Filtro por CSV",
+      "passed": true,
+      "detail": "2"
+    },
+    {
+      "name": "Busca textual",
+      "passed": true,
+      "detail": "1"
+    },
+    {
+      "name": "Limpar filtros restaura recursos",
+      "passed": true,
+      "detail": "9"
+    },
+    {
+      "name": "Fórmula metodológica publicada",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sumário metodológico possui seis links",
+      "passed": true,
+      "detail": "6"
+    },
+    {
+      "name": "Governança possui cinco salvaguardas",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "Accordion de governança abre",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Alto contraste aplicado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Fonte ampliada aplicada",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Links sublinhados aplicados",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Movimento reduzido aplicado",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preferências persistem após reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sem overflow móvel index.html",
+      "passed": true,
+      "detail": "scroll=390 client=390"
+    },
+    {
+      "name": "Sem overflow móvel painel.html",
+      "passed": true,
+      "detail": "scroll=390 client=390"
+    },
+    {
+      "name": "Sem overflow móvel dados.html",
+      "passed": true,
+      "detail": "scroll=390 client=390"
+    },
+    {
+      "name": "Sem overflow móvel metodologia.html",
+      "passed": true,
+      "detail": "scroll=390 client=390"
+    },
+    {
+      "name": "Sem overflow móvel governanca.html",
+      "passed": true,
+      "detail": "scroll=390 client=390"
+    },
+    {
+      "name": "Sem overflow móvel acessibilidade.html",
+      "passed": true,
+      "detail": "scroll=390 client=390"
+    },
+    {
+      "name": "Menu móvel abre",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Menu móvel expõe seis links",
+      "passed": true,
+      "detail": "6"
+    },
+    {
+      "name": "Console móvel sem erros",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Console desktop sem erros",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sem requisições falhas",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

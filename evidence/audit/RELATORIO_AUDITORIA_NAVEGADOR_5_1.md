@@ -1,0 +1,76 @@
+# Auditoria funcional por navegador — Protege.Dados 5.1
+
+- Execução UTC: 2026-07-13T18:42:40.991392+00:00
+- Verificações: 67
+- Aprovadas: 67
+- Falhas: 0
+
+## Resultado detalhado
+
+- ✅ HTTP index.html — status=200
+- ✅ Título index.html — Início — Protege.Dados
+- ✅ Main index.html — main#conteudo
+- ✅ Sem overflow desktop index.html — scroll=1440 client=1440
+- ✅ HTTP painel.html — status=200
+- ✅ Título painel.html — Painel e comparador — Protege.Dados
+- ✅ Main painel.html — main#conteudo
+- ✅ Sem overflow desktop painel.html — scroll=1440 client=1440
+- ✅ HTTP dados.html — status=200
+- ✅ Título dados.html — Dados e API — Protege.Dados
+- ✅ Main dados.html — main#conteudo
+- ✅ Sem overflow desktop dados.html — scroll=1440 client=1440
+- ✅ HTTP metodologia.html — status=200
+- ✅ Título metodologia.html — Metodologia — Protege.Dados
+- ✅ Main metodologia.html — main#conteudo
+- ✅ Sem overflow desktop metodologia.html — scroll=1440 client=1440
+- ✅ HTTP governanca.html — status=200
+- ✅ Título governanca.html — Governança — Protege.Dados
+- ✅ Main governanca.html — main#conteudo
+- ✅ Sem overflow desktop governanca.html — scroll=1440 client=1440
+- ✅ HTTP acessibilidade.html — status=200
+- ✅ Título acessibilidade.html — Acessibilidade — Protege.Dados
+- ✅ Main acessibilidade.html — main#conteudo
+- ✅ Sem overflow desktop acessibilidade.html — scroll=1440 client=1440
+- ✅ HTTP 404.html — status=200
+- ✅ Título 404.html — Página não encontrada — Protege.Dados
+- ✅ Main 404.html — main#conteudo
+- ✅ Sem overflow desktop 404.html — scroll=1440 client=1440
+- ✅ Início carrega 27 UFs
+- ✅ Total nacional de escolas — 181.065
+- ✅ Total nacional de matrículas — 47.088.922
+- ✅ Total nacional de denúncias — 294.592
+- ✅ Seletor contém 27 UFs — 27
+- ✅ Troca de UF atualiza painel
+- ✅ IVPD selecionado é numérico — 52,1
+- ✅ Cartograma possui 27 UFs — 27
+- ✅ Cartograma atualiza UF — Distrito Federal (DF)
+- ✅ Comparação gera três cartões — 3
+- ✅ Comparação gera três linhas — 3
+- ✅ Download da comparação — bytes=1844
+- ✅ Download Excel por UF — bytes=1017
+- ✅ Tabela contém 27 UFs — 27
+- ✅ Dados apresenta nove recursos — 9
+- ✅ Filtro por API — 5
+- ✅ Filtro por CSV — 2
+- ✅ Busca textual — 1
+- ✅ Limpar filtros restaura recursos — 9
+- ✅ Fórmula metodológica publicada
+- ✅ Sumário metodológico possui seis links — 6
+- ✅ Governança possui cinco salvaguardas — 5
+- ✅ Accordion de governança abre
+- ✅ Alto contraste aplicado
+- ✅ Fonte ampliada aplicada
+- ✅ Links sublinhados aplicados
+- ✅ Movimento reduzido aplicado
+- ✅ Preferências persistem após reload
+- ✅ Sem overflow móvel index.html — scroll=390 client=390
+- ✅ Sem overflow móvel painel.html — scroll=390 client=390
+- ✅ Sem overflow móvel dados.html — scroll=390 client=390
+- ✅ Sem overflow móvel metodologia.html — scroll=390 client=390
+- ✅ Sem overflow móvel governanca.html — scroll=390 client=390
+- ✅ Sem overflow móvel acessibilidade.html — scroll=390 client=390
+- ✅ Menu móvel abre
+- ✅ Menu móvel expõe seis links — 6
+- ✅ Console móvel sem erros
+- ✅ Console desktop sem erros
+- ✅ Sem requisições falhas

@@ -1,6 +1,6 @@
 [project]
 name = "protege-dados"
-version = "1.0.0"
+version = "5.1.0"
 description = "Pipeline reproduzível e painel aberto da IVPD"
 requires-python = ">=3.11"
 dependencies = [
@@ -19,3 +19,6 @@ protege-dados = "protege_dados.cli:main"
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+[project.optional-dependencies]
+audit = ["playwright>=1.49"]

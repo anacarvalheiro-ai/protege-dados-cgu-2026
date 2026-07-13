@@ -1,4 +1,4 @@
-name: Qualidade Protege.Dados 5.0
+name: Qualidade Protege.Dados 5.1
 on:
   pull_request:
   workflow_dispatch:
@@ -18,5 +18,6 @@ jobs:
           python -m pip install -e .
       - run: python scripts/validate_release.py
       - run: python scripts/validate_portal.py
+      - run: node --check web/assets/site.js
       - run: node --check web/assets/app.js
       - run: python -m pytest -q

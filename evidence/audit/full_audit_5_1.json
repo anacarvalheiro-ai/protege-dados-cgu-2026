@@ -1,0 +1,67 @@
+{
+  "project": "Protege.Dados",
+  "version": "5.1",
+  "executed_at_utc": "2026-07-13T18:44:01.724309+00:00",
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Validação dos dados e da release",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "scripts/validate_release.py"
+      ],
+      "returncode": 0,
+      "output": "VALIDAÇÃO APROVADA — PROTEGE.DADOS 5.1 | 162 verificações"
+    },
+    {
+      "name": "Validação estrutural do portal",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "scripts/validate_portal.py"
+      ],
+      "returncode": 0,
+      "output": "VALIDAÇÃO DO PORTAL APROVADA — 7 páginas | 173 verificações"
+    },
+    {
+      "name": "Testes unitários Python",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "output": "...                                                                      [100%]\n3 passed in 0.11s"
+    },
+    {
+      "name": "Sintaxe JavaScript do site",
+      "command": [
+        "node",
+        "--check",
+        "web/assets/site.js"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "name": "Sintaxe JavaScript do painel",
+      "command": [
+        "node",
+        "--check",
+        "web/assets/app.js"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "name": "Teste do atualizador executável",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "scripts/test_updater.py"
+      ],
+      "returncode": 0,
+      "output": "==============================================================\nATUALIZADOR PROFISSIONAL — PROTEGE.DADOS 5.1\nOrigem: /mnt/data/Protege_Dados_5_1_MASTER_ATUALIZACAO\nDestino: /tmp/protege-updater-test-xqkjw27s/protege-dados-cgu-2026\n==============================================================\nBackup criado: /tmp/protege-updater-test-xqkjw27s/Backups_Protege_Dados/Protege_Dados_antes_5_1_20260713-184354.zip\nPasta atualizada: .github\nPasta atualizada: config\nPasta atualizada: data\nPasta atualizada: docs\nPasta atualizada: evidence\nPasta atualizada: scripts\nPasta atualizada: src\nPasta atualizada: tests\nPasta atualizada: web\nArquivo atualizado: pyproject.toml\nArquivo atualizado: LICENSE\nArquivo atualizado: DATA_LICENSE.md\nArquivo atualizado: SECURITY.md\nArquivo atualizado: CONTRIBUTING.md\nArquivo atualizado: CODE_OF_CONDUCT.md\nArquivo atualizado: CHANGELOG.md\nArquivo atualizado: CITATION.cff\nArquivo atualizado: .gitignore\nArquivo atualizado: README.md\nArquivo atualizado: INSTRUCOES_ATUALIZACAO_5_1.txt\nArquivo atualizado: ATUALIZAR_PROTEGE_DADOS_5_1.bat\nArquivo atualizado: Atualizar_Protege_Dados_5_1.ps1\nArquivo atualizado: atualizar_protege_dados_5_1.py\nArquivo atualizado: ABRIR_PREVIA_LOCAL.bat\nArquivo atualizado: PUBLICAR_NO_GITHUB_5_1.bat\nArquivo atualizado: Publicar_No_GitHub_5_1.ps1\nArquivo atualizado: PUBLICAR_NO_GITHUB.md\nArquivo atualizado: LEIA_PRIMEIRO.txt\n$ /opt/pyvenv/bin/python scripts/validate_release.py\nVALIDAÇÃO APROVADA — PROTEGE.DADOS 5.1 | 162 verificações\n$ /opt/pyvenv/bin/python scripts/validate_portal.py\nVALIDAÇÃO DO PORTAL APROVADA — 7 páginas | 173 verificações\n$ /opt/pyvenv/bin/python -m pytest -q\n...                                                                      [100%]\n3 passed in 0.11s\n$ /opt/nvm/versions/node/v22.16.0/bin/node --check web/assets/site.js\n$ /opt/nvm/versions/node/v22.16.0/bin/node --check web/assets/app.js\nGit não disponível ou pasta não é um repositório; commit não executado.\nPROTEGE.DADOS 5.1 ATUALIZADO E VALIDADO COM SUCESSO.\nLog: /tmp/protege-updater-test-xqkjw27s/protege-dados-cgu-2026/logs/atualizacao-5-1-20260713-184354.log\n\nOK — versao_5_1\nOK — site_js\nOK — arquivo_obsoleto_removido\nOK — log_criado\nOK — backup_criado\nTESTE DO ATUALIZADOR APROVADO — 5/5 verificações"
+    }
+  ]
+}

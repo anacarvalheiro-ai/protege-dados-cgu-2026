@@ -1,0 +1,29 @@
+PROTEGE.DADOS 5.1 — ATUALIZAÇÃO PROFISSIONAL
+
+ARQUIVO PRINCIPAL
+ATUALIZAR_PROTEGE_DADOS_5_1.bat
+
+COMO ATUALIZAR
+1. Extraia todo o conteúdo do ZIP em uma pasta comum.
+2. Dê dois cliques em ATUALIZAR_PROTEGE_DADOS_5_1.bat.
+3. Confirme ou informe o caminho do repositório protege-dados-cgu-2026.
+4. O atualizador criará um backup ZIP e, quando houver Git, uma branch local de segurança.
+5. Os arquivos serão copiados de forma controlada.
+6. Serão executados validadores, testes Python e verificações de JavaScript.
+7. Ao final, o programa perguntará separadamente se deve criar commit e se deve enviar ao GitHub.
+
+PRÉVIA LOCAL
+Execute ABRIR_PREVIA_LOCAL.bat e abra http://localhost:8765/.
+Para encerrar, pressione CTRL+C na janela do servidor.
+
+PUBLICAÇÃO SEPARADA
+Dentro do repositório atualizado, execute PUBLICAR_NO_GITHUB_5_1.bat.
+A publicação só ocorre após você digitar exatamente PUBLICAR.
+
+RELATÓRIOS
+- evidence/audit/RELATORIO_CONSOLIDADO_AUDITORIA_5_1.md
+- evidence/audit/RELATORIO_AUDITORIA_NAVEGADOR_5_1.md
+- evidence/screenshots/
+
+PORTAL
+https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/

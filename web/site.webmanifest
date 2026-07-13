@@ -1,0 +1,10 @@
+{
+  "name": "Protege.Dados",
+  "short_name": "Protege.Dados",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f9fd",
+  "theme_color": "#062e5b",
+  "description": "Ecossistema público de inteligência territorial para proteção digital infantojuvenil.",
+  "icons": []
+}

@@ -1,11 +1,9 @@
-PROTEGE.DADOS 5.2 — PUBLICAÇÃO
+PROTEGE.DADOS 5.1 — LEIA PRIMEIRO
 
-1. Extraia TODO o conteúdo deste ZIP.
-2. Abra a pasta extraída.
-3. Dê dois cliques em PUBLICAR_AGORA.bat.
-4. Aguarde a mensagem “PUBLICAÇÃO 5.2 ENVIADA AO GITHUB”.
-5. No GitHub, aguarde validate e deploy ficarem verdes.
-6. Abra o portal em janela anônima ou use Ctrl+Shift+R.
+1. Extraia todo o ZIP.
+2. Execute ATUALIZAR_PROTEGE_DADOS_5_1.bat.
+3. Confira a prévia com ABRIR_PREVIA_LOCAL.bat.
+4. Publique somente depois da revisão, usando PUBLICAR_NO_GITHUB_5_1.bat.
+5. No GitHub, aguarde os workflows de qualidade e deploy ficarem verdes.
 
-Portal:
-https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
+Consulte INSTRUCOES_ATUALIZACAO_5_1.txt para o procedimento completo.

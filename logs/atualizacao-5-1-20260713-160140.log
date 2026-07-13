@@ -1,0 +1,86 @@
+==============================================================
+ATUALIZADOR PROFISSIONAL — PROTEGE.DADOS 5.1
+Origem: C:\Users\anaca\Downloads\Protege_Dados_5_1_MASTER_ATUALIZACAO\Protege_Dados_5_1_MASTER_ATUALIZACAO
+Destino: C:\Users\anaca\Documents\ProtegeDadosAtualizacao\protege-dados-cgu-2026
+==============================================================
+Backup criado: C:\Users\anaca\Documents\ProtegeDadosAtualizacao\Backups_Protege_Dados\Protege_Dados_antes_5_1_20260713-160140.zip
+Pasta atualizada: .github
+Pasta atualizada: config
+Pasta atualizada: data
+Pasta atualizada: docs
+Pasta atualizada: evidence
+Pasta atualizada: scripts
+Pasta atualizada: src
+Pasta atualizada: tests
+Pasta atualizada: web
+Arquivo atualizado: pyproject.toml
+Arquivo atualizado: LICENSE
+Arquivo atualizado: DATA_LICENSE.md
+Arquivo atualizado: SECURITY.md
+Arquivo atualizado: CONTRIBUTING.md
+Arquivo atualizado: CODE_OF_CONDUCT.md
+Arquivo atualizado: CHANGELOG.md
+Arquivo atualizado: CITATION.cff
+Arquivo atualizado: .gitignore
+Arquivo atualizado: README.md
+Arquivo atualizado: INSTRUCOES_ATUALIZACAO_5_1.txt
+Arquivo atualizado: ATUALIZAR_PROTEGE_DADOS_5_1.bat
+Arquivo atualizado: Atualizar_Protege_Dados_5_1.ps1
+Arquivo atualizado: atualizar_protege_dados_5_1.py
+Arquivo atualizado: ABRIR_PREVIA_LOCAL.bat
+Arquivo atualizado: PUBLICAR_NO_GITHUB_5_1.bat
+Arquivo atualizado: Publicar_No_GitHub_5_1.ps1
+Arquivo atualizado: PUBLICAR_NO_GITHUB.md
+Arquivo atualizado: LEIA_PRIMEIRO.txt
+$ C:\Users\anaca\AppData\Local\Programs\Python\Python313\python.exe -m pip install -e .
+Obtaining file:///C:/Users/anaca/Documents/ProtegeDadosAtualizacao/protege-dados-cgu-2026
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: pandas>=2.2 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (3.0.3)
+Requirement already satisfied: numpy>=1.26 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (2.5.1)
+Requirement already satisfied: openpyxl>=3.1 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (3.1.5)
+Requirement already satisfied: pyarrow>=16 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (25.0.0)
+Requirement already satisfied: pyyaml>=6.0 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (6.0.3)
+Requirement already satisfied: pydantic>=2.7 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (2.13.4)
+Requirement already satisfied: pytest>=8.0 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from protege-dados==5.1.0) (8.4.2)
+Requirement already satisfied: et-xmlfile in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from openpyxl>=3.1->protege-dados==5.1.0) (2.0.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pandas>=2.2->protege-dados==5.1.0) (2.9.0.post0)
+Requirement already satisfied: tzdata in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pandas>=2.2->protege-dados==5.1.0) (2026.3)
+Requirement already satisfied: annotated-types>=0.6.0 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic>=2.7->protege-dados==5.1.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.4 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic>=2.7->protege-dados==5.1.0) (2.46.4)
+Requirement already satisfied: typing-extensions>=4.14.1 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic>=2.7->protege-dados==5.1.0) (4.16.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic>=2.7->protege-dados==5.1.0) (0.4.2)
+Requirement already satisfied: colorama>=0.4 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pytest>=8.0->protege-dados==5.1.0) (0.4.6)
+Requirement already satisfied: iniconfig>=1 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pytest>=8.0->protege-dados==5.1.0) (2.3.0)
+Requirement already satisfied: packaging>=20 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pytest>=8.0->protege-dados==5.1.0) (26.2)
+Requirement already satisfied: pluggy<2,>=1.5 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pytest>=8.0->protege-dados==5.1.0) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pytest>=8.0->protege-dados==5.1.0) (2.20.0)
+Requirement already satisfied: six>=1.5 in C:\Users\anaca\AppData\Local\Programs\Python\Python313\Lib\site-packages (from python-dateutil>=2.8.2->pandas>=2.2->protege-dados==5.1.0) (1.17.0)
+Building wheels for collected packages: protege-dados
+  Building editable for protege-dados (pyproject.toml): started
+  Building editable for protege-dados (pyproject.toml): finished with status 'done'
+  Created wheel for protege-dados: filename=protege_dados-5.1.0-0.editable-py3-none-any.whl size=2415 sha256=2a82524923afa6befa09f6ce85978d9147156b1cddaa4a06779d490912b19de4
+  Stored in directory: C:\Users\anaca\AppData\Local\Temp\pip-ephem-wheel-cache-2mrlb4j6\wheels\de\b9\2d\f09a6a4604152dad4d0ae48f8ec6dec3f69c9be0436ace8bd8
+Successfully built protege-dados
+Installing collected packages: protege-dados
+  Attempting uninstall: protege-dados
+    Found existing installation: protege-dados 1.0.0
+    Uninstalling protege-dados-1.0.0:
+      Successfully uninstalled protege-dados-1.0.0
+Successfully installed protege-dados-5.1.0
+$ C:\Users\anaca\AppData\Local\Programs\Python\Python313\python.exe scripts/validate_release.py
+VALIDAÇÃO APROVADA — PROTEGE.DADOS 5.1 | 162 verificações
+$ C:\Users\anaca\AppData\Local\Programs\Python\Python313\python.exe scripts/validate_portal.py
+VALIDAÇÃO DO PORTAL APROVADA — 7 páginas | 173 verificações
+$ C:\Users\anaca\AppData\Local\Programs\Python\Python313\python.exe -m pytest -q
+...                                                                      [100%]
+3 passed in 0.95s
+AVISO: Node.js não encontrado; o GitHub Actions fará a verificação JavaScript.
+AVISO: Playwright não instalado. O pacote contém auditoria funcional previamente aprovada.
+$ C:\Program Files\Git\cmd\git.EXE add --all
