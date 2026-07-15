@@ -746,5 +746,248 @@
 })();
 </script>
 <!-- FEEDBACK-3-CANAIS:FIM -->
+<!-- FEEDBACK-PROTEGE-PRO:INICIO -->
+<style id="feedback-protege-pro-style">
+  .pd-feedback-modal[hidden]{display:none!important}
+  .pd-feedback-modal{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:1rem;background:rgba(3,22,40,.78)}
+  .pd-feedback-dialog{width:min(760px,100%);max-height:92vh;overflow:auto;background:#fff;color:#10283f;border-radius:18px;box-shadow:0 28px 90px rgba(0,0,0,.3);padding:clamp(1.25rem,3vw,2rem)}
+  .pd-feedback-dialog h2{margin:0 0 .35rem;color:#0a3156}
+  .pd-feedback-intro{margin:0 0 1.2rem;color:#526779}
+  .pd-feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  .pd-field{display:grid;gap:.35rem}
+  .pd-field--full{grid-column:1/-1}
+  .pd-field label{font-weight:750;color:#0a3156}
+  .pd-field input,.pd-field select,.pd-field textarea{width:100%;box-sizing:border-box;min-height:46px;border:1px solid #a9c2d5;border-radius:10px;padding:.72rem .8rem;font:inherit;color:#10283f;background:#fff}
+  .pd-field textarea{min-height:120px;resize:vertical}
+  .pd-field input:focus,.pd-field select:focus,.pd-field textarea:focus{outline:3px solid #f2c94c;outline-offset:2px;border-color:#0e73b8}
+  .pd-feedback-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.2rem}
+  .pd-feedback-btn{border:0;border-radius:10px;padding:.82rem 1rem;min-height:48px;font:inherit;font-weight:800;cursor:pointer;text-align:center;text-decoration:none}
+  .pd-feedback-btn--github{background:#24292f;color:#fff}
+  .pd-feedback-btn--email{background:#0e73b8;color:#fff}
+  .pd-feedback-btn--whatsapp{background:#167d4f;color:#fff}
+  .pd-feedback-btn--secondary{background:#edf3f7;color:#0a3156}
+  .pd-feedback-btn:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
+  .pd-feedback-footer{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.8rem}
+  .pd-feedback-note{margin-top:1rem;padding:.9rem 1rem;border-left:4px solid #d5a51f;background:#fff5cf;font-size:.92rem}
+  .pd-feedback-fallback{position:fixed;right:1rem;bottom:1rem;z-index:9999;border:0;border-radius:999px;padding:.8rem 1rem;background:#0a3156;color:#fff;font-weight:800;box-shadow:0 10px 35px rgba(0,0,0,.22);cursor:pointer}
+  .pd-feedback-fallback:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
+  body.pd-feedback-open{overflow:hidden}
+  @media(max-width:680px){.pd-feedback-grid{grid-template-columns:1fr}.pd-field--full{grid-column:auto}.pd-feedback-actions{grid-template-columns:1fr}.pd-feedback-fallback{right:.7rem;bottom:.7rem}}
+</style>
+
+<div id="pdFeedbackModal" class="pd-feedback-modal" role="dialog" aria-modal="true" aria-labelledby="pdFeedbackTitle" hidden>
+  <div class="pd-feedback-dialog">
+    <h2 id="pdFeedbackTitle">Registrar feedback</h2>
+    <p class="pd-feedback-intro">
+      Relate uma barreira de acessibilidade, erro de funcionamento, dúvida sobre os dados ou sugestão.
+    </p>
+
+    <form id="pdFeedbackForm">
+      <div class="pd-feedback-grid">
+        <div class="pd-field">
+          <label for="pdNome">Nome</label>
+          <input id="pdNome" autocomplete="name">
+        </div>
+
+        <div class="pd-field">
+          <label for="pdEmail">E-mail para retorno</label>
+          <input id="pdEmail" type="email" autocomplete="email">
+        </div>
+
+        <div class="pd-field">
+          <label for="pdCategoria">Categoria</label>
+          <select id="pdCategoria">
+            <option>Acessibilidade</option>
+            <option>Erro de funcionamento</option>
+            <option>Conteúdo ou metodologia</option>
+            <option>Dados ou indicador</option>
+            <option>Sugestão de melhoria</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="pd-field">
+          <label for="pdTecnologia">Tecnologia assistiva</label>
+          <input id="pdTecnologia" placeholder="Ex.: NVDA, VoiceOver ou nenhuma">
+        </div>
+
+        <div class="pd-field pd-field--full">
+          <label for="pdPagina">Página ou seção</label>
+          <input id="pdPagina" required>
+        </div>
+
+        <div class="pd-field pd-field--full">
+          <label for="pdDescricao">Descreva o problema ou sugestão</label>
+          <textarea id="pdDescricao" required placeholder="Informe o que tentou fazer, o que aconteceu e o comportamento esperado."></textarea>
+        </div>
+      </div>
+
+      <div class="pd-feedback-actions">
+        <button type="button" id="pdEnviarIssue" class="pd-feedback-btn pd-feedback-btn--github">Criar Issue no GitHub</button>
+        <button type="button" id="pdEnviarEmail" class="pd-feedback-btn pd-feedback-btn--email">Enviar por e-mail</button>
+        <button type="button" id="pdEnviarWhatsApp" class="pd-feedback-btn pd-feedback-btn--whatsapp">Enviar por WhatsApp</button>
+      </div>
+
+      <div class="pd-feedback-footer">
+        <button type="button" id="pdCopiarDiagnostico" class="pd-feedback-btn pd-feedback-btn--secondary">Copiar diagnóstico</button>
+        <button type="button" id="pdFecharFeedback" class="pd-feedback-btn pd-feedback-btn--secondary">Cancelar</button>
+      </div>
+
+      <p class="pd-feedback-note">
+        Não informe dados pessoais sensíveis, dados de crianças ou adolescentes. O site não armazena este formulário.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script id="feedback-protege-pro-script">
+(function(){
+  'use strict';
+
+  const EMAIL='anacarvalheiro@gmail.com';
+  const WHATS='5561993506975';
+  const REPO='anacarvalheiro-ai/protege-dados-cgu-2026';
+  const modal=document.getElementById('pdFeedbackModal');
+  let ultimoFoco=null;
+
+  const valor=id=>{
+    const el=document.getElementById(id);
+    return el ? el.value.trim() : '';
+  };
+
+  function obterUF(){
+    const seletores=[
+      'select[id*="uf" i]',
+      'select[name*="uf" i]',
+      'select[aria-label*="unidade federativa" i]'
+    ];
+    for(const seletor of seletores){
+      const el=document.querySelector(seletor);
+      if(el && el.value) return el.value;
+    }
+    return 'Não identificada';
+  }
+
+  function diagnostico(){
+    return {
+      pagina: document.title + ' — ' + location.href,
+      navegador: navigator.userAgent,
+      resolucao: window.innerWidth + ' × ' + window.innerHeight,
+      uf: obterUF(),
+      idioma: navigator.language || 'Não informado',
+      data: new Date().toLocaleString('pt-BR')
+    };
+  }
+
+  function abrir(e){
+    if(e) e.preventDefault();
+    ultimoFoco=document.activeElement;
+    const d=diagnostico();
+    document.getElementById('pdPagina').value=d.pagina;
+    modal.hidden=false;
+    document.body.classList.add('pd-feedback-open');
+    setTimeout(()=>document.getElementById('pdNome').focus(),0);
+  }
+
+  function fechar(){
+    modal.hidden=true;
+    document.body.classList.remove('pd-feedback-open');
+    if(ultimoFoco && typeof ultimoFoco.focus==='function') ultimoFoco.focus();
+  }
+
+  function validar(){
+    if(!valor('pdPagina')){
+      alert('Informe a página ou seção.');
+      document.getElementById('pdPagina').focus();
+      return false;
+    }
+    if(!valor('pdDescricao')){
+      alert('Descreva o problema ou sugestão.');
+      document.getElementById('pdDescricao').focus();
+      return false;
+    }
+    return true;
+  }
+
+  function montarMensagem(){
+    const d=diagnostico();
+    return [
+      'FEEDBACK — PROTEGE.DADOS',
+      '',
+      'Categoria: '+valor('pdCategoria'),
+      'Nome: '+(valor('pdNome')||'Não informado'),
+      'E-mail para retorno: '+(valor('pdEmail')||'Não informado'),
+      'Página/seção: '+valor('pdPagina'),
+      'UF selecionada: '+d.uf,
+      'Tecnologia assistiva: '+(valor('pdTecnologia')||'Não informada'),
+      'Navegador/dispositivo: '+d.navegador,
+      'Resolução da janela: '+d.resolucao,
+      'Idioma: '+d.idioma,
+      '',
+      'Descrição:',
+      valor('pdDescricao'),
+      '',
+      'Data/hora: '+d.data
+    ].join('\n');
+  }
+
+  document.getElementById('pdEnviarIssue').addEventListener('click',()=>{
+    if(!validar()) return;
+    const titulo='[Feedback] '+valor('pdCategoria')+' — '+document.title;
+    const body=montarMensagem()+'\n\n> Não inclua dados pessoais sensíveis ou dados de crianças e adolescentes.';
+    const url='https://github.com/'+REPO+'/issues/new?title='+encodeURIComponent(titulo)+'&body='+encodeURIComponent(body);
+    window.open(url,'_blank','noopener,noreferrer');
+  });
+
+  document.getElementById('pdEnviarEmail').addEventListener('click',()=>{
+    if(!validar()) return;
+    location.href='mailto:'+EMAIL+
+      '?subject='+encodeURIComponent('Feedback Protege.Dados — '+valor('pdCategoria'))+
+      '&body='+encodeURIComponent(montarMensagem());
+  });
+
+  document.getElementById('pdEnviarWhatsApp').addEventListener('click',()=>{
+    if(!validar()) return;
+    window.open('https://wa.me/'+WHATS+'?text='+encodeURIComponent(montarMensagem()),'_blank','noopener,noreferrer');
+  });
+
+  document.getElementById('pdCopiarDiagnostico').addEventListener('click',async()=>{
+    if(!validar()) return;
+    try{
+      await navigator.clipboard.writeText(montarMensagem());
+      alert('Diagnóstico copiado.');
+    }catch(e){
+      alert('Não foi possível copiar automaticamente. Use o canal de e-mail, WhatsApp ou GitHub.');
+    }
+  });
+
+  document.getElementById('pdFecharFeedback').addEventListener('click',fechar);
+  modal.addEventListener('click',e=>{if(e.target===modal)fechar()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)fechar()});
+
+  const candidatos=Array.from(document.querySelectorAll('a,button'));
+  let encontrados=0;
+  candidatos.forEach(el=>{
+    const t=(el.textContent||'').trim().toLowerCase();
+    if(t==='enviar feedback'||t.includes('registrar feedback')||el.hasAttribute('data-feedback-protege')){
+      encontrados++;
+      el.setAttribute('data-feedback-protege','true');
+      el.setAttribute('aria-haspopup','dialog');
+      el.addEventListener('click',abrir);
+    }
+  });
+
+  if(!encontrados){
+    const fallback=document.createElement('button');
+    fallback.type='button';
+    fallback.className='pd-feedback-fallback';
+    fallback.textContent='Enviar feedback';
+    fallback.setAttribute('aria-haspopup','dialog');
+    fallback.addEventListener('click',abrir);
+    document.body.appendChild(fallback);
+  }
+})();
+</script>
+<!-- FEEDBACK-PROTEGE-PRO:FIM -->
 </body>
     </html>
