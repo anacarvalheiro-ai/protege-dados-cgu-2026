@@ -36,7 +36,8 @@
           <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menu">☰</button>
           <div id="nav-links" class="nav-links"><a href="index.html" aria-current="page">Início</a><a href="painel.html">Painel e comparador</a><a href="dados.html">Dados e API</a><a href="metodologia.html">Metodologia</a><a href="governanca.html">Governança</a><a href="acessibilidade.html">Acessibilidade</a></div>
         </div>
-      </nav>
+        <a href="#documentos-ivpd">Documentos IVPD</a>
+</nav>
       <main id="conteudo" class="container">
   <div id="portal-status" class="notice" role="status" aria-live="polite">Carregando os dados das 27 UFs...</div>
   <section class="section">
@@ -58,6 +59,60 @@
     <article class="feature-card"><div class="icon-title"><span class="icon-chip" aria-hidden="true">03</span><div><h3>Reprodutibilidade</h3><p>Código, dados derivados, testes e histórico de versões abertos.</p></div></div></article>
   </section>
   <section class="section card"><div class="section-head"><p class="eyebrow">Leitura responsável</p><h2>O que a IVPD representa</h2></div><p>A IVPD é experimental. Não constitui ranking, não mede prevalência real, não identifica pessoas e não realiza decisões automatizadas. Denúncias são registros administrativos sujeitos a subnotificação, cobertura e diferenças de acesso aos canais.</p></section>
+<!-- DOCUMENTOS-IVPD:INICIO -->
+<section id="documentos-ivpd" class="section documents-section" aria-labelledby="documentos-ivpd-title">
+  <div class="container">
+    <p class="eyebrow">TRANSPARÊNCIA METODOLÓGICA</p>
+    <h2 id="documentos-ivpd-title">Entenda a metodologia e interprete os indicadores</h2>
+    <p class="section-intro">
+      Consulte os documentos oficiais do Protege.Dados para compreender o cálculo do IVPD,
+      interpretar os resultados em linguagem acessível e conhecer limites, salvaguardas e
+      orientações de uso responsável.
+    </p>
+
+    <div class="cards documents-grid">
+      <article class="card document-card">
+        <p class="document-tag">DOCUMENTO TÉCNICO</p>
+        <h3>Metodologia de cálculo do IVPD</h3>
+        <p>Fórmulas, pesos, normalização robusta, programação em Python, validação e pipeline de dados.</p>
+        <a class="button document-link" href="./documentos/metodologia-calculo-ivpd.pdf"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Abrir Metodologia de cálculo do IVPD em PDF">
+          Abrir metodologia completa
+        </a>
+      </article>
+
+      <article class="card document-card">
+        <p class="document-tag">LEITURA ACESSÍVEL</p>
+        <h3>Interpretação pública dos indicadores</h3>
+        <p>Explicação direta dos números do painel, com exemplos e advertências para evitar leituras incorretas.</p>
+        <a class="button document-link" href="./documentos/interpretacao-publica-indicadores-ivpd.pdf"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Abrir interpretação pública dos indicadores em PDF">
+          Entender os números do painel
+        </a>
+      </article>
+
+      <article class="card document-card">
+        <p class="document-tag">GUIA COMPLETO</p>
+        <h3>Guia completo de interpretação</h3>
+        <p>Guia institucional para cidadãos, famílias, gestores, escolas, OSCs, imprensa e pesquisadores.</p>
+        <a class="button document-link" href="./documentos/guia-completo-interpretacao-indicadores.pdf"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Abrir Guia completo de interpretação dos indicadores em PDF">
+          Consultar guia completo
+        </a>
+      </article>
+    </div>
+
+    <aside class="responsible-reading" aria-label="Orientação de leitura responsável">
+      <strong>Leitura responsável:</strong>
+      o IVPD é experimental, não mede pessoas, não representa percentual de crianças em risco,
+      não constitui ranking absoluto e não realiza decisões automatizadas.
+    </aside>
+  </div>
+</section>
+<!-- DOCUMENTOS-IVPD:FIM -->
 </main>
 
       <footer class="footer">
