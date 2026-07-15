@@ -123,57 +123,118 @@
       </footer>
       <script src="assets/site.js?v=5.1.0" defer></script><script src="assets/app.js?v=5.1.0" defer></script>
     
-<!-- FEEDBACK-PROTEGE-PRO:INICIO -->
-<style id="feedback-protege-pro-style">
-  .pd-feedback-modal[hidden]{display:none!important}
-  .pd-feedback-modal{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:1rem;background:rgba(3,22,40,.78)}
-  .pd-feedback-dialog{width:min(760px,100%);max-height:92vh;overflow:auto;background:#fff;color:#10283f;border-radius:18px;box-shadow:0 28px 90px rgba(0,0,0,.3);padding:clamp(1.25rem,3vw,2rem)}
-  .pd-feedback-dialog h2{margin:0 0 .35rem;color:#0a3156}
-  .pd-feedback-intro{margin:0 0 1.2rem;color:#526779}
-  .pd-feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-  .pd-field{display:grid;gap:.35rem}
-  .pd-field--full{grid-column:1/-1}
-  .pd-field label{font-weight:750;color:#0a3156}
-  .pd-field input,.pd-field select,.pd-field textarea{width:100%;box-sizing:border-box;min-height:46px;border:1px solid #a9c2d5;border-radius:10px;padding:.72rem .8rem;font:inherit;color:#10283f;background:#fff}
-  .pd-field textarea{min-height:120px;resize:vertical}
-  .pd-field input:focus,.pd-field select:focus,.pd-field textarea:focus{outline:3px solid #f2c94c;outline-offset:2px;border-color:#0e73b8}
-  .pd-feedback-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.2rem}
-  .pd-feedback-btn{border:0;border-radius:10px;padding:.82rem 1rem;min-height:48px;font:inherit;font-weight:800;cursor:pointer;text-align:center;text-decoration:none}
-  .pd-feedback-btn--github{background:#24292f;color:#fff}
-  .pd-feedback-btn--email{background:#0e73b8;color:#fff}
-  .pd-feedback-btn--whatsapp{background:#167d4f;color:#fff}
-  .pd-feedback-btn--secondary{background:#edf3f7;color:#0a3156}
-  .pd-feedback-btn:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
-  .pd-feedback-footer{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.8rem}
-  .pd-feedback-note{margin-top:1rem;padding:.9rem 1rem;border-left:4px solid #d5a51f;background:#fff5cf;font-size:.92rem}
-  .pd-feedback-fallback{position:fixed;right:1rem;bottom:1rem;z-index:9999;border:0;border-radius:999px;padding:.8rem 1rem;background:#0a3156;color:#fff;font-weight:800;box-shadow:0 10px 35px rgba(0,0,0,.22);cursor:pointer}
-  .pd-feedback-fallback:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
-  body.pd-feedback-open{overflow:hidden}
-  @media(max-width:680px){.pd-feedback-grid{grid-template-columns:1fr}.pd-field--full{grid-column:auto}.pd-feedback-actions{grid-template-columns:1fr}.pd-feedback-fallback{right:.7rem;bottom:.7rem}}
+
+<!-- FEEDBACK-3-CANAIS:INICIO -->
+<style id="pd-feedback-3c-style">
+  .pd3-modal[hidden]{display:none!important}
+  .pd3-modal{
+    position:fixed;inset:0;z-index:999999;
+    display:grid;place-items:center;padding:1rem;
+    background:rgba(4,24,43,.78)
+  }
+  .pd3-dialog{
+    width:min(780px,100%);max-height:92vh;overflow:auto;
+    background:#fff;color:#10283f;border-radius:20px;
+    box-shadow:0 30px 100px rgba(0,0,0,.34);
+    padding:clamp(1.25rem,3vw,2rem)
+  }
+  .pd3-dialog h2{margin:0 0 .4rem;color:#0a3156;font-size:clamp(1.55rem,3vw,2rem)}
+  .pd3-intro{margin:0 0 1.2rem;color:#526779}
+  .pd3-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  .pd3-field{display:grid;gap:.35rem}
+  .pd3-field--full{grid-column:1/-1}
+  .pd3-field label{font-weight:800;color:#0a3156}
+  .pd3-field input,.pd3-field select,.pd3-field textarea{
+    width:100%;box-sizing:border-box;min-height:46px;
+    border:1px solid #a9c2d5;border-radius:10px;
+    padding:.72rem .8rem;font:inherit;color:#10283f;background:#fff
+  }
+  .pd3-field textarea{min-height:125px;resize:vertical}
+  .pd3-field input:focus,.pd3-field select:focus,.pd3-field textarea:focus{
+    outline:3px solid #f2c94c;outline-offset:2px;border-color:#0e73b8
+  }
+  .pd3-options{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:.8rem;margin-top:1.1rem
+  }
+  .pd3-option{
+    position:relative;display:block;cursor:pointer
+  }
+  .pd3-option input{
+    position:absolute;opacity:0;pointer-events:none
+  }
+  .pd3-option-card{
+    display:flex;align-items:flex-start;gap:.65rem;
+    min-height:100%;padding:1rem;border:2px solid #cbdce8;
+    border-radius:14px;background:#f8fbfd;color:#10283f
+  }
+  .pd3-option-dot{
+    width:1.15rem;height:1.15rem;flex:0 0 1.15rem;
+    border:2px solid #0e73b8;border-radius:50%;margin-top:.12rem;
+    box-sizing:border-box;background:#fff
+  }
+  .pd3-option-title{display:block;font-weight:850;color:#0a3156}
+  .pd3-option-help{display:block;margin-top:.2rem;font-size:.88rem;color:#526779}
+  .pd3-option input:checked + .pd3-option-card{
+    border-color:#0e73b8;background:#eaf4fb;
+    box-shadow:0 0 0 3px rgba(14,115,184,.12)
+  }
+  .pd3-option input:checked + .pd3-option-card .pd3-option-dot{
+    box-shadow:inset 0 0 0 4px #fff;background:#0e73b8
+  }
+  .pd3-option input:focus-visible + .pd3-option-card{
+    outline:3px solid #f2c94c;outline-offset:3px
+  }
+  .pd3-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.2rem}
+  .pd3-btn{
+    border:0;border-radius:10px;padding:.82rem 1.05rem;min-height:48px;
+    font:inherit;font-weight:850;cursor:pointer;text-decoration:none
+  }
+  .pd3-btn--primary{background:#0e73b8;color:#fff}
+  .pd3-btn--secondary{background:#edf3f7;color:#0a3156}
+  .pd3-btn:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
+  .pd3-note{
+    margin-top:1rem;padding:.9rem 1rem;border-left:4px solid #d5a51f;
+    background:#fff5cf;font-size:.92rem
+  }
+  .pd3-fallback{
+    position:fixed;right:1rem;bottom:1rem;z-index:9999;
+    border:0;border-radius:999px;padding:.82rem 1rem;
+    background:#0a3156;color:#fff;font-weight:850;
+    box-shadow:0 10px 35px rgba(0,0,0,.22);cursor:pointer
+  }
+  .pd3-fallback:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
+  body.pd3-open{overflow:hidden}
+  @media(max-width:720px){
+    .pd3-grid{grid-template-columns:1fr}
+    .pd3-field--full{grid-column:auto}
+    .pd3-options{grid-template-columns:1fr}
+    .pd3-actions{display:grid;grid-template-columns:1fr}
+  }
 </style>
 
-<div id="pdFeedbackModal" class="pd-feedback-modal" role="dialog" aria-modal="true" aria-labelledby="pdFeedbackTitle" hidden>
-  <div class="pd-feedback-dialog">
-    <h2 id="pdFeedbackTitle">Registrar feedback</h2>
-    <p class="pd-feedback-intro">
-      Relate uma barreira de acessibilidade, erro de funcionamento, dúvida sobre os dados ou sugestão.
+<div id="pd3Modal" class="pd3-modal" role="dialog" aria-modal="true" aria-labelledby="pd3Title" hidden>
+  <div class="pd3-dialog">
+    <h2 id="pd3Title">Encontrou um problema?</h2>
+    <p class="pd3-intro">
+      Registre uma barreira de acessibilidade, erro de funcionamento, dúvida sobre dados ou sugestão de melhoria.
     </p>
 
-    <form id="pdFeedbackForm">
-      <div class="pd-feedback-grid">
-        <div class="pd-field">
-          <label for="pdNome">Nome</label>
-          <input id="pdNome" autocomplete="name">
+    <form id="pd3Form">
+      <div class="pd3-grid">
+        <div class="pd3-field">
+          <label for="pd3Nome">Nome</label>
+          <input id="pd3Nome" autocomplete="name">
         </div>
 
-        <div class="pd-field">
-          <label for="pdEmail">E-mail para retorno</label>
-          <input id="pdEmail" type="email" autocomplete="email">
+        <div class="pd3-field">
+          <label for="pd3EmailRetorno">E-mail para retorno</label>
+          <input id="pd3EmailRetorno" type="email" autocomplete="email">
         </div>
 
-        <div class="pd-field">
-          <label for="pdCategoria">Categoria</label>
-          <select id="pdCategoria">
+        <div class="pd3-field">
+          <label for="pd3Categoria">Categoria</label>
+          <select id="pd3Categoria">
             <option>Acessibilidade</option>
             <option>Erro de funcionamento</option>
             <option>Conteúdo ou metodologia</option>
@@ -183,48 +244,85 @@
           </select>
         </div>
 
-        <div class="pd-field">
-          <label for="pdTecnologia">Tecnologia assistiva</label>
-          <input id="pdTecnologia" placeholder="Ex.: NVDA, VoiceOver ou nenhuma">
+        <div class="pd3-field">
+          <label for="pd3Tecnologia">Tecnologia assistiva</label>
+          <input id="pd3Tecnologia" placeholder="Ex.: NVDA, VoiceOver ou nenhuma">
         </div>
 
-        <div class="pd-field pd-field--full">
-          <label for="pdPagina">Página ou seção</label>
-          <input id="pdPagina" required>
+        <div class="pd3-field pd3-field--full">
+          <label for="pd3Pagina">Página ou seção</label>
+          <input id="pd3Pagina" required>
         </div>
 
-        <div class="pd-field pd-field--full">
-          <label for="pdDescricao">Descreva o problema ou sugestão</label>
-          <textarea id="pdDescricao" required placeholder="Informe o que tentou fazer, o que aconteceu e o comportamento esperado."></textarea>
+        <div class="pd3-field pd3-field--full">
+          <label for="pd3Descricao">Descrição do problema ou sugestão</label>
+          <textarea id="pd3Descricao" required placeholder="Explique o que tentou fazer, o que aconteceu e o que deveria ter acontecido."></textarea>
         </div>
       </div>
 
-      <div class="pd-feedback-actions">
-        <button type="button" id="pdEnviarIssue" class="pd-feedback-btn pd-feedback-btn--github">Criar Issue no GitHub</button>
-        <button type="button" id="pdEnviarEmail" class="pd-feedback-btn pd-feedback-btn--email">Enviar por e-mail</button>
-        <button type="button" id="pdEnviarWhatsApp" class="pd-feedback-btn pd-feedback-btn--whatsapp">Enviar por WhatsApp</button>
+      <fieldset style="border:0;padding:0;margin:1.2rem 0 0">
+        <legend style="font-weight:850;color:#0a3156;margin-bottom:.55rem">
+          Escolha como deseja enviar
+        </legend>
+
+        <div class="pd3-options">
+          <label class="pd3-option">
+            <input type="radio" name="pd3Canal" value="issue" checked>
+            <span class="pd3-option-card">
+              <span class="pd3-option-dot" aria-hidden="true"></span>
+              <span>
+                <span class="pd3-option-title">Criar Issue</span>
+                <span class="pd3-option-help">Registra o relato publicamente no GitHub para acompanhamento técnico.</span>
+              </span>
+            </span>
+          </label>
+
+          <label class="pd3-option">
+            <input type="radio" name="pd3Canal" value="email">
+            <span class="pd3-option-card">
+              <span class="pd3-option-dot" aria-hidden="true"></span>
+              <span>
+                <span class="pd3-option-title">Enviar por e-mail</span>
+                <span class="pd3-option-help">Abre o aplicativo de e-mail com a mensagem preenchida.</span>
+              </span>
+            </span>
+          </label>
+
+          <label class="pd3-option">
+            <input type="radio" name="pd3Canal" value="whatsapp">
+            <span class="pd3-option-card">
+              <span class="pd3-option-dot" aria-hidden="true"></span>
+              <span>
+                <span class="pd3-option-title">Enviar pelo WhatsApp</span>
+                <span class="pd3-option-help">Abre uma conversa com a mensagem pronta para envio.</span>
+              </span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="pd3-actions">
+        <button type="button" id="pd3Continuar" class="pd3-btn pd3-btn--primary">Continuar</button>
+        <button type="button" id="pd3Copiar" class="pd3-btn pd3-btn--secondary">Copiar diagnóstico</button>
+        <button type="button" id="pd3Fechar" class="pd3-btn pd3-btn--secondary">Cancelar</button>
       </div>
 
-      <div class="pd-feedback-footer">
-        <button type="button" id="pdCopiarDiagnostico" class="pd-feedback-btn pd-feedback-btn--secondary">Copiar diagnóstico</button>
-        <button type="button" id="pdFecharFeedback" class="pd-feedback-btn pd-feedback-btn--secondary">Cancelar</button>
-      </div>
-
-      <p class="pd-feedback-note">
-        Não informe dados pessoais sensíveis, dados de crianças ou adolescentes. O site não armazena este formulário.
+      <p class="pd3-note">
+        Não inclua dados pessoais sensíveis nem informações de crianças ou adolescentes.
+        O portal não armazena o conteúdo deste formulário.
       </p>
     </form>
   </div>
 </div>
 
-<script id="feedback-protege-pro-script">
+<script id="pd-feedback-3c-script">
 (function(){
   'use strict';
 
   const EMAIL='anacarvalheiro@gmail.com';
   const WHATS='5561993506975';
   const REPO='anacarvalheiro-ai/protege-dados-cgu-2026';
-  const modal=document.getElementById('pdFeedbackModal');
+  const modal=document.getElementById('pd3Modal');
   let ultimoFoco=null;
 
   const valor=id=>{
@@ -247,106 +345,127 @@
 
   function diagnostico(){
     return {
-      pagina: document.title + ' — ' + location.href,
+      pagina: document.title+' — '+location.href,
       navegador: navigator.userAgent,
-      resolucao: window.innerWidth + ' × ' + window.innerHeight,
+      resolucao: window.innerWidth+' × '+window.innerHeight,
       uf: obterUF(),
       idioma: navigator.language || 'Não informado',
       data: new Date().toLocaleString('pt-BR')
     };
   }
 
-  function abrir(e){
-    if(e) e.preventDefault();
+  function abrir(evento){
+    if(evento) evento.preventDefault();
     ultimoFoco=document.activeElement;
-    const d=diagnostico();
-    document.getElementById('pdPagina').value=d.pagina;
+    document.getElementById('pd3Pagina').value=diagnostico().pagina;
     modal.hidden=false;
-    document.body.classList.add('pd-feedback-open');
-    setTimeout(()=>document.getElementById('pdNome').focus(),0);
+    document.body.classList.add('pd3-open');
+    setTimeout(()=>document.getElementById('pd3Nome').focus(),0);
   }
 
   function fechar(){
     modal.hidden=true;
-    document.body.classList.remove('pd-feedback-open');
+    document.body.classList.remove('pd3-open');
     if(ultimoFoco && typeof ultimoFoco.focus==='function') ultimoFoco.focus();
   }
 
   function validar(){
-    if(!valor('pdPagina')){
+    if(!valor('pd3Pagina')){
       alert('Informe a página ou seção.');
-      document.getElementById('pdPagina').focus();
+      document.getElementById('pd3Pagina').focus();
       return false;
     }
-    if(!valor('pdDescricao')){
+    if(!valor('pd3Descricao')){
       alert('Descreva o problema ou sugestão.');
-      document.getElementById('pdDescricao').focus();
+      document.getElementById('pd3Descricao').focus();
       return false;
     }
     return true;
   }
 
-  function montarMensagem(){
+  function mensagem(){
     const d=diagnostico();
     return [
       'FEEDBACK — PROTEGE.DADOS',
       '',
-      'Categoria: '+valor('pdCategoria'),
-      'Nome: '+(valor('pdNome')||'Não informado'),
-      'E-mail para retorno: '+(valor('pdEmail')||'Não informado'),
-      'Página/seção: '+valor('pdPagina'),
+      'Categoria: '+valor('pd3Categoria'),
+      'Nome: '+(valor('pd3Nome')||'Não informado'),
+      'E-mail para retorno: '+(valor('pd3EmailRetorno')||'Não informado'),
+      'Página/seção: '+valor('pd3Pagina'),
       'UF selecionada: '+d.uf,
-      'Tecnologia assistiva: '+(valor('pdTecnologia')||'Não informada'),
+      'Tecnologia assistiva: '+(valor('pd3Tecnologia')||'Não informada'),
       'Navegador/dispositivo: '+d.navegador,
       'Resolução da janela: '+d.resolucao,
       'Idioma: '+d.idioma,
       '',
       'Descrição:',
-      valor('pdDescricao'),
+      valor('pd3Descricao'),
       '',
       'Data/hora: '+d.data
     ].join('\n');
   }
 
-  document.getElementById('pdEnviarIssue').addEventListener('click',()=>{
-    if(!validar()) return;
-    const titulo='[Feedback] '+valor('pdCategoria')+' — '+document.title;
-    const body=montarMensagem()+'\n\n> Não inclua dados pessoais sensíveis ou dados de crianças e adolescentes.';
-    const url='https://github.com/'+REPO+'/issues/new?title='+encodeURIComponent(titulo)+'&body='+encodeURIComponent(body);
-    window.open(url,'_blank','noopener,noreferrer');
-  });
+  function canalSelecionado(){
+    const selecionado=document.querySelector('input[name="pd3Canal"]:checked');
+    return selecionado ? selecionado.value : 'issue';
+  }
 
-  document.getElementById('pdEnviarEmail').addEventListener('click',()=>{
+  document.getElementById('pd3Continuar').addEventListener('click',()=>{
     if(!validar()) return;
-    location.href='mailto:'+EMAIL+
-      '?subject='+encodeURIComponent('Feedback Protege.Dados — '+valor('pdCategoria'))+
-      '&body='+encodeURIComponent(montarMensagem());
-  });
 
-  document.getElementById('pdEnviarWhatsApp').addEventListener('click',()=>{
-    if(!validar()) return;
-    window.open('https://wa.me/'+WHATS+'?text='+encodeURIComponent(montarMensagem()),'_blank','noopener,noreferrer');
-  });
+    const canal=canalSelecionado();
+    const texto=mensagem();
 
-  document.getElementById('pdCopiarDiagnostico').addEventListener('click',async()=>{
-    if(!validar()) return;
-    try{
-      await navigator.clipboard.writeText(montarMensagem());
-      alert('Diagnóstico copiado.');
-    }catch(e){
-      alert('Não foi possível copiar automaticamente. Use o canal de e-mail, WhatsApp ou GitHub.');
+    if(canal==='issue'){
+      const titulo='[Feedback] '+valor('pd3Categoria')+' — '+document.title;
+      const url='https://github.com/'+REPO+'/issues/new?title='+
+        encodeURIComponent(titulo)+'&body='+encodeURIComponent(texto);
+      window.open(url,'_blank','noopener,noreferrer');
+      return;
+    }
+
+    if(canal==='email'){
+      const assunto='Feedback Protege.Dados — '+valor('pd3Categoria');
+      location.href='mailto:'+EMAIL+
+        '?subject='+encodeURIComponent(assunto)+
+        '&body='+encodeURIComponent(texto);
+      return;
+    }
+
+    if(canal==='whatsapp'){
+      window.open(
+        'https://wa.me/'+WHATS+'?text='+encodeURIComponent(texto),
+        '_blank',
+        'noopener,noreferrer'
+      );
     }
   });
 
-  document.getElementById('pdFecharFeedback').addEventListener('click',fechar);
-  modal.addEventListener('click',e=>{if(e.target===modal)fechar()});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)fechar()});
+  document.getElementById('pd3Copiar').addEventListener('click',async()=>{
+    if(!validar()) return;
+    try{
+      await navigator.clipboard.writeText(mensagem());
+      alert('Diagnóstico copiado.');
+    }catch(e){
+      alert('Não foi possível copiar automaticamente.');
+    }
+  });
 
-  const candidatos=Array.from(document.querySelectorAll('a,button'));
+  document.getElementById('pd3Fechar').addEventListener('click',fechar);
+  modal.addEventListener('click',e=>{if(e.target===modal)fechar()});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&!modal.hidden) fechar();
+  });
+
   let encontrados=0;
-  candidatos.forEach(el=>{
-    const t=(el.textContent||'').trim().toLowerCase();
-    if(t==='enviar feedback'||t.includes('registrar feedback')||el.hasAttribute('data-feedback-protege')){
+  Array.from(document.querySelectorAll('a,button')).forEach(el=>{
+    const texto=(el.textContent||'').trim().toLowerCase();
+    if(
+      texto==='enviar feedback' ||
+      texto.includes('registrar feedback') ||
+      texto.includes('encontrou um problema') ||
+      el.hasAttribute('data-feedback-protege')
+    ){
       encontrados++;
       el.setAttribute('data-feedback-protege','true');
       el.setAttribute('aria-haspopup','dialog');
@@ -355,16 +474,16 @@
   });
 
   if(!encontrados){
-    const fallback=document.createElement('button');
-    fallback.type='button';
-    fallback.className='pd-feedback-fallback';
-    fallback.textContent='Enviar feedback';
-    fallback.setAttribute('aria-haspopup','dialog');
-    fallback.addEventListener('click',abrir);
-    document.body.appendChild(fallback);
+    const botao=document.createElement('button');
+    botao.type='button';
+    botao.className='pd3-fallback';
+    botao.textContent='Enviar feedback';
+    botao.setAttribute('aria-haspopup','dialog');
+    botao.addEventListener('click',abrir);
+    document.body.appendChild(botao);
   }
 })();
 </script>
-<!-- FEEDBACK-PROTEGE-PRO:FIM -->
+<!-- FEEDBACK-3-CANAIS:FIM -->
 </body>
     </html>
