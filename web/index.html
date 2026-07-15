@@ -122,5 +122,62 @@
         </div>
       </footer>
       <script src="assets/site.js?v=5.1.0" defer></script><script src="assets/app.js?v=5.1.0" defer></script>
-    </body>
+    <!-- FEEDBACK-PROTEGE:INICIO -->
+<style id="feedback-protege-style">
+.feedback-modal[hidden]{display:none!important}.feedback-modal{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:1rem;background:rgba(3,22,40,.72)}
+.feedback-dialog{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;color:#10283f;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.28);padding:clamp(1.25rem,3vw,2rem)}
+.feedback-dialog h2{margin:0 0 .45rem;color:#0a3156}.feedback-intro{margin:0 0 1.25rem;color:#526779}.feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.feedback-field{display:grid;gap:.35rem}.feedback-field--full{grid-column:1/-1}.feedback-field label{font-weight:750;color:#0a3156}
+.feedback-field input,.feedback-field select,.feedback-field textarea{width:100%;box-sizing:border-box;min-height:46px;border:1px solid #a9c2d5;border-radius:10px;padding:.72rem .8rem;font:inherit}
+.feedback-field textarea{min-height:130px;resize:vertical}.feedback-field input:focus,.feedback-field select:focus,.feedback-field textarea:focus{outline:3px solid #f2c94c;outline-offset:2px;border-color:#0e73b8}
+.feedback-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}.feedback-action{border:0;border-radius:10px;padding:.78rem 1rem;min-height:46px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none}
+.feedback-action--email{background:#0e73b8;color:#fff}.feedback-action--whatsapp{background:#167d4f;color:#fff}.feedback-action--close{background:#edf3f7;color:#0a3156}
+.feedback-action:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}.feedback-note{margin-top:1rem;padding:.85rem 1rem;border-left:4px solid #d5a51f;background:#fff5cf;font-size:.92rem}
+body.feedback-modal-open{overflow:hidden}@media(max-width:640px){.feedback-grid{grid-template-columns:1fr}.feedback-field--full{grid-column:auto}.feedback-action{width:100%}}
+</style>
+
+<div id="feedbackProtegeModal" class="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedbackProtegeTitle" hidden>
+ <div class="feedback-dialog">
+  <h2 id="feedbackProtegeTitle">Registrar feedback de acessibilidade</h2>
+  <p class="feedback-intro">Descreva a barreira. O formulário prepara a mensagem para envio por e-mail ou WhatsApp.</p>
+  <form id="feedbackProtegeForm">
+   <div class="feedback-grid">
+    <div class="feedback-field"><label for="feedbackNome">Nome</label><input id="feedbackNome" autocomplete="name"></div>
+    <div class="feedback-field"><label for="feedbackEmail">Seu e-mail</label><input id="feedbackEmail" type="email" autocomplete="email"></div>
+    <div class="feedback-field"><label for="feedbackPagina">Página ou seção</label><input id="feedbackPagina" required></div>
+    <div class="feedback-field"><label for="feedbackNavegador">Navegador e dispositivo</label><input id="feedbackNavegador"></div>
+    <div class="feedback-field"><label for="feedbackTecnologia">Tecnologia assistiva</label><input id="feedbackTecnologia" placeholder="Ex.: NVDA, VoiceOver ou nenhuma"></div>
+    <div class="feedback-field"><label for="feedbackCategoria">Categoria</label><select id="feedbackCategoria"><option>Acessibilidade</option><option>Erro de funcionamento</option><option>Conteúdo ou metodologia</option><option>Dados ou indicador</option><option>Sugestão</option><option>Outro</option></select></div>
+    <div class="feedback-field feedback-field--full"><label for="feedbackDescricao">Descrição</label><textarea id="feedbackDescricao" required placeholder="Informe o que tentou fazer, o que aconteceu e o comportamento esperado."></textarea></div>
+   </div>
+   <div class="feedback-actions">
+    <button type="button" class="feedback-action feedback-action--email" id="feedbackEnviarEmail">Enviar por e-mail</button>
+    <button type="button" class="feedback-action feedback-action--whatsapp" id="feedbackEnviarWhatsApp">Enviar por WhatsApp</button>
+    <button type="button" class="feedback-action feedback-action--close" id="feedbackFechar">Cancelar</button>
+   </div>
+   <p class="feedback-note">O site não armazena o formulário. Seu aplicativo de e-mail ou WhatsApp será aberto com a mensagem preenchida.</p>
+  </form>
+ </div>
+</div>
+
+<script id="feedback-protege-script">
+(function(){
+ const EMAIL='anacarvalheiro@gmail.com', WHATS='5561993506975';
+ const modal=document.getElementById('feedbackProtegeModal');
+ let ultimoFoco=null;
+ const campo=id=>document.getElementById(id).value.trim();
+ function abrir(e){if(e)e.preventDefault();ultimoFoco=document.activeElement;document.getElementById('feedbackPagina').value=document.title+' — '+location.href;document.getElementById('feedbackNavegador').value=navigator.userAgent;modal.hidden=false;document.body.classList.add('feedback-modal-open');setTimeout(()=>document.getElementById('feedbackNome').focus(),0)}
+ function fechar(){modal.hidden=true;document.body.classList.remove('feedback-modal-open');if(ultimoFoco)ultimoFoco.focus()}
+ function validar(){if(!campo('feedbackPagina')){alert('Informe a página ou seção.');return false}if(!campo('feedbackDescricao')){alert('Descreva a barreira ou sugestão.');return false}return true}
+ function mensagem(){return ['FEEDBACK — PROTEGE.DADOS','','Categoria: '+campo('feedbackCategoria'),'Nome: '+(campo('feedbackNome')||'Não informado'),'E-mail para retorno: '+(campo('feedbackEmail')||'Não informado'),'Página/seção: '+campo('feedbackPagina'),'Navegador/dispositivo: '+campo('feedbackNavegador'),'Tecnologia assistiva: '+(campo('feedbackTecnologia')||'Não informada'),'','Descrição:',campo('feedbackDescricao'),'','Data/hora: '+new Date().toLocaleString('pt-BR')].join('\n')}
+ document.getElementById('feedbackEnviarEmail').onclick=()=>{if(validar())location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Feedback Protege.Dados — '+campo('feedbackCategoria'))+'&body='+encodeURIComponent(mensagem())}
+ document.getElementById('feedbackEnviarWhatsApp').onclick=()=>{if(validar())window.open('https://wa.me/'+WHATS+'?text='+encodeURIComponent(mensagem()),'_blank','noopener,noreferrer')}
+ document.getElementById('feedbackFechar').onclick=fechar;
+ modal.addEventListener('click',e=>{if(e.target===modal)fechar()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)fechar()});
+ Array.from(document.querySelectorAll('a,button')).forEach(el=>{const t=(el.textContent||'').trim().toLowerCase();if(t==='enviar feedback'||t.includes('registrar feedback')||el.hasAttribute('data-feedback-protege')){el.setAttribute('data-feedback-protege','true');el.setAttribute('aria-haspopup','dialog');el.addEventListener('click',abrir)}})
+})();
+</script>
+<!-- FEEDBACK-PROTEGE:FIM -->
+</body>
     </html>
