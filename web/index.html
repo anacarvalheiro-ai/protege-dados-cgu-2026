@@ -124,117 +124,56 @@
       <script src="assets/site.js?v=5.1.0" defer></script><script src="assets/app.js?v=5.1.0" defer></script>
     
 
-<!-- FEEDBACK-3-CANAIS:INICIO -->
-<style id="pd-feedback-3c-style">
-  .pd3-modal[hidden]{display:none!important}
-  .pd3-modal{
-    position:fixed;inset:0;z-index:999999;
-    display:grid;place-items:center;padding:1rem;
-    background:rgba(4,24,43,.78)
-  }
-  .pd3-dialog{
-    width:min(780px,100%);max-height:92vh;overflow:auto;
-    background:#fff;color:#10283f;border-radius:20px;
-    box-shadow:0 30px 100px rgba(0,0,0,.34);
-    padding:clamp(1.25rem,3vw,2rem)
-  }
-  .pd3-dialog h2{margin:0 0 .4rem;color:#0a3156;font-size:clamp(1.55rem,3vw,2rem)}
-  .pd3-intro{margin:0 0 1.2rem;color:#526779}
-  .pd3-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-  .pd3-field{display:grid;gap:.35rem}
-  .pd3-field--full{grid-column:1/-1}
-  .pd3-field label{font-weight:800;color:#0a3156}
-  .pd3-field input,.pd3-field select,.pd3-field textarea{
-    width:100%;box-sizing:border-box;min-height:46px;
-    border:1px solid #a9c2d5;border-radius:10px;
-    padding:.72rem .8rem;font:inherit;color:#10283f;background:#fff
-  }
-  .pd3-field textarea{min-height:125px;resize:vertical}
-  .pd3-field input:focus,.pd3-field select:focus,.pd3-field textarea:focus{
-    outline:3px solid #f2c94c;outline-offset:2px;border-color:#0e73b8
-  }
-  .pd3-options{
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:.8rem;margin-top:1.1rem
-  }
-  .pd3-option{
-    position:relative;display:block;cursor:pointer
-  }
-  .pd3-option input{
-    position:absolute;opacity:0;pointer-events:none
-  }
-  .pd3-option-card{
-    display:flex;align-items:flex-start;gap:.65rem;
-    min-height:100%;padding:1rem;border:2px solid #cbdce8;
-    border-radius:14px;background:#f8fbfd;color:#10283f
-  }
-  .pd3-option-dot{
-    width:1.15rem;height:1.15rem;flex:0 0 1.15rem;
-    border:2px solid #0e73b8;border-radius:50%;margin-top:.12rem;
-    box-sizing:border-box;background:#fff
-  }
-  .pd3-option-title{display:block;font-weight:850;color:#0a3156}
-  .pd3-option-help{display:block;margin-top:.2rem;font-size:.88rem;color:#526779}
-  .pd3-option input:checked + .pd3-option-card{
-    border-color:#0e73b8;background:#eaf4fb;
-    box-shadow:0 0 0 3px rgba(14,115,184,.12)
-  }
-  .pd3-option input:checked + .pd3-option-card .pd3-option-dot{
-    box-shadow:inset 0 0 0 4px #fff;background:#0e73b8
-  }
-  .pd3-option input:focus-visible + .pd3-option-card{
-    outline:3px solid #f2c94c;outline-offset:3px
-  }
-  .pd3-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.2rem}
-  .pd3-btn{
-    border:0;border-radius:10px;padding:.82rem 1.05rem;min-height:48px;
-    font:inherit;font-weight:850;cursor:pointer;text-decoration:none
-  }
-  .pd3-btn--primary{background:#0e73b8;color:#fff}
-  .pd3-btn--secondary{background:#edf3f7;color:#0a3156}
-  .pd3-btn:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
-  .pd3-note{
-    margin-top:1rem;padding:.9rem 1rem;border-left:4px solid #d5a51f;
-    background:#fff5cf;font-size:.92rem
-  }
-  .pd3-fallback{
-    position:fixed;right:1rem;bottom:1rem;z-index:9999;
-    border:0;border-radius:999px;padding:.82rem 1rem;
-    background:#0a3156;color:#fff;font-weight:850;
-    box-shadow:0 10px 35px rgba(0,0,0,.22);cursor:pointer
-  }
-  .pd3-fallback:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
-  body.pd3-open{overflow:hidden}
-  @media(max-width:720px){
-    .pd3-grid{grid-template-columns:1fr}
-    .pd3-field--full{grid-column:auto}
-    .pd3-options{grid-template-columns:1fr}
-    .pd3-actions{display:grid;grid-template-columns:1fr}
-  }
+
+<!-- FEEDBACK-DEFINITIVO:INICIO -->
+<style id="pd-feedback-def-style">
+.pddef-modal[hidden]{display:none!important}
+.pddef-modal{position:fixed;inset:0;z-index:999999;display:grid;place-items:center;padding:1rem;background:rgba(3,22,40,.78)}
+.pddef-dialog{width:min(780px,100%);max-height:92vh;overflow:auto;background:#fff;color:#10283f;border-radius:20px;box-shadow:0 28px 90px rgba(0,0,0,.32);padding:clamp(1.25rem,3vw,2rem)}
+.pddef-dialog h2{margin:0 0 .35rem;color:#0a3156}
+.pddef-intro{margin:0 0 1.15rem;color:#526779}
+.pddef-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.pddef-field{display:grid;gap:.35rem}.pddef-field--full{grid-column:1/-1}
+.pddef-field label{font-weight:800;color:#0a3156}
+.pddef-field input,.pddef-field select,.pddef-field textarea{width:100%;box-sizing:border-box;min-height:46px;border:1px solid #a9c2d5;border-radius:10px;padding:.72rem .8rem;font:inherit;color:#10283f;background:#fff}
+.pddef-field textarea{min-height:125px;resize:vertical}
+.pddef-field input:focus,.pddef-field select:focus,.pddef-field textarea:focus{outline:3px solid #f2c94c;outline-offset:2px;border-color:#0e73b8}
+.pddef-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:1.2rem}
+.pddef-btn{border:0;border-radius:11px;padding:.9rem 1rem;min-height:50px;font:inherit;font-weight:850;cursor:pointer;text-align:center;text-decoration:none}
+.pddef-btn--issue{background:#24292f;color:#fff}
+.pddef-btn--email{background:#0e73b8;color:#fff}
+.pddef-btn--whatsapp{background:#167d4f;color:#fff}
+.pddef-btn--secondary{background:#edf3f7;color:#0a3156}
+.pddef-btn:focus-visible{outline:3px solid #f2c94c;outline-offset:3px}
+.pddef-tools{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.8rem}
+.pddef-note{margin-top:1rem;padding:.9rem 1rem;border-left:4px solid #d5a51f;background:#fff5cf;font-size:.92rem}
+.pddef-test{margin-top:.65rem;font-size:.88rem;color:#526779}
+.pddef-fallback{position:fixed;right:1rem;bottom:1rem;z-index:9999;border:0;border-radius:999px;padding:.82rem 1rem;background:#0a3156;color:#fff;font-weight:850;box-shadow:0 10px 35px rgba(0,0,0,.22);cursor:pointer}
+@media(max-width:720px){.pddef-grid{grid-template-columns:1fr}.pddef-field--full{grid-column:auto}.pddef-buttons{grid-template-columns:1fr}.pddef-tools{display:grid;grid-template-columns:1fr}}
 </style>
 
-<div id="pd3Modal" class="pd3-modal" role="dialog" aria-modal="true" aria-labelledby="pd3Title" hidden>
-  <div class="pd3-dialog">
-    <h2 id="pd3Title">Encontrou um problema?</h2>
-    <p class="pd3-intro">
-      Registre uma barreira de acessibilidade, erro de funcionamento, dúvida sobre dados ou sugestão de melhoria.
+<div id="pddefModal" class="pddef-modal" role="dialog" aria-modal="true" aria-labelledby="pddefTitle" hidden>
+  <div class="pddef-dialog">
+    <h2 id="pddefTitle">Encontrou um problema?</h2>
+    <p class="pddef-intro">
+      Registre uma barreira, erro de funcionamento, dúvida sobre dados ou sugestão.
     </p>
 
-    <form id="pd3Form">
-      <div class="pd3-grid">
-        <div class="pd3-field">
-          <label for="pd3Nome">Nome</label>
-          <input id="pd3Nome" autocomplete="name">
+    <form id="pddefForm">
+      <div class="pddef-grid">
+        <div class="pddef-field">
+          <label for="pddefNome">Nome</label>
+          <input id="pddefNome" autocomplete="name">
         </div>
 
-        <div class="pd3-field">
-          <label for="pd3EmailRetorno">E-mail para retorno</label>
-          <input id="pd3EmailRetorno" type="email" autocomplete="email">
+        <div class="pddef-field">
+          <label for="pddefEmail">E-mail para retorno</label>
+          <input id="pddefEmail" type="email" autocomplete="email">
         </div>
 
-        <div class="pd3-field">
-          <label for="pd3Categoria">Categoria</label>
-          <select id="pd3Categoria">
+        <div class="pddef-field">
+          <label for="pddefCategoria">Categoria</label>
+          <select id="pddefCategoria">
             <option>Acessibilidade</option>
             <option>Erro de funcionamento</option>
             <option>Conteúdo ou metodologia</option>
@@ -244,85 +183,50 @@
           </select>
         </div>
 
-        <div class="pd3-field">
-          <label for="pd3Tecnologia">Tecnologia assistiva</label>
-          <input id="pd3Tecnologia" placeholder="Ex.: NVDA, VoiceOver ou nenhuma">
+        <div class="pddef-field">
+          <label for="pddefTecnologia">Tecnologia assistiva</label>
+          <input id="pddefTecnologia" placeholder="Ex.: NVDA, VoiceOver ou nenhuma">
         </div>
 
-        <div class="pd3-field pd3-field--full">
-          <label for="pd3Pagina">Página ou seção</label>
-          <input id="pd3Pagina" required>
+        <div class="pddef-field pddef-field--full">
+          <label for="pddefPagina">Página ou seção</label>
+          <input id="pddefPagina" required>
         </div>
 
-        <div class="pd3-field pd3-field--full">
-          <label for="pd3Descricao">Descrição do problema ou sugestão</label>
-          <textarea id="pd3Descricao" required placeholder="Explique o que tentou fazer, o que aconteceu e o que deveria ter acontecido."></textarea>
+        <div class="pddef-field pddef-field--full">
+          <label for="pddefDescricao">Descrição</label>
+          <textarea id="pddefDescricao" required placeholder="Explique o que tentou fazer, o que aconteceu e o que deveria ter acontecido."></textarea>
         </div>
       </div>
 
-      <fieldset style="border:0;padding:0;margin:1.2rem 0 0">
-        <legend style="font-weight:850;color:#0a3156;margin-bottom:.55rem">
-          Escolha como deseja enviar
-        </legend>
-
-        <div class="pd3-options">
-          <label class="pd3-option">
-            <input type="radio" name="pd3Canal" value="issue" checked>
-            <span class="pd3-option-card">
-              <span class="pd3-option-dot" aria-hidden="true"></span>
-              <span>
-                <span class="pd3-option-title">Criar Issue</span>
-                <span class="pd3-option-help">Registra o relato publicamente no GitHub para acompanhamento técnico.</span>
-              </span>
-            </span>
-          </label>
-
-          <label class="pd3-option">
-            <input type="radio" name="pd3Canal" value="email">
-            <span class="pd3-option-card">
-              <span class="pd3-option-dot" aria-hidden="true"></span>
-              <span>
-                <span class="pd3-option-title">Enviar por e-mail</span>
-                <span class="pd3-option-help">Abre o aplicativo de e-mail com a mensagem preenchida.</span>
-              </span>
-            </span>
-          </label>
-
-          <label class="pd3-option">
-            <input type="radio" name="pd3Canal" value="whatsapp">
-            <span class="pd3-option-card">
-              <span class="pd3-option-dot" aria-hidden="true"></span>
-              <span>
-                <span class="pd3-option-title">Enviar pelo WhatsApp</span>
-                <span class="pd3-option-help">Abre uma conversa com a mensagem pronta para envio.</span>
-              </span>
-            </span>
-          </label>
-        </div>
-      </fieldset>
-
-      <div class="pd3-actions">
-        <button type="button" id="pd3Continuar" class="pd3-btn pd3-btn--primary">Continuar</button>
-        <button type="button" id="pd3Copiar" class="pd3-btn pd3-btn--secondary">Copiar diagnóstico</button>
-        <button type="button" id="pd3Fechar" class="pd3-btn pd3-btn--secondary">Cancelar</button>
+      <div class="pddef-buttons">
+        <button type="button" id="pddefIssue" class="pddef-btn pddef-btn--issue">Criar Issue</button>
+        <button type="button" id="pddefEmailBtn" class="pddef-btn pddef-btn--email">Enviar por e-mail</button>
+        <button type="button" id="pddefWhatsBtn" class="pddef-btn pddef-btn--whatsapp">Enviar pelo WhatsApp</button>
       </div>
 
-      <p class="pd3-note">
-        Não inclua dados pessoais sensíveis nem informações de crianças ou adolescentes.
-        O portal não armazena o conteúdo deste formulário.
+      <div class="pddef-tools">
+        <button type="button" id="pddefGmailBtn" class="pddef-btn pddef-btn--secondary">Abrir no Gmail Web</button>
+        <button type="button" id="pddefCopiar" class="pddef-btn pddef-btn--secondary">Copiar mensagem</button>
+        <button type="button" id="pddefFechar" class="pddef-btn pddef-btn--secondary">Cancelar</button>
+      </div>
+
+      <p class="pddef-note">
+        O envio por e-mail depende de um aplicativo de e-mail configurado. Caso ele não abra, use “Abrir no Gmail Web”.
+        O WhatsApp abre o aplicativo ou o WhatsApp Web com a mensagem pronta.
       </p>
     </form>
   </div>
 </div>
 
-<script id="pd-feedback-3c-script">
+<script id="pd-feedback-def-script">
 (function(){
   'use strict';
 
   const EMAIL='anacarvalheiro@gmail.com';
   const WHATS='5561993506975';
   const REPO='anacarvalheiro-ai/protege-dados-cgu-2026';
-  const modal=document.getElementById('pd3Modal');
+  const modal=document.getElementById('pddefModal');
   let ultimoFoco=null;
 
   const valor=id=>{
@@ -343,127 +247,123 @@
     return 'Não identificada';
   }
 
-  function diagnostico(){
+  function infoTecnica(){
     return {
       pagina: document.title+' — '+location.href,
       navegador: navigator.userAgent,
       resolucao: window.innerWidth+' × '+window.innerHeight,
       uf: obterUF(),
-      idioma: navigator.language || 'Não informado',
       data: new Date().toLocaleString('pt-BR')
     };
   }
 
-  function abrir(evento){
-    if(evento) evento.preventDefault();
+  function abrir(e){
+    if(e)e.preventDefault();
     ultimoFoco=document.activeElement;
-    document.getElementById('pd3Pagina').value=diagnostico().pagina;
+    document.getElementById('pddefPagina').value=infoTecnica().pagina;
     modal.hidden=false;
-    document.body.classList.add('pd3-open');
-    setTimeout(()=>document.getElementById('pd3Nome').focus(),0);
+    document.body.style.overflow='hidden';
+    setTimeout(()=>document.getElementById('pddefNome').focus(),0);
   }
 
   function fechar(){
     modal.hidden=true;
-    document.body.classList.remove('pd3-open');
-    if(ultimoFoco && typeof ultimoFoco.focus==='function') ultimoFoco.focus();
+    document.body.style.overflow='';
+    if(ultimoFoco && typeof ultimoFoco.focus==='function')ultimoFoco.focus();
   }
 
   function validar(){
-    if(!valor('pd3Pagina')){
+    if(!valor('pddefPagina')){
       alert('Informe a página ou seção.');
-      document.getElementById('pd3Pagina').focus();
       return false;
     }
-    if(!valor('pd3Descricao')){
+    if(!valor('pddefDescricao')){
       alert('Descreva o problema ou sugestão.');
-      document.getElementById('pd3Descricao').focus();
+      document.getElementById('pddefDescricao').focus();
       return false;
     }
     return true;
   }
 
-  function mensagem(){
-    const d=diagnostico();
+  function texto(){
+    const d=infoTecnica();
     return [
       'FEEDBACK — PROTEGE.DADOS',
       '',
-      'Categoria: '+valor('pd3Categoria'),
-      'Nome: '+(valor('pd3Nome')||'Não informado'),
-      'E-mail para retorno: '+(valor('pd3EmailRetorno')||'Não informado'),
-      'Página/seção: '+valor('pd3Pagina'),
+      'Categoria: '+valor('pddefCategoria'),
+      'Nome: '+(valor('pddefNome')||'Não informado'),
+      'E-mail para retorno: '+(valor('pddefEmail')||'Não informado'),
+      'Página/seção: '+valor('pddefPagina'),
       'UF selecionada: '+d.uf,
-      'Tecnologia assistiva: '+(valor('pd3Tecnologia')||'Não informada'),
+      'Tecnologia assistiva: '+(valor('pddefTecnologia')||'Não informada'),
       'Navegador/dispositivo: '+d.navegador,
-      'Resolução da janela: '+d.resolucao,
-      'Idioma: '+d.idioma,
+      'Resolução: '+d.resolucao,
       '',
       'Descrição:',
-      valor('pd3Descricao'),
+      valor('pddefDescricao'),
       '',
       'Data/hora: '+d.data
     ].join('\n');
   }
 
-  function canalSelecionado(){
-    const selecionado=document.querySelector('input[name="pd3Canal"]:checked');
-    return selecionado ? selecionado.value : 'issue';
+  function assunto(){
+    return 'Feedback Protege.Dados — '+valor('pddefCategoria');
   }
 
-  document.getElementById('pd3Continuar').addEventListener('click',()=>{
-    if(!validar()) return;
-
-    const canal=canalSelecionado();
-    const texto=mensagem();
-
-    if(canal==='issue'){
-      const titulo='[Feedback] '+valor('pd3Categoria')+' — '+document.title;
-      const url='https://github.com/'+REPO+'/issues/new?title='+
-        encodeURIComponent(titulo)+'&body='+encodeURIComponent(texto);
-      window.open(url,'_blank','noopener,noreferrer');
-      return;
-    }
-
-    if(canal==='email'){
-      const assunto='Feedback Protege.Dados — '+valor('pd3Categoria');
-      location.href='mailto:'+EMAIL+
-        '?subject='+encodeURIComponent(assunto)+
-        '&body='+encodeURIComponent(texto);
-      return;
-    }
-
-    if(canal==='whatsapp'){
-      window.open(
-        'https://wa.me/'+WHATS+'?text='+encodeURIComponent(texto),
-        '_blank',
-        'noopener,noreferrer'
-      );
-    }
+  document.getElementById('pddefIssue').addEventListener('click',()=>{
+    if(!validar())return;
+    const url='https://github.com/'+REPO+'/issues/new?title='+
+      encodeURIComponent('[Feedback] '+valor('pddefCategoria')+' — '+document.title)+
+      '&body='+encodeURIComponent(texto());
+    window.location.href=url;
   });
 
-  document.getElementById('pd3Copiar').addEventListener('click',async()=>{
-    if(!validar()) return;
+  document.getElementById('pddefEmailBtn').addEventListener('click',()=>{
+    if(!validar())return;
+    const mailto='mailto:'+EMAIL+
+      '?subject='+encodeURIComponent(assunto())+
+      '&body='+encodeURIComponent(texto());
+    window.location.href=mailto;
+  });
+
+  document.getElementById('pddefGmailBtn').addEventListener('click',()=>{
+    if(!validar())return;
+    const gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+
+      encodeURIComponent(EMAIL)+
+      '&su='+encodeURIComponent(assunto())+
+      '&body='+encodeURIComponent(texto());
+    window.location.href=gmail;
+  });
+
+  document.getElementById('pddefWhatsBtn').addEventListener('click',()=>{
+    if(!validar())return;
+    const whats='https://wa.me/'+WHATS+'?text='+encodeURIComponent(texto());
+    window.location.href=whats;
+  });
+
+  document.getElementById('pddefCopiar').addEventListener('click',async()=>{
+    if(!validar())return;
     try{
-      await navigator.clipboard.writeText(mensagem());
-      alert('Diagnóstico copiado.');
+      await navigator.clipboard.writeText(texto());
+      alert('Mensagem copiada.');
     }catch(e){
-      alert('Não foi possível copiar automaticamente.');
+      const area=document.getElementById('pddefDescricao');
+      area.focus();
+      alert('Não foi possível copiar automaticamente. Use Gmail Web ou WhatsApp.');
     }
   });
 
-  document.getElementById('pd3Fechar').addEventListener('click',fechar);
+  document.getElementById('pddefFechar').addEventListener('click',fechar);
   modal.addEventListener('click',e=>{if(e.target===modal)fechar()});
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'&&!modal.hidden) fechar();
-  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)fechar()});
 
   let encontrados=0;
   Array.from(document.querySelectorAll('a,button')).forEach(el=>{
-    const texto=(el.textContent||'').trim().toLowerCase();
+    const t=(el.textContent||'').trim().toLowerCase();
     if(
-      texto==='enviar feedback' ||
-      texto.includes('registrar feedback') ||
-      texto.includes('encontrou um problema') ||
+      t==='enviar feedback' ||
+      t.includes('registrar feedback') ||
+      t.includes('encontrou um problema') ||
       el.hasAttribute('data-feedback-protege')
     ){
       encontrados++;
@@ -474,16 +374,16 @@
   });
 
   if(!encontrados){
-    const botao=document.createElement('button');
-    botao.type='button';
-    botao.className='pd3-fallback';
-    botao.textContent='Enviar feedback';
-    botao.setAttribute('aria-haspopup','dialog');
-    botao.addEventListener('click',abrir);
-    document.body.appendChild(botao);
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='pddef-fallback';
+    b.textContent='Enviar feedback';
+    b.setAttribute('aria-haspopup','dialog');
+    b.addEventListener('click',abrir);
+    document.body.appendChild(b);
   }
 })();
 </script>
-<!-- FEEDBACK-3-CANAIS:FIM -->
+<!-- FEEDBACK-DEFINITIVO:FIM -->
 </body>
     </html>
