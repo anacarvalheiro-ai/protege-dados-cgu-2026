@@ -1,0 +1,13 @@
+{
+  "name": "Protege.Dados",
+  "version": "5.1.0",
+  "release": "LTS",
+  "organization": "Pretos Na Era Digital Ltda.",
+  "technical_lead": "Ana Maria Carvalheiro",
+  "portal": "https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/",
+  "repository": "https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026",
+  "status": "public",
+  "methodology": "experimental",
+  "individual_data": false,
+  "automated_decision": false
+}

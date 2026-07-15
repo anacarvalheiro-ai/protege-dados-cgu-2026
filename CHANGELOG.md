@@ -1,3 +1,22 @@
+# Changelog
+
+## [5.1.0] - 2026-07-15
+
+### Adicionado
+- README institucional consolidado;
+- documentação de metodologia, arquitetura, governança, API e uso;
+- notas de release LTS;
+- checklist de preparação institucional.
+
+### Melhorado
+- clareza da interpretação do IVPD;
+- organização documental;
+- rastreabilidade de versão;
+- apresentação para avaliadores e parceiros.
+
+### Observação
+O IVPD permanece experimental e não deve ser interpretado como ranking absoluto, prevalência real ou decisão automatizada.
+
 # Histórico de versões
 
 ## 5.1.0 — 13/07/2026

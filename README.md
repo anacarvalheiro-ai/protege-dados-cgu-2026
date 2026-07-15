@@ -1,103 +1,114 @@
-# Protege.Dados 5.1 — Ecossistema público de inteligência territorial
+# Protege.Dados
 
-[![Portal](https://img.shields.io/badge/portal-GitHub%20Pages-0b73b9)](https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/)
-[![Deploy](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/deploy.yml/badge.svg)](https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026/actions/workflows/deploy.yml)
-[![Release](https://img.shields.io/badge/release-5.1-56c7ff)](CHANGELOG.md)
-[![Licença](https://img.shields.io/badge/c%C3%B3digo-MIT-06365f)](LICENSE)
-[![Dados](https://img.shields.io/badge/dados-CSV%20%7C%20JSON-0873ba)](data/processed/ivpd_uf_v1.csv)
+## Observatório de Proteção Digital Infantojuvenil
 
-## Candidatura ao 2º Concurso de Reúso de Dados Abertos da CGU
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-5.1.0-0E73B8)](#)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB)](#)
+[![Dados abertos](https://img.shields.io/badge/dados-abertos-2E7D5A)](#)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-222222)](#)
+[![Licença](https://img.shields.io/badge/licen%C3%A7a-consulte%20o%20reposit%C3%B3rio-D6A21E)](#)
 
-O **Protege.Dados 5.1** integra dados oficiais de população, educação e denúncias administrativas e publica resultados agregados para as 27 unidades federativas. O portal foi redesenhado com base nos templates institucionais aprovados, preservando as funcionalidades de consulta, comparação, filtros, downloads, API e acessibilidade.
+O **Protege.Dados** é uma plataforma pública de inteligência territorial voltada à proteção digital de crianças e adolescentes. A iniciativa integra dados abertos oficiais, produz indicadores por Unidade da Federação e disponibiliza painel, comparador, arquivos abertos, API estática, metodologia e documentação de governança.
 
-> **Leitura responsável:** a IVPD é experimental. Não constitui ranking, não mede prevalência real, não identifica pessoas e não realiza decisões automatizadas.
+**Responsável técnica:** Ana Maria Carvalheiro  
+**Organização:** Pretos Na Era Digital Ltda.  
+**Versão estável:** 5.1.0 LTS
 
-## Entregas da versão 5.1
+## Acesso rápido
 
-- página inicial com painel nacional e métricas verificáveis;
-- consulta por UF com indicadores e componentes normalizados;
-- cartograma interativo e acessível das 27 UFs;
-- comparador de até três UFs;
-- exportação de recortes e comparações em CSV;
-- seção de dados abertos com pesquisa e filtros;
-- CSV compatível com Excel brasileiro e CSV internacional;
-- JSON e API estática com cinco endpoints;
-- metodologia do IVPD documentada;
-- governança, salvaguardas, limitações e dicionário de dados;
-- controles persistentes de alto contraste, ampliação, sublinhado de links e redução de movimento;
-- layout responsivo para desktop, tablet e celular;
-- testes Python, validação estática e auditoria funcional por navegador;
-- publicação automatizada pelo GitHub Actions.
+- Portal público: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
+- Dados e API: web/api/v1/
+- Metodologia: docs/metodologia/
+- Arquitetura: docs/arquitetura/
+- Governança: docs/governanca/
+- Guia do usuário: docs/usuario/
+- Guia do desenvolvedor: docs/desenvolvedor/
+- Registro de mudanças: CHANGELOG.md
 
-## Acessos
+## O que a plataforma oferece
 
-- Portal: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/
-- Repositório: https://github.com/anacarvalheiro-ai/protege-dados-cgu-2026
-- API: https://anacarvalheiro-ai.github.io/protege-dados-cgu-2026/api/v1/index.json
-- Documentação: [docs/](docs/)
+- consulta territorial para as 27 Unidades da Federação;
+- indicadores de denúncias e conectividade escolar;
+- IVPD experimental em escala de 0 a 100;
+- comparação contextual entre UFs;
+- exportação em CSV e JSON;
+- API estática pública;
+- metodologia auditável e reproduzível;
+- salvaguardas de privacidade e interpretação responsável;
+- canal de feedback por GitHub Issue, e-mail e WhatsApp.
 
-## Resultados atuais
+## Interpretação responsável do IVPD
 
-| Evidência | Resultado |
-|---|---:|
-| Unidades federativas | 27 |
-| Grupos de fontes oficiais | 3 |
-| Escolas analisadas | 181.065 |
-| Matrículas consideradas | 47.088.922 |
-| Escolas com internet | 166.771 |
-| Escolas com banda larga | 145.195 |
-| Denúncias no recorte de 2025 | 294.592 |
+O IVPD é um indicador sintético experimental de vulnerabilidade relativa. Ele:
 
-## Estrutura principal
+- não representa percentual de crianças em risco;
+- não mede pessoas individualmente;
+- não estima prevalência real de violência;
+- não constitui ranking absoluto;
+- não realiza decisões automatizadas;
+- não substitui análise qualitativa ou diagnóstico local.
 
-```text
-web/                     Portal publicado no GitHub Pages
-web/data/                JSON territorial
-web/downloads/           CSVs para reúso
-web/api/v1/              Endpoints estáticos
-web/assets/              CSS, JavaScript e identidade técnica
-scripts/                 Validadores e auditoria funcional
-tests/                   Testes unitários Python
-evidence/                Relatórios, hashes e capturas de tela
-```
+## Fontes e processamento
 
-## Validação local
+A solução utiliza fontes públicas oficiais e processamento programado em Python. As etapas principais são:
 
-```bash
-python -m pip install -e .
-python scripts/validate_release.py
-python scripts/validate_portal.py
+1. ingestão e registro das bases;
+2. padronização territorial;
+3. limpeza e validação;
+4. construção dos indicadores;
+5. normalização;
+6. cálculo do IVPD;
+7. testes automáticos;
+8. publicação em formatos abertos.
+
+## Arquitetura
+
+`	ext
+fontes oficiais
+      |
+      v
+leitura e validação
+      |
+      v
+processamento em Python
+      |
+      v
+indicadores por UF
+      |
+      +--> CSV
+      +--> JSON
+      +--> API estática
+      +--> portal público
+`
+
+## Execução local
+
+`powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements-dev.txt
 python -m pytest -q
-node --check web/assets/site.js
-node --check web/assets/app.js
-```
+`
 
-Para a auditoria funcional com navegador Chromium:
+Consulte docs/desenvolvedor/instalacao.md antes de executar o pipeline completo.
 
-```bash
-python scripts/browser_audit.py
-```
+## Documentação
 
-## Atualização assistida no Windows
+| Documento | Finalidade |
+|---|---|
+| docs/metodologia/README.md | cálculo, pesos, normalização e limitações |
+| docs/arquitetura/README.md | componentes e fluxo técnico |
+| docs/governanca/README.md | versionamento, qualidade, privacidade e auditoria |
+| docs/api/README.md | endpoints e formatos |
+| docs/usuario/README.md | uso e interpretação do portal |
+| docs/desenvolvedor/README.md | instalação, testes e manutenção |
+| docs/release/RELEASE-5.1.0.md | notas da versão estável |
 
-Após extrair o pacote, execute:
+## Reúso e transparência
 
-```text
-ATUALIZAR_PROTEGE_DADOS_5_1.bat
-```
+O projeto foi estruturado para facilitar auditoria, reprodução e reúso responsável. Antes de reutilizar os dados, consulte a metodologia, o dicionário de dados, as limitações e os termos de licenciamento presentes no repositório.
 
-O atualizador cria backup, copia os arquivos, executa as validações e oferece a opção de preparar o commit no Git. Consulte `INSTRUCOES_ATUALIZACAO_5_1.txt`.
+## Contato
 
-## Publicação
-
-1. mantenha o projeto na raiz do repositório `protege-dados-cgu-2026`;
-2. confirme que **Settings → Pages → Source** está em **GitHub Actions**;
-3. envie o commit para a branch `main`;
-4. acompanhe o workflow **Publicar Protege.Dados 5.1**;
-5. somente conclua a submissão após os jobs de validação e deploy ficarem verdes.
-
-## Autoria
-
-**Ana Maria Carvalheiro**  
+Ana Maria Carvalheiro  
 Pretos Na Era Digital Ltda.  
-Brasília/DF — 2026
+E-mail: anacarvalheiro@gmail.com
